@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-09-06T13:27:21+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: krokedil-settings\n"
+
+#: Addons.php:46
+#: Navigation.php:63
+msgid "Addons"
+msgstr ""
+
+#: Addons.php:144
+msgid "the plugin"
+msgstr ""
+
+#. translators: %s is the plugin name.
+#: Addons.php:147
+msgid "These are other plugins from Krokedil that work well together with %s."
+msgstr ""
+
+#: Addons.php:207
+msgid "Free"
+msgstr ""
+
+#: Addons.php:238
+msgid "Active"
+msgstr ""
+
+#: Addons.php:242
+msgid "Activate"
+msgstr ""
+
+#: Addons.php:247
+msgid "Install Now"
+msgstr ""
+
+#: Navigation.php:55
+msgid "General"
+msgstr ""
+
+#: Navigation.php:59
+#: Support.php:31
+msgid "Support"
+msgstr ""
+
+#: Support.php:96
+msgid "Before opening a support ticket, please make sure you have read the relevant plugin resources for a solution to your problem"
+msgstr ""
+
+#: Support.php:100
+msgid "Open support ticket with Krokedil"
+msgstr ""
+
+#: Traits/Sidebar.php:27
+msgid "Plugin resources"
+msgstr ""
+
+#: Traits/Sidebar.php:36
+msgid "Additional resources"
+msgstr ""

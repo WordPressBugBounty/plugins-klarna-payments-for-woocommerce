@@ -1,0 +1,75 @@
+.krokedil_addons__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.krokedil_addons__card {
+    max-width: 356px;
+    display: grid;
+    gap: 0;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    /*margin: 0 auto;*/
+}
+
+@media only screen and (min-width: 992px) {
+    .krokedil_addons__card {
+        margin: 0;
+    }
+
+    .krokedil_addons__cards {
+        grid-template-columns: repeat(auto-fit, minmax(256px, max-content));
+    }
+}
+
+@media only screen and (max-width: 782px) {
+    .krokedil_addons__card_action {
+    }
+}
+
+
+.krokedil_addons__card_content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.krokedil_addons__card_content .krokedil_addons__card_description {
+    flex-grow: 1;
+}
+
+.krokedil_addons__card_image {
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    max-height: 200px;
+}
+
+.krokedil_addons__card_image img, .krokedil_addons__card_image div {
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.krokedil_addons__card_action {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.krokedil_addons__read_more, .krokedil_addons__price {
+    margin-top: 5px;
+}
+
+.krokedil_settings__wrapper p.submit {
+    display:none;
+}

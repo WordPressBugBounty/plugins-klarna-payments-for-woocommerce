@@ -1,0 +1,52 @@
+.krokedil_wc__metabox h4 {
+    margin-bottom: .1em;
+}
+
+.krokedil_wc__metabox_section {
+    margin-top: 2em;
+}
+
+h4.krokedil_wc__metabox_label {
+    cursor: pointer;
+    display: flex;
+    gap: 1em;
+    margin: 0;
+}
+
+.krokedil_wc__metabox_section_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.krokedil_wc__metabox_label .dashicons {
+    transition: transform 0.15s ease;
+}
+
+.krokedil_wc__metabox_label .dashicons.krokedil_wc__metabox_open {
+    transform: rotate(-180deg);
+}
+
+.krokedil_wc__metabox_section {
+    padding-top: 1em;
+    border-top: 1px solid #e5e5e5;
+}
+
+div.krokedil_wc__metabox div.krokedil_wc__metabox_button,
+div.krokedil_wc__metabox a.krokedil_wc__metabox_action {
+    margin-top: 1em;
+}
+
+.krokedil_wc__metabox_toggle_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.krokedil_wc__metabox_toggle_wrapper h4 {
+    margin-top: 0;
+}
+
+.krokedil_wc__metabox_toggle_wrapper .woocommerce-input-toggle {
+    cursor: pointer;
+}

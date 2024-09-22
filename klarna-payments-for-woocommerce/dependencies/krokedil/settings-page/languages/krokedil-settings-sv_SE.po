@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-06T13:27:21+00:00\n"
+"PO-Revision-Date: 2024-09-06 15:30+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Domain: krokedil-settings\n"
+
+#: Addons.php:46 Navigation.php:63
+msgid "Addons"
+msgstr "Tillägg"
+
+#: Addons.php:144
+msgid "the plugin"
+msgstr "pluginet"
+
+#. translators: %s is the plugin name.
+#: Addons.php:147
+msgid "These are other plugins from Krokedil that work well together with %s."
+msgstr ""
+"Här är andra tillägg från Krokedil som fungerar bra tillsammans med %s."
+
+#: Addons.php:207
+msgid "Free"
+msgstr "Gratis"
+
+#: Addons.php:238
+msgid "Active"
+msgstr "Aktiv"
+
+#: Addons.php:242
+msgid "Activate"
+msgstr "Aktivera"
+
+#: Addons.php:247
+msgid "Install Now"
+msgstr "Installera nu"
+
+#: Navigation.php:55
+msgid "General"
+msgstr "Allmänt"
+
+#: Navigation.php:59 Support.php:31
+msgid "Support"
+msgstr "Support"
+
+#: Support.php:96
+msgid ""
+"Before opening a support ticket, please make sure you have read the relevant "
+"plugin resources for a solution to your problem"
+msgstr ""
+"Före du öppnar en support ärende, var vänlig se till att du har läst det "
+"relevanta tilläggets resursers för en lösning på ditt problem"
+
+#: Support.php:100
+msgid "Open support ticket with Krokedil"
+msgstr "Öppna support ärende med Krokedil"
+
+#: Traits/Sidebar.php:27
+msgid "Plugin resources"
+msgstr "Plugin resurser"
+
+#: Traits/Sidebar.php:36
+msgid "Additional resources"
+msgstr "Ytterligare resurser"
