@@ -62,6 +62,7 @@
 .krokedil_settings__sidebar .krokedil_settings__sidebar_section {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .krokedil_settings__sidebar h1.krokedil_settings__sidebar_title {
@@ -89,14 +90,35 @@
     margin-top: 5px;
 }
 
-.krokedil_settings__sidebar .krokedil_settings__sidebar_footer {
+.krokedil_settings__sidebar .krokedil_settings__sidebar_footer_krokedil {
     padding: 5px 10px 10px 10px;
     margin-top: 10px;
     flex-direction: column;
 }
 
-.krokedil_settings__sidebar .krokedil_settings__sidebar_footer p.krokedil_settings__sidebar_subtext {
+.krokedil_settings__sidebar .krokedil_settings__sidebar_footer_krokedil p.krokedil_settings__sidebar_subtext {
     align-self: flex-start;
+    color: #000000;
+    margin: 5px 0px 5px 0px;
+    font: 1em sans-serif;
+}
+
+.krokedil_settings__sidebar .krokedil_settings__sidebar_footer_krokedil img.krokedil_settings__sidebar_logo {
+    margin: 0px;
+    height: 20px;
+    width: auto;
+}
+
+.krokedil_settings__sidebar .krokedil_settings__sidebar_footer {
+    text-align: right;
+    display: grid;
+    gap: 5px 5px;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.krokedil_settings__sidebar .krokedil_settings__sidebar_footer p.krokedil_settings__sidebar_subtext {
     color: #000000;
     margin: 5px 0px 5px 0px;
     font: 1em sans-serif;
@@ -104,8 +126,8 @@
 
 .krokedil_settings__sidebar .krokedil_settings__sidebar_footer img.krokedil_settings__sidebar_logo {
     margin: 0px;
-    height: 20px;
-    width: auto;
+    width: 70px;
+    display: block;
 }
 
 .krokedil_settings__header_title {

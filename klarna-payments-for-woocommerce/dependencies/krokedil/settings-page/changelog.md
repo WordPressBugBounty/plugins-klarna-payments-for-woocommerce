@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [1.2.0] - 2024-10-23
+### Added
+
+* Added links to plugin and additional resources.
+* Allowed for customizing the partner logo. 
+
+### Fixed
+
+* Fixed what version we compare against for WooCommerce to get the system status report.
 
 ## [1.1.0] - 2024-09-11
 ### Changed
