@@ -4,13 +4,14 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitbef47250909618e625a355af2afc0e22
+class ComposerStaticInit071374db34a5e832e6d786d66760810f
 {
     public static $prefixLengthsPsr4 = array (
         'K' => 
         array (
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\' => 42,
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\' => 48,
+            'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\' => 53,
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\SettingsPage\\' => 49,
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\' => 58,
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\' => 58,
@@ -26,6 +27,10 @@ class ComposerStaticInitbef47250909618e625a355af2afc0e22
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\' => 
         array (
             0 => __DIR__ . '/..' . '/krokedil/woocommerce/src',
+        ),
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/krokedil/sign-in-with-klarna/src',
         ),
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\SettingsPage\\' => 
         array (
@@ -79,6 +84,12 @@ class ComposerStaticInitbef47250909618e625a355af2afc0e22
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\SettingsPage\\Traits\\Sidebar' => __DIR__ . '/..' . '/krokedil/settings-page/src/Traits/Sidebar.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\SettingsPage\\Traits\\Singleton' => __DIR__ . '/..' . '/krokedil/settings-page/src/Traits/Singleton.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\SettingsPage\\Traits\\Subsection' => __DIR__ . '/..' . '/krokedil/settings-page/src/Traits/Subsection.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\AJAX' => __DIR__ . '/..' . '/krokedil/sign-in-with-klarna/src/AJAX.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\JWT' => __DIR__ . '/..' . '/krokedil/sign-in-with-klarna/src/JWT.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\Redirect' => __DIR__ . '/..' . '/krokedil/sign-in-with-klarna/src/Redirect.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\Settings' => __DIR__ . '/..' . '/krokedil/sign-in-with-klarna/src/Settings.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\SignInWithKlarna' => __DIR__ . '/..' . '/krokedil/sign-in-with-klarna/src/SignInWithKlarna.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\User' => __DIR__ . '/..' . '/krokedil/sign-in-with-klarna/src/User.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Base' => __DIR__ . '/..' . '/krokedil/woocommerce/src/Base.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Cart\\Cart' => __DIR__ . '/..' . '/krokedil/woocommerce/src/Cart/Cart.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Cart\\CartCustomer' => __DIR__ . '/..' . '/krokedil/woocommerce/src/Cart/CartCustomer.php',
@@ -120,9 +131,9 @@ class ComposerStaticInitbef47250909618e625a355af2afc0e22
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitbef47250909618e625a355af2afc0e22::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitbef47250909618e625a355af2afc0e22::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitbef47250909618e625a355af2afc0e22::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit071374db34a5e832e6d786d66760810f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit071374db34a5e832e6d786d66760810f::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit071374db34a5e832e6d786d66760810f::$classMap;
 
         }, null, ClassLoader::class);
     }
