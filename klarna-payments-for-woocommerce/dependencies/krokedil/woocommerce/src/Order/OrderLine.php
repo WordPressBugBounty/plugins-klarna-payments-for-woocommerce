@@ -69,7 +69,7 @@ abstract class OrderLine extends OrderLineData
      */
     public function set_unit_price()
     {
-        $this->unit_price = apply_filters($this->get_filter_name('unit_price'), $this->format_price($this->order_line_item->get_total() / $this->order_line_item->get_quantity()), $this->order_line_item);
+        $this->unit_price = apply_filters($this->get_filter_name('unit_price'), $this->format_price((float) $this->order_line_item->get_total() / $this->order_line_item->get_quantity()), $this->order_line_item);
     }
     /**
      * Abstract function to set product subtotal unit price. Unit price before any discounts are applied.
@@ -78,7 +78,7 @@ abstract class OrderLine extends OrderLineData
      */
     public function set_subtotal_unit_price()
     {
-        $this->subtotal_unit_price = apply_filters($this->get_filter_name('subtotal_unit_price'), $this->format_price($this->order_line_item->get_total() / $this->order_line_item->get_quantity()), $this->order_line_item);
+        $this->subtotal_unit_price = apply_filters($this->get_filter_name('subtotal_unit_price'), $this->format_price((float) $this->order_line_item->get_total() / $this->order_line_item->get_quantity()), $this->order_line_item);
     }
     /**
      * Abstract function to set product tax rate

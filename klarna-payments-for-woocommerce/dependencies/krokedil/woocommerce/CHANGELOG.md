@@ -8,21 +8,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [1.7.1] - 2024-11-08
+
+### Fixed
+* Corrected documentation for the `get_total` method to clarify that it returns the total amount inclusive of tax, rather than exclusive.
+* Resolved an issue with the unit price retrieval in order lines where an empty string was returned instead of 0 when the price was removed from the associated item. Thanks @MajorChump!
+* Updated the `get_sku` method to consistently return a string by coercing the product ID to a string if the SKU is unset (defaulting previously to an integer). 
+
 ## [1.7.0] - 2024-09-11
+
 ### Added
 * Added a abstract class for handling order metaboxes to simplify and standardize the process of adding metaboxes to the order edit screen after WooCommerce added HPOS.
 
 ## [1.6.2] - 2024-08-28
+
 ### Fixed
 * Fixed a critical error when retrieving PW gift card from a Woo order.
 * Fixed a division by zero when calculating the tax rate.
 * Fixed an undefined index warning by ensuring that PW gift card exists before attempting retrieval.
 
 ## [1.6.1] - 2024-05-13
+
 ### Fixed
 * Reference to undefined method causes a fatal error.
 
 ## [1.6.0] - 2024-05-13
+
 ### Added
 * Added support for "Gift Cards" by Woo.
 * Added support for "PW WooCommerce Gift Cards" by Pimwick.
@@ -30,6 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Added support for "WooCommerce Smart Coupons" by StoreApps.
 
 ## [1.5.0] - 2024-03-12
+
 ### Added
 * Added support for multiple taxes per order line item.
 
@@ -41,6 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Added support for AvaTax.
 
 ## [1.3.1] - 2023-12-04
+
 ### Fixed
 * Removed the extra shipping package that WC Subscriptions add when the cart contain a subscription with a free trial. We can remove the package because if it is a free trial, there should not be any cost for the customer. If we kept it, the customer would have been charged for the shipping cost.
 
@@ -54,7 +67,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.2.1] - 2023-06-20
 
-### Changes
+### Changed
 * We now use the first package returned when getting packages from the cart instead of the one with the key 0. This should improve compatibility with other plugins that might use something other then a incrementing integer for the package key. For example WooCommerce Advanced Shipping Packages, which uses the post id of the package as the key.
 
 ## [1.2.0] - 2023-06-19

@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [1.2.1] - 2024-11-12
+### Added
+* Added the 'kosm_show_everywhere' filter hook to allow the placement to be shown on all pages.
+
+### Changed
+* Updated the product description as shown on the settings page.
+
 ## [1.2.0] - 2024-09-11
 ### Added
 
