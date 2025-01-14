@@ -7,7 +7,7 @@ use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaOnsiteMessaging\Pages\Cart;
 if (!\defined('ABSPATH')) {
     exit;
 }
-\define('KOSM_VERSION', '1.2.1');
+\define('KOSM_VERSION', '1.3.1');
 /**
  * The orchestrator class.
  */
@@ -45,6 +45,10 @@ class KlarnaOnsiteMessaging
     public function __construct($settings)
     {
         $this->settings = new Settings($settings);
+        // Skip if On-Site Messaging is not enabled.
+        if (!$this->settings()->is_enabled()) {
+            return;
+        }
         $this->product = new Product($this->settings);
         $this->cart = new Cart($this->settings);
         $this->shortcode = new Shortcode();
@@ -105,7 +109,8 @@ class KlarnaOnsiteMessaging
         if ('klarna_onsite_messaging_sdk' !== $handle) {
             return $tag;
         }
-        $environment = 'yes' === $this->settings->get('onsite_messaging_test_mode') ? 'playground' : 'production';
+        $settings = get_option('woocommerce_klarna_payments_settings', array());
+        $environment = isset($settings['testmode']) && 'yes' === $settings['testmode'] ? 'playground' : 'production';
         $data_client_id = apply_filters('kosm_data_client_id', $this->settings->get('data_client_id'));
         $tag = \str_replace(' src', ' async src', $tag);
         $tag = \str_replace('></script>', " data-environment={$environment} data-client-id='{$data_client_id}'></script>", $tag);

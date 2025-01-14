@@ -102,8 +102,8 @@ class Settings
         $setting = \str_replace('siwk_', '', $setting);
         if ('scope' === $setting) {
             // These scopes are required for full functionality and shouldn't be modified by the merchant, and must be excluded from the filter.
-            $required = 'openid offline_access customer:login profile:name profile:email profile:phone profile:billing_address';
-            return $required . apply_filters("siwk_{$setting}", \implode(' ', \array_keys(\array_filter($this->scope))));
+            $required = 'openid offline_access customer:login profile:name profile:email profile:phone profile:billing_address ';
+            return \trim($required . apply_filters("siwk_{$setting}", \implode(' ', \array_keys(\array_filter($this->scope)))));
         }
         return apply_filters("siwk_{$setting}", $this->{$setting});
     }
@@ -148,7 +148,7 @@ class Settings
         $this->client_id = \kp_get_client_id($this->market);
         $this->locale = apply_filters('siwk_locale', \str_replace('_', '-', get_locale()));
         // The array keys match the name of the scopes they define.
-        $this->scope = array('profile:name' => wc_string_to_bool($settings['siwk_required_scopes_name'] ?? 'yes'), 'profile:email' => wc_string_to_bool($settings['siwk_required_scopes_email'] ?? 'yes'), 'profile:phone' => wc_string_to_bool($settings['siwk_required_scopes_phone'] ?? 'yes'), 'profile:language' => wc_string_to_bool($settings['siwk_optional_scopes_language'] ?? 'no'), 'profile:country' => wc_string_to_bool($settings['siwk_optional_scopes_country'] ?? 'no'), 'profile:date_of_birth' => wc_string_to_bool($settings['siwk_optional_scopes_date_of_birth'] ?? 'no'));
+        $this->scope = array('profile:name' => wc_string_to_bool($settings['siwk_required_scopes_name'] ?? 'yes'), 'profile:email' => wc_string_to_bool($settings['siwk_required_scopes_email'] ?? 'yes'), 'profile:phone' => wc_string_to_bool($settings['siwk_required_scopes_phone'] ?? 'yes'), 'profile:locale' => wc_string_to_bool($settings['siwk_optional_scopes_language'] ?? 'no'), 'profile:country' => wc_string_to_bool($settings['siwk_optional_scopes_country'] ?? 'no'), 'profile:date_of_birth' => wc_string_to_bool($settings['siwk_optional_scopes_date_of_birth'] ?? 'no'));
     }
     /**
      * Retrieve the default settings values.

@@ -77,6 +77,7 @@ class Settings
     {
         $default = $this->default();
         $settings['onsite_messaging'] = array('id' => 'kosm', 'title' => 'On-Site Messaging', 'description' => __('Add personalized messaging throughout the shopper journey for higher conversion rates and increased spend.', 'klarna-onsite-messaging-for-woocommerce'), 'links' => array(array('url' => 'https://docs.klarna.com/conversion-boosters/on-site-messaging/additional-resources/osm-customise-merchant-portal/', 'title' => __('Further customization is possible in the Klarna Merchant Portal.', 'klarna-onsite-messaging-for-woocommerce'))), 'type' => 'kp_section_start');
+        $settings['onsite_messaging_enabled'] = array('title' => __('Enable/Disable', 'klarna-onsite-messaging-for-woocommerce'), 'label' => __('Enable On-site Messaging', 'klarna-onsite-messaging-for-woocommerce'), 'type' => 'checkbox', 'description' => '', 'default' => 'yes');
         $settings['placement_data_key_cart'] = array('title' => __('Cart Page Placement', 'klarna-onsite-messaging-for-woocommerce'), 'type' => 'select', 'description' => __('Select the placement for the cart page.', 'klarna-onsite-messaging-for-woocommerce'), 'default' => $default['placement_data_key_cart'], 'desc_tip' => \true, 'options' => array('' => __('Don\'t show', 'klarna-onsite-messaging-for-woocommerce'), 'credit-promotion-badge' => __('Show with Klarna badge  (recommended)', 'klarna-onsite-messaging-for-woocommerce'), 'credit-promotion-auto-size' => __('Show without Klarna badge', 'klarna-onsite-messaging-for-woocommerce')));
         $settings['onsite_messaging_cart_location'] = array('title' => __('Cart Page Location', 'klarna-onsite-messaging-for-woocommerce'), 'desc' => __('Select where to display the widget on your cart page', 'klarna-onsite-messaging-for-woocommerce'), 'id' => '', 'default' => $default['onsite_messaging_cart_location'], 'type' => 'select', 'options' => array('woocommerce_cart_collaterals' => __('Above cross sell', 'klarna-onsite-messaging-for-woocommerce'), 'woocommerce_before_cart_totals' => __('Above cart totals', 'klarna-onsite-messaging-for-woocommerce'), 'woocommerce_proceed_to_checkout' => __('Between cart totals and proceed to checkout button', 'klarna-onsite-messaging-for-woocommerce'), 'woocommerce_after_cart_totals' => __('After proceed to checkout button', 'klarna-onsite-messaging-for-woocommerce'), 'woocommerce_after_cart' => __('Bottom of the page', 'klarna-onsite-messaging-for-woocommerce')));
         $settings['onsite_messaging_theme_cart'] = array('title' => __('Cart Page Theme', 'klarna-onsite-messaging-for-woocommerce'), 'desc' => __('Select which theme to use for the cart page.', 'klarna-onsite-messaging-for-woocommerce'), 'id' => '', 'default' => $default['onsite_messaging_theme_cart'], 'type' => 'select', 'options' => array('default' => __('Light', 'klarna-onsite-messaging-for-woocommerce'), 'dark' => __('Dark', 'klarna-onsite-messaging-for-woocommerce'), 'custom' => __('Custom', 'klarna-onsite-messaging-for-woocommerce')));
@@ -114,6 +115,15 @@ class Settings
      */
     private function default()
     {
-        return array('onsite_messaging_enabled_product' => 'yes', 'placement_data_key_product' => 'credit-promotion-badge', 'onsite_messaging_product_location' => '45', 'onsite_messaging_theme_product' => 'default', 'onsite_messaging_enabled_cart' => 'yes', 'placement_data_key_cart' => 'credit-promotion-badge', 'onsite_messaging_cart_location' => 'woocommerce_cart_collaterals', 'onsite_messaging_theme_cart' => '', 'custom_product_page_widget_enabled' => 'no', 'custom_product_page_placement_hook' => 'woocommerce_single_product_summary', 'custom_product_page_placement_priority' => 35);
+        return array('onsite_messaging_enabled' => 'yes', 'onsite_messaging_enabled_product' => 'yes', 'placement_data_key_product' => 'credit-promotion-badge', 'onsite_messaging_product_location' => '45', 'onsite_messaging_theme_product' => 'default', 'onsite_messaging_enabled_cart' => 'yes', 'placement_data_key_cart' => 'credit-promotion-badge', 'onsite_messaging_cart_location' => 'woocommerce_cart_collaterals', 'onsite_messaging_theme_cart' => '', 'custom_product_page_widget_enabled' => 'no', 'custom_product_page_placement_hook' => 'woocommerce_single_product_summary', 'custom_product_page_placement_priority' => 35);
+    }
+    /**
+     * Get the enabled status for On-Site Messaging.
+     *
+     * @return bool
+     */
+    public function is_enabled()
+    {
+        return 'yes' === $this->settings['onsite_messaging_enabled'] ?? 'yes';
     }
 }

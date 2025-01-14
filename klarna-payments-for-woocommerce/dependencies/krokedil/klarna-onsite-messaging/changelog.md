@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [1.3.1] - 2025-01-14
+### Fix
+* Resolved KOSM not being disabled by setting in some environments.
+
+## [1.3.0] - 2025-01-13
+### Added
+* Added enable/disable setting for KOSM.
+
+### Fix
+* Resolved "Attempt to read property on null" warning.
+* Resolved data-environment tag not being set correctly.
+
 ## [1.2.1] - 2024-11-12
 ### Added
 * Added the 'kosm_show_everywhere' filter hook to allow the placement to be shown on all pages.

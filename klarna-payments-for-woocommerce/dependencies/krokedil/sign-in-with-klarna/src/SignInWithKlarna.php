@@ -7,7 +7,7 @@ if (!\defined('ABSPATH')) {
     exit;
 }
 if (!\defined('SIWK_VERSION')) {
-    \define('SIWK_VERSION', '1.0.4');
+    \define('SIWK_VERSION', '1.0.5');
 }
 /**
  * Sign_In_With_Klarna class.
