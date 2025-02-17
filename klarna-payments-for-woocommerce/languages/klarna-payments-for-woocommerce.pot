@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/klarna-payments-for-woocommerce\n"
-"POT-Creation-Date: 2025-01-14 09:52:37+00:00\n"
+"POT-Creation-Date: 2025-02-17 11:37:32+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: blocks/src/payment/KlarnaPayments.php:79 classes/class-kp-assets.php:113
+#: blocks/src/payment/KlarnaPayments.php:86 classes/class-kp-assets.php:113
 msgid "Pay with Klarna"
 msgstr ""
 
@@ -126,189 +126,198 @@ msgstr ""
 msgid "Klarna Merchant Portal"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:235
-msgid "To unlock the plugin's features, enter your credentials"
+#: classes/admin/class-kp-form-fields.php:232
+msgid "Klarna Merchant Privacy Notice"
+msgstr ""
+
+#: classes/admin/class-kp-form-fields.php:234
+#. translators: %s: privacy policy link.
+msgid "By activating Klarna using API credentials you agree to and accept the %s."
 msgstr ""
 
 #: classes/admin/class-kp-form-fields.php:240
-#: classes/admin/class-kp-form-fields.php:335
+msgid "To unlock the plugin's features, enter your credentials"
+msgstr ""
+
+#: classes/admin/class-kp-form-fields.php:245
+#: classes/admin/class-kp-form-fields.php:340
 #: dependencies/krokedil/klarna-express-checkout/src/Settings.php:125
 #: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
 msgid "Documentation"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:246
+#: classes/admin/class-kp-form-fields.php:251
 msgid "Client Identifier & API Credentials"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:248
+#: classes/admin/class-kp-form-fields.php:253
 #. translators: %s: merchant portal link.
 msgid ""
 "Enter the credentials for production and test for each market Klarna is "
-"used. Get the client identifier and API credentials from the %s, under "
-"Settings."
+"used. Get the client identifier and API credentials from the %1$s, under "
+"Settings. <br><br><b>%2$s</b>"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:251
+#: classes/admin/class-kp-form-fields.php:256
 msgid "Enter the countries where Klarna will be available"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:255
+#: classes/admin/class-kp-form-fields.php:260
 msgid "Start typing"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:259
+#: classes/admin/class-kp-form-fields.php:264
 #: dependencies/krokedil/klarna-onsite-messaging/src/Settings.php:54
 msgid "Test mode"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:260
+#: classes/admin/class-kp-form-fields.php:265
 msgid "Enable Klarna in Klarna's test environment."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:266
+#: classes/admin/class-kp-form-fields.php:271
 msgid "European Market"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:274
+#: classes/admin/class-kp-form-fields.php:279
 msgid "Credentials for Europe"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:281
+#: classes/admin/class-kp-form-fields.php:286
 msgid "Combine EU credentials"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:282
+#: classes/admin/class-kp-form-fields.php:287
 msgid "Combine all EU country credentials into a single"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:290
+#: classes/admin/class-kp-form-fields.php:295
 msgid "North American Market"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:294
+#: classes/admin/class-kp-form-fields.php:299
 msgid "Credentials for the US"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:295
+#: classes/admin/class-kp-form-fields.php:300
 msgid "Credentials for Canada"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:296
+#: classes/admin/class-kp-form-fields.php:301
 msgid "Credentials for Mexico"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:302
+#: classes/admin/class-kp-form-fields.php:307
 msgid "Oceania Market"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:306
+#: classes/admin/class-kp-form-fields.php:311
 msgid "Credentials for Australia"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:307
+#: classes/admin/class-kp-form-fields.php:312
 msgid "Credentials for New Zealand"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:331
+#: classes/admin/class-kp-form-fields.php:336
 msgid ""
 "Give your customers the ability to pay in flexible ways such as Buy now, "
 "Pay Later, Invoicing, Installments and Financing."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:341
+#: classes/admin/class-kp-form-fields.php:346
 #: dependencies/krokedil/klarna-express-checkout/src/Settings.php:125
 #: dependencies/krokedil/klarna-onsite-messaging/src/Settings.php:80
 #: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
 msgid "Enable/Disable"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:342
+#: classes/admin/class-kp-form-fields.php:347
 msgid "Enable Klarna Payments"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:348
+#: classes/admin/class-kp-form-fields.php:353
 msgid "Logging"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:349
+#: classes/admin/class-kp-form-fields.php:354
 msgid "Log debug messages"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:351
+#: classes/admin/class-kp-form-fields.php:356
 msgid "Save debug messages to the WooCommerce System Status log."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:354
+#: classes/admin/class-kp-form-fields.php:359
 msgid "No"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:355
+#: classes/admin/class-kp-form-fields.php:360
 msgid "Yes"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:356
+#: classes/admin/class-kp-form-fields.php:361
 msgid "Yes (with extra debug data)"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:361
+#: classes/admin/class-kp-form-fields.php:366
 msgid "Hide \"What is Klarna?\" link"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:363
+#: classes/admin/class-kp-form-fields.php:368
 msgid "If checked, \"What is Klarna?\" will not be shown."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:368
+#: classes/admin/class-kp-form-fields.php:373
 msgid "Float \"What is Klarna?\" link"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:370
+#: classes/admin/class-kp-form-fields.php:375
 msgid "If checked, \"What is Klarna?\" will be floated right."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:375
+#: classes/admin/class-kp-form-fields.php:380
 msgid "Product URLs"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:377
+#: classes/admin/class-kp-form-fields.php:382
 msgid "Send product and product image URLs to Klarna"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:382
+#: classes/admin/class-kp-form-fields.php:387
 msgid "Add Klarna URLs to order email"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:384
+#: classes/admin/class-kp-form-fields.php:389
 msgid ""
 "This will add Klarna URLs to the order emails that are sent. You can read "
 "more about this here: "
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:389
-#: classes/admin/class-kp-form-fields.php:391
+#: classes/admin/class-kp-form-fields.php:394
+#: classes/admin/class-kp-form-fields.php:396
 msgid "Customer type"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:392
+#: classes/admin/class-kp-form-fields.php:397
 msgid "Select the customer for the store."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:394
+#: classes/admin/class-kp-form-fields.php:399
 msgid "Business to Consumer (B2C)"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:395
+#: classes/admin/class-kp-form-fields.php:400
 msgid "Business to Business (B2B)"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:404
+#: classes/admin/class-kp-form-fields.php:409
 #: dependencies/krokedil/klarna-express-checkout/src/Settings.php:125
 #: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
 msgid "Preview"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:424
+#: classes/admin/class-kp-form-fields.php:429
 #. translators: %s: country name.
 msgid "Credentials for %s:"
 msgstr ""
@@ -1093,7 +1102,7 @@ msgstr ""
 msgid "Test Countries"
 msgstr ""
 
-#: includes/kp-functions.php:28
+#: includes/kp-functions.php:30
 msgid "Klarna Payments API Error: "
 msgstr ""
 

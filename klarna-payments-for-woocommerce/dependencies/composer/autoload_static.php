@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf3562d81fee2183ced886fe5922ea940
+class ComposerStaticInitcaa5045fd63765f5b0aa36e2aa1b27ec
 {
     public static $prefixLengthsPsr4 = array (
         'K' => 
@@ -111,6 +111,7 @@ class ComposerStaticInitf3562d81fee2183ced886fe5922ea940
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\OrderData' => __DIR__ . '/..' . '/krokedil/woocommerce/src/OrderData.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\OrderLineData' => __DIR__ . '/..' . '/krokedil/woocommerce/src/OrderLineData.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\OrderMetabox' => __DIR__ . '/..' . '/krokedil/woocommerce/src/OrderMetabox.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\OrderUtility' => __DIR__ . '/..' . '/krokedil/woocommerce/src/OrderUtility.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Order\\Order' => __DIR__ . '/..' . '/krokedil/woocommerce/src/Order/Order.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Order\\OrderCustomer' => __DIR__ . '/..' . '/krokedil/woocommerce/src/Order/OrderCustomer.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Order\\OrderLine' => __DIR__ . '/..' . '/krokedil/woocommerce/src/Order/OrderLine.php',
@@ -131,9 +132,9 @@ class ComposerStaticInitf3562d81fee2183ced886fe5922ea940
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf3562d81fee2183ced886fe5922ea940::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf3562d81fee2183ced886fe5922ea940::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitf3562d81fee2183ced886fe5922ea940::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitcaa5045fd63765f5b0aa36e2aa1b27ec::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitcaa5045fd63765f5b0aa36e2aa1b27ec::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitcaa5045fd63765f5b0aa36e2aa1b27ec::$classMap;
 
         }, null, ClassLoader::class);
     }

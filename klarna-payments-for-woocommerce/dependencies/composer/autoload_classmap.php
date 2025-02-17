@@ -66,6 +66,7 @@ return array(
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\OrderData' => $vendorDir . '/krokedil/woocommerce/src/OrderData.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\OrderLineData' => $vendorDir . '/krokedil/woocommerce/src/OrderLineData.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\OrderMetabox' => $vendorDir . '/krokedil/woocommerce/src/OrderMetabox.php',
+    'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\OrderUtility' => $vendorDir . '/krokedil/woocommerce/src/OrderUtility.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Order\\Order' => $vendorDir . '/krokedil/woocommerce/src/Order/Order.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Order\\OrderCustomer' => $vendorDir . '/krokedil/woocommerce/src/Order/OrderCustomer.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Order\\OrderLine' => $vendorDir . '/krokedil/woocommerce/src/Order/OrderLine.php',

@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [1.8.0] - 2025-01-22
+
+### Added
+* Added the OrderUtility class for adding environmental information to the WooCommerce order, such as PHP version, WordPress version, WooCommerce version, plugin version and used checkout flow. 
+
 ## [1.7.1] - 2024-11-08
 
 ### Fixed
