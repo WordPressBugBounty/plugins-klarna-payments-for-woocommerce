@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/klarna-payments-for-woocommerce\n"
-"POT-Creation-Date: 2025-02-17 11:37:32+00:00\n"
+"POT-Creation-Date: 2025-02-18 09:30:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -342,61 +342,65 @@ msgstr ""
 msgid "Learn more about Klarna"
 msgstr ""
 
-#: classes/admin/class-kp-settings-page.php:100
+#: classes/admin/class-kp-settings-page.php:103
 #: dependencies/krokedil/settings-page/src/Addons.php:244
 msgid "Active"
 msgstr ""
 
-#: classes/admin/class-kp-settings-page.php:100
+#: classes/admin/class-kp-settings-page.php:103
 msgid "Not active"
 msgstr ""
 
-#: classes/admin/class-kp-settings-page.php:299
+#: classes/admin/class-kp-settings-page.php:302
 msgid "(Test)"
 msgstr ""
 
-#: classes/admin/class-kp-settings-page.php:299
+#: classes/admin/class-kp-settings-page.php:302
 msgid "(Production)"
 msgstr ""
 
-#: classes/admin/class-kp-settings-page.php:305
+#: classes/admin/class-kp-settings-page.php:308
 msgid "Username"
 msgstr ""
 
-#: classes/admin/class-kp-settings-page.php:309
+#: classes/admin/class-kp-settings-page.php:312
 msgid "Password"
 msgstr ""
 
-#: classes/admin/class-kp-settings-page.php:314
+#: classes/admin/class-kp-settings-page.php:317
 #: dependencies/krokedil/klarna-onsite-messaging/src/Settings.php:55
 msgid "Client ID"
 msgstr ""
 
-#: classes/class-kp-ajax.php:82 classes/class-kp-subscriptions.php:201
+#: classes/class-kp-ajax.php:84 classes/class-kp-subscriptions.php:201
 #. translators: Recurring token.
 msgid "Recurring token created: %s"
 msgstr ""
 
-#: classes/class-kp-ajax.php:87
+#: classes/class-kp-ajax.php:89
 msgid ""
 "The order contains a free or trial subscription, and no Klarna order is "
 "associated with this purchase. A Klarna order will only be registered once "
 "the subscriber is charged."
 msgstr ""
 
-#: classes/class-kp-ajax.php:158
+#: classes/class-kp-ajax.php:160
 msgid "Customer aborted purchase with Klarna."
 msgstr ""
 
-#: classes/class-kp-ajax.php:160
+#: classes/class-kp-ajax.php:162
 msgid "Authorization rejected by Klarna."
+msgstr ""
+
+#: classes/class-kp-api.php:261
+msgid "Missing shared secret."
 msgstr ""
 
 #: classes/class-kp-assets.php:114
 msgid "Please read and accept the terms and conditions to proceed with your order."
 msgstr ""
 
-#: classes/class-kp-assets.php:155
+#: classes/class-kp-assets.php:157
 msgid "Select all"
 msgstr ""
 
@@ -491,19 +495,19 @@ msgstr ""
 msgid "What is Klarna?"
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:382
+#: classes/class-wc-gateway-klarna-payments.php:387
 msgid "Failed to get required data from the Klarna session. Please try again."
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:445
+#: classes/class-wc-gateway-klarna-payments.php:450
 msgid "Failed to create a session with Klarna. Please try again."
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:475
+#: classes/class-wc-gateway-klarna-payments.php:480
 msgid "Failed to create a hosted payment page with Klarna. Please try again."
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:616
+#: classes/class-wc-gateway-klarna-payments.php:621
 msgid "Klarna did not accept the new order amount, the order has not been updated"
 msgstr ""
 
@@ -1140,8 +1144,8 @@ msgstr ""
 msgid "https://wordpress.org/support/article/using-permalinks/"
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:445
-#: klarna-payments-for-woocommerce.php:454
+#: klarna-payments-for-woocommerce.php:446
+#: klarna-payments-for-woocommerce.php:455
 msgid ""
 "Your installation of Klarna Payments is not complete. If you installed this "
 "plugin directly from Github please refer to the README.DEV.md file in the "
