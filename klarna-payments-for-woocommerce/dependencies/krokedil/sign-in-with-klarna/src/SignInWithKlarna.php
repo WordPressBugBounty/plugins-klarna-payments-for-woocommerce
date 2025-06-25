@@ -7,7 +7,7 @@ if (!\defined('ABSPATH')) {
     exit;
 }
 if (!\defined('SIWK_VERSION')) {
-    \define('SIWK_VERSION', '1.0.5');
+    \define('SIWK_VERSION', '1.0.6');
 }
 /**
  * Sign_In_With_Klarna class.
@@ -58,6 +58,15 @@ class SignInWithKlarna
     public function __construct($settings)
     {
         $this->settings = new Settings($settings);
+        add_action('init', array($this, 'init'));
+    }
+    /**
+     * Initialize the SignInWithKlarna class.
+     *
+     * @return void
+     */
+    public function init()
+    {
         $this->jwt = new JWT(wc_string_to_bool($this->settings->get('test_mode')), $this->settings);
         $this->user = new User($this->jwt);
         $this->ajax = new AJAX($this->jwt, $this->user);
@@ -177,6 +186,10 @@ class SignInWithKlarna
          * 2. if logged in or guest but has not signed in with klarna.
          * 3. signed in, but need to renew the refresh token.
          */
+        $kp_unavailable_feature_ids = get_option('kp_unavailable_feature_ids', array());
+        if (\in_array('siwk', $kp_unavailable_feature_ids)) {
+            return \false;
+        }
         $enabled = $this->settings->get('enabled');
         if (!wc_string_to_bool($enabled)) {
             return \false;

@@ -271,6 +271,8 @@ abstract class OrderLineData extends Base
     /**
      * Function to get product tax rate
      *
+     * The tax rate is always returned in minor units (e.g., 12% → 1200).
+     *
      * @param bool $single Whether the tax rate(s) should be summed as a single value or as separate array items.
      * @return float|int|array<float|int>
      */

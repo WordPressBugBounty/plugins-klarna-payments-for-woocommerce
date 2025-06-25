@@ -19,13 +19,44 @@ trait Subsection
     /**
      * Output the Subsection.
      *
+     * @param bool $show_settings_navigation Whether to display the settings navigation.
      * @return void
      */
-    public function output_subsection()
+    public function output_subsection($show_settings_navigation = \false)
     {
+        $settings = \array_filter($this->gateway->get_form_fields(), function ($field) {
+            return isset($field['type']) && 'krokedil_section_start' === $field['type'];
+        });
+        if ($show_settings_navigation) {
+            ?>
+			<div class="krokedil_settings__settings_navigation">
+				<h3><?php 
+            esc_html_e('Sections', 'krokedil-settings');
+            ?></h3>
+					<?php 
+            foreach ($settings as $setting) {
+                ?>
+						<p>
+							<span>
+								&raquo;
+								<a href="#<?php 
+                echo esc_attr($setting['id']);
+                ?>" class="krokedil_settings__settings_navigation_link">
+									<?php 
+                echo esc_html($setting['title']);
+                ?>
+								</a>
+							</span>
+						</p>
+						<?php 
+            }
+            ?>
+			</div>
+			<?php 
+        }
         ?>
 		<div class="krokedil_settings__content">
-			<?php 
+		<?php 
         $this->output_page_content();
         ?>
 		</div>
@@ -118,6 +149,51 @@ trait Subsection
      */
     protected static function get_text($text)
     {
-        return $text[self::get_locale()] ?? $text['text']['en'] ?? '';
+        return $text[self::get_locale()] ?? $text['en'] ?? '';
+    }
+    /**
+     * Print the content.
+     *
+     * @param array $item The item to print.
+     * @param bool  $ignore_p_tag Whether to ignore the p tag.
+     *
+     * @return string
+     */
+    public static function print_content($item, $ignore_p_tag = \false)
+    {
+        $type = $item['type'];
+        $text = '';
+        switch ($type) {
+            case 'text':
+                $text = self::get_text($item);
+                break;
+            case 'link':
+                $text = self::get_link($item);
+                break;
+            case 'link_text':
+                $text = self::get_link_text($item);
+                break;
+            case 'list':
+                $list_items = $item['items'];
+                $list = '<ul class="krokedil_settings__list">';
+                foreach ($list_items as $list_item) {
+                    $list .= '<li>';
+                    $list .= self::print_content($list_item, \true);
+                    $list .= '</li>';
+                }
+                $list .= '</ul>';
+                $text = $list;
+                break;
+            case 'spacer':
+                $ignore_p_tag = \true;
+                $text = '<div class="krokedil_settings__spacer"></div>';
+                break;
+            default:
+                return '';
+        }
+        if ($ignore_p_tag) {
+            return $text;
+        }
+        return '<p>' . $text . '</p>';
     }
 }

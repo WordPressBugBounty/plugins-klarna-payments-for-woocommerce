@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [1.0.6] - 2025-06-09
+### Fixed
+
+* Resolved notice "_load_textdomain_just_in_time was called incorrectly".
+
+### Added
+
+* Added check to determine if SIWK is marked as unavailable for the current Klarna credentials. If so, SIWK will be disabled.
+
 ## [1.0.5] - 2025-01-13
 ### Fixed
 * Fixed faulty formatting for scope and removed invalid scope.

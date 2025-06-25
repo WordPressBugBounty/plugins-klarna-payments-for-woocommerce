@@ -56,16 +56,16 @@ msgid ""
 "Before opening a support ticket, please make sure you have read the relevant "
 "plugin resources for a solution to your problem"
 msgstr ""
-"Före du öppnar en support ärende, var vänlig se till att du har läst det "
+"Före du öppnar en supportärende, var vänlig se till att du har läst det "
 "relevanta tilläggets resursers för en lösning på ditt problem"
 
 #: Support.php:100
 msgid "Open support ticket with Krokedil"
-msgstr "Öppna support ärende med Krokedil"
+msgstr "Öppna supportärende med Krokedil"
 
 #: Traits/Sidebar.php:27
 msgid "Plugin resources"
-msgstr "Plugin resurser"
+msgstr "Pluginresurser"
 
 #: Traits/Sidebar.php:36
 msgid "Additional resources"

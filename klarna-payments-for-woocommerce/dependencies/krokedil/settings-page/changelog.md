@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [1.3.0] - 2025-06-24
+### Added
+
+* Added the option to use a new design and page navigation for the settings page.
+
+## [1.2.1] - 2025-06-10
+### Added
+
+* Added support for customizing and translating various text sections.
+
 ## [1.2.0] - 2024-10-23
 ### Added
 

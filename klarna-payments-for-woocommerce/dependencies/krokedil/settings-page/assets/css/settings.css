@@ -136,6 +136,7 @@
 
 .krokedil_settings__header_description {
     margin: 5px 0 0 0;
+    max-width: 800px;
 }
 
 .krokedil_addons__description {
@@ -154,4 +155,154 @@ ul.krokedil_settings__list li {
 
 div.krokedil_settings__spacer {
     margin-top: 25px;
+}
+
+/**/
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__section {
+	position: relative;
+	background: white;
+    border: 1px solid #e5e5e5;
+	border-bottom: 0;
+    width: calc(100% - 40px);
+	margin-bottom: 10px;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__section .krokedil_settings__section_toggle {
+	position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__section .krokedil_settings__section_content {
+	display: none;
+	margin: 0 20px;
+	width: calc(100% - 40px);
+    padding-bottom: 10px;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__section .krokedil_settings__section_content.active {
+    display: table;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__section .krokedil_settings__section_header {
+	padding: 10px 20px;
+	border-bottom: solid 1px #e5e5e5;
+	cursor: pointer;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__section table.form-table th.titledesc {
+    padding-bottom: 8px;
+	width: calc(100% - 20px);
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__section table.form-table th.titledesc .woocommerce-help-tip {
+    position: relative;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__wrapper, .krokedil_settings__gateway_page.styled .krokedil_settings__wrapper .krokedil_settings__content {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 10px;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__section table.form-table td.forminp input.colorpick {
+	width: 100px;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__section .form-table .titledesc {
+	display: block;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__section .form-table .forminp {
+	padding: 0;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__wrapper .krokedil_settings__content {
+	flex: 1;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin-right: auto;
+    margin-bottom: 16px;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__wrapper .krokedil_settings__settings_navigation {
+    width: 200px;
+}
+
+@media only screen and (min-width: 1186px) {
+    .krokedil_settings__gateway_page.styled .krokedil_settings__wrapper .krokedil_settings__settings_navigation {
+        max-height: 89vh;
+        position: sticky;
+        top: 92px;
+        left: 0;
+    }
+
+    .krokedil_settings__gateway_page.styled p.submit {
+        position: sticky;
+        bottom: 1.5em;
+    }
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__section_title {
+    margin-bottom: 0;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings__section_description p {
+    margin-top: 7px;
+    opacity: 0.8;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_ppu_status:not(.active) {
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+    outline: none;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_ppu_status:not(.active) input[type="number"] {
+    pointer-events: none;
+    user-select: none;
+    outline: none;
+    background: #f5f5f5;
+    color: #888;
+    cursor: not-allowed;
+    tab-index: -1;
+}
+
+.krokedil_settings__gateway_page.styled table.form-table input[type="text"],
+.krokedil_settings__gateway_page.styled table.form-table input[type="password"],
+.krokedil_settings__gateway_page.styled table.form-table select
+{
+    width: 100%;
+    max-width: 400px;
+}
+
+.krokedil_settings__gateway_page.styled table.form-table textarea {
+    max-width: 400px;
+    height: 3em;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings_title, .krokedil_settings__gateway_page.styled .krokedil_settings_sub_title {
+    margin-bottom: 0;
+    margin-top: 1.4em;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings_sub_title {
+    font-size: 1.1em;
+    margin-top: 1.5em;
+}
+
+.krokedil_settings__gateway_page.styled .krokedil_settings_sub_title + p {
+    margin-top: 0.3em;
+}
+
+.krokedil_settings__gateway_page.styled  .krokedil_ppu_setting__title.inactive + p + .form-table .titledesc {
+   padding-top: 0;
 }

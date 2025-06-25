@@ -64,6 +64,7 @@ class SettingsPage
         wp_register_style('krokedil-support-page', plugin_dir_url(__FILE__) . '../assets/css/support.css', array('krokedil-settings-page'), \filemtime(__DIR__ . '/../assets/css/support.css'));
         wp_register_style('krokedil-addons-page', plugin_dir_url(__FILE__) . '../assets/css/addons.css', array('krokedil-settings-page'), \filemtime(__DIR__ . '/../assets/css/addons.css'));
         wp_register_script('krokedil-support-page', plugin_dir_url(__FILE__) . '../assets/js/support.js', array('jquery'), \filemtime(__DIR__ . '/../assets/js/support.js'), \false);
+        wp_register_script('krokedil-settings-page', plugin_dir_url(__FILE__) . '../assets/js/styled-settings.js', array('jquery'), \filemtime(__DIR__ . '/../assets/js/styled-settings.js'), \false);
     }
     /**
      * Set the plugin name.

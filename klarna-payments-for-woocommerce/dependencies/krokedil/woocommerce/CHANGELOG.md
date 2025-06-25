@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [1.8.1] - 2025-06-03
+### Added
+* Added documentation for `get_tax_rate` method to clarify that it always return the tax rate in minor units regardless of the unit type set in the configuration (e.g., 12% → 1200).
+
+### Fixed
+* Addressed a fatal error when attempting to retrieve a product's type.
+
 ## [1.8.0] - 2025-01-22
 
 ### Added

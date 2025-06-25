@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/klarna-payments-for-woocommerce\n"
-"POT-Creation-Date: 2025-05-12 08:13:31+00:00\n"
+"POT-Creation-Date: 2025-06-25 09:39:53+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -142,7 +142,7 @@ msgstr ""
 #: classes/admin/class-kp-form-fields.php:245
 #: classes/admin/class-kp-form-fields.php:340
 #: dependencies/krokedil/klarna-express-checkout/src/Settings.php:125
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Documentation"
 msgstr ""
 
@@ -228,7 +228,7 @@ msgstr ""
 #: classes/admin/class-kp-form-fields.php:346
 #: dependencies/krokedil/klarna-express-checkout/src/Settings.php:125
 #: dependencies/krokedil/klarna-onsite-messaging/src/Settings.php:80
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Enable/Disable"
 msgstr ""
 
@@ -313,7 +313,7 @@ msgstr ""
 
 #: classes/admin/class-kp-form-fields.php:409
 #: dependencies/krokedil/klarna-express-checkout/src/Settings.php:125
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Preview"
 msgstr ""
 
@@ -343,7 +343,7 @@ msgid "Learn more about Klarna"
 msgstr ""
 
 #: classes/admin/class-kp-settings-page.php:103
-#: dependencies/krokedil/settings-page/src/Addons.php:244
+#: dependencies/krokedil/settings-page/src/Addons.php:241
 msgid "Active"
 msgstr ""
 
@@ -554,19 +554,19 @@ msgstr ""
 #: dependencies/krokedil/klarna-onsite-messaging/src/Settings.php:63
 #: dependencies/krokedil/klarna-onsite-messaging/src/Settings.php:83
 #: dependencies/krokedil/klarna-onsite-messaging/src/Settings.php:86
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Dark"
 msgstr ""
 
 #: dependencies/krokedil/klarna-express-checkout/src/Settings.php:125
 #: dependencies/krokedil/klarna-onsite-messaging/src/Settings.php:83
 #: dependencies/krokedil/klarna-onsite-messaging/src/Settings.php:86
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Light"
 msgstr ""
 
 #: dependencies/krokedil/klarna-express-checkout/src/Settings.php:125
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Outlined"
 msgstr ""
 
@@ -579,17 +579,17 @@ msgid "Select the shape for the Klarna Express Checkout."
 msgstr ""
 
 #: dependencies/krokedil/klarna-express-checkout/src/Settings.php:125
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Rounded"
 msgstr ""
 
 #: dependencies/krokedil/klarna-express-checkout/src/Settings.php:125
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Rectangular"
 msgstr ""
 
 #: dependencies/krokedil/klarna-express-checkout/src/Settings.php:125
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Pill"
 msgstr ""
 
@@ -879,25 +879,16 @@ msgstr ""
 msgid "Addons"
 msgstr ""
 
-#: dependencies/krokedil/settings-page/src/Addons.php:141
+#: dependencies/krokedil/settings-page/src/Addons.php:209
 #. translators: %s is the plugin name.
-msgid "the plugin"
-msgstr ""
-
-#: dependencies/krokedil/settings-page/src/Addons.php:143
-#. translators: %s is the plugin name.
-msgid "These are other plugins from Krokedil that work well together with %s."
-msgstr ""
-
-#: dependencies/krokedil/settings-page/src/Addons.php:212
 msgid "Free"
 msgstr ""
 
-#: dependencies/krokedil/settings-page/src/Addons.php:248
+#: dependencies/krokedil/settings-page/src/Addons.php:245
 msgid "Activate"
 msgstr ""
 
-#: dependencies/krokedil/settings-page/src/Addons.php:254
+#: dependencies/krokedil/settings-page/src/Addons.php:251
 msgid "Install Now"
 msgstr ""
 
@@ -911,13 +902,11 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: dependencies/krokedil/settings-page/src/Support.php:85
-msgid ""
-"Before opening a support ticket, please make sure you have read the "
-"relevant plugin resources for a solution to your problem"
+#: dependencies/krokedil/settings-page/src/Support.php:100
+msgid "If you still need help, please open a support ticket with Krokedil."
 msgstr ""
 
-#: dependencies/krokedil/settings-page/src/Support.php:97
+#: dependencies/krokedil/settings-page/src/Support.php:103
 msgid "Open support ticket with Krokedil"
 msgstr ""
 
@@ -925,113 +914,117 @@ msgstr ""
 msgid "Return to payments"
 msgstr ""
 
-#: dependencies/krokedil/settings-page/src/Traits/Sidebar.php:84
+#: dependencies/krokedil/settings-page/src/Traits/Sidebar.php:90
 msgid "Plugin resources"
 msgstr ""
 
-#: dependencies/krokedil/settings-page/src/Traits/Sidebar.php:108
+#: dependencies/krokedil/settings-page/src/Traits/Sidebar.php:114
 msgid "Additional resources"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/settings-page/src/Traits/Subsection.php:34
+msgid "Sections"
+msgstr ""
+
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 #: dependencies/krokedil/sign-in-with-klarna/src/User.php:176
 msgid "Sign in with Klarna"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid ""
 "Let customers connect their accounts with pre-set payments and preferences "
 "to shop anywhere, improve personalized shopping experiences."
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Enable Sign in with Klarna"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Redirect URL"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid ""
 "Add this URL to your list of allowed redirect URLs in the \"Sign in with "
 "Klarna\" settings on the <a href=\"https://portal.klarna.com/\">Klarna "
 "merchant portal</a>."
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Button theme"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "The button's color theme."
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Button shape"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "The button's shape."
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Badge alignment"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Change alignment of the Klarna logo on the call to action button."
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Badge"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Left"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Centered"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Cart page placement"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Change the placement of the \"Sign in with Klarna\" button on the cart page."
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Before \"Proceed to checkout\" button"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "After \"Proceed to checkout\" button"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Required Customer Data"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Email Address"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Full name"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Phone number"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Billing address"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid ""
 "These scopes are included by default, as necessary for creating a "
 "WooCommerce customer account in your shop.  More about available scopes "
@@ -1043,19 +1036,19 @@ msgid ""
 ">here</a>."
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Date of birth"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Country"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:118
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
 msgid "Language Preference"
 msgstr ""
 
-#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:160
+#: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:176
 msgid "Theme, button shape & placements"
 msgstr ""
 

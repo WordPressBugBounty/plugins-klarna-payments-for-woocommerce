@@ -7,7 +7,7 @@ use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaOnsiteMessaging\Pages\Cart;
 if (!\defined('ABSPATH')) {
     exit;
 }
-\define('KOSM_VERSION', '1.3.1');
+\define('KOSM_VERSION', '1.3.2');
 /**
  * The orchestrator class.
  */
