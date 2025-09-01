@@ -4,13 +4,14 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd1cc28574ac90780f727aec5a008fe5e
+class ComposerStaticInite7a1d0776d686511132f3453452489c0
 {
     public static $prefixLengthsPsr4 = array (
         'K' => 
         array (
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\' => 42,
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\' => 48,
+            'KrokedilKlarnaPaymentsDeps\\Krokedil\\Support\\' => 44,
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\' => 53,
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\SettingsPage\\' => 49,
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\' => 58,
@@ -27,6 +28,10 @@ class ComposerStaticInitd1cc28574ac90780f727aec5a008fe5e
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\' => 
         array (
             0 => __DIR__ . '/..' . '/krokedil/woocommerce/src',
+        ),
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\Support\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/krokedil/support/src',
         ),
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\' => 
         array (
@@ -90,6 +95,8 @@ class ComposerStaticInitd1cc28574ac90780f727aec5a008fe5e
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\Settings' => __DIR__ . '/..' . '/krokedil/sign-in-with-klarna/src/Settings.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\SignInWithKlarna' => __DIR__ . '/..' . '/krokedil/sign-in-with-klarna/src/SignInWithKlarna.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\User' => __DIR__ . '/..' . '/krokedil/sign-in-with-klarna/src/User.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\Support\\Logger' => __DIR__ . '/..' . '/krokedil/support/src/Logger.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\Support\\SystemReport' => __DIR__ . '/..' . '/krokedil/support/src/SystemReport.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Base' => __DIR__ . '/..' . '/krokedil/woocommerce/src/Base.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Cart\\Cart' => __DIR__ . '/..' . '/krokedil/woocommerce/src/Cart/Cart.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Cart\\CartCustomer' => __DIR__ . '/..' . '/krokedil/woocommerce/src/Cart/CartCustomer.php',
@@ -125,6 +132,7 @@ class ComposerStaticInitd1cc28574ac90780f727aec5a008fe5e
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\StoreApi\\StoreApiLineFee' => __DIR__ . '/..' . '/krokedil/woocommerce/src/StoreApi/StoreApiLineFee.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\StoreApi\\StoreApiLineItem' => __DIR__ . '/..' . '/krokedil/woocommerce/src/StoreApi/StoreApiLineItem.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\StoreApi\\StoreApiLineShipping' => __DIR__ . '/..' . '/krokedil/woocommerce/src/StoreApi/StoreApiLineShipping.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Subscription' => __DIR__ . '/..' . '/krokedil/woocommerce/src/Subscription.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\Logger' => __DIR__ . '/..' . '/krokedil/wp-api/src/Logger.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\Request' => __DIR__ . '/..' . '/krokedil/wp-api/src/Request.php',
     );
@@ -132,9 +140,9 @@ class ComposerStaticInitd1cc28574ac90780f727aec5a008fe5e
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd1cc28574ac90780f727aec5a008fe5e::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd1cc28574ac90780f727aec5a008fe5e::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd1cc28574ac90780f727aec5a008fe5e::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite7a1d0776d686511132f3453452489c0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite7a1d0776d686511132f3453452489c0::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInite7a1d0776d686511132f3453452489c0::$classMap;
 
         }, null, ClassLoader::class);
     }

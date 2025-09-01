@@ -45,6 +45,8 @@ return array(
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\Settings' => $vendorDir . '/krokedil/sign-in-with-klarna/src/Settings.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\SignInWithKlarna' => $vendorDir . '/krokedil/sign-in-with-klarna/src/SignInWithKlarna.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\User' => $vendorDir . '/krokedil/sign-in-with-klarna/src/User.php',
+    'KrokedilKlarnaPaymentsDeps\\Krokedil\\Support\\Logger' => $vendorDir . '/krokedil/support/src/Logger.php',
+    'KrokedilKlarnaPaymentsDeps\\Krokedil\\Support\\SystemReport' => $vendorDir . '/krokedil/support/src/SystemReport.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Base' => $vendorDir . '/krokedil/woocommerce/src/Base.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Cart\\Cart' => $vendorDir . '/krokedil/woocommerce/src/Cart/Cart.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Cart\\CartCustomer' => $vendorDir . '/krokedil/woocommerce/src/Cart/CartCustomer.php',
@@ -80,6 +82,7 @@ return array(
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\StoreApi\\StoreApiLineFee' => $vendorDir . '/krokedil/woocommerce/src/StoreApi/StoreApiLineFee.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\StoreApi\\StoreApiLineItem' => $vendorDir . '/krokedil/woocommerce/src/StoreApi/StoreApiLineItem.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\StoreApi\\StoreApiLineShipping' => $vendorDir . '/krokedil/woocommerce/src/StoreApi/StoreApiLineShipping.php',
+    'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Subscription' => $vendorDir . '/krokedil/woocommerce/src/Subscription.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\Logger' => $vendorDir . '/krokedil/wp-api/src/Logger.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\Request' => $vendorDir . '/krokedil/wp-api/src/Request.php',
 );

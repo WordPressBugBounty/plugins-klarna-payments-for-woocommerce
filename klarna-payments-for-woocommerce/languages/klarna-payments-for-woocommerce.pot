@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/klarna-payments-for-woocommerce\n"
-"POT-Creation-Date: 2025-06-25 09:39:53+00:00\n"
+"POT-Creation-Date: 2025-09-01 08:17:50+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -237,6 +237,7 @@ msgid "Enable Klarna Payments"
 msgstr ""
 
 #: classes/admin/class-kp-form-fields.php:353
+#: dependencies/krokedil/support/src/Logger.php:54
 msgid "Logging"
 msgstr ""
 
@@ -372,27 +373,28 @@ msgstr ""
 msgid "Client ID"
 msgstr ""
 
-#: classes/class-kp-ajax.php:84 classes/class-kp-subscriptions.php:202
+#: classes/class-kp-ajax.php:84 classes/class-kp-subscriptions.php:79
+#: classes/class-kp-subscriptions.php:236
 #. translators: Recurring token.
 msgid "Recurring token created: %s"
 msgstr ""
 
-#: classes/class-kp-ajax.php:89
+#: classes/class-kp-ajax.php:88
 msgid ""
 "The order contains a free or trial subscription, and no Klarna order is "
 "associated with this purchase. A Klarna order will only be registered once "
 "the subscriber is charged."
 msgstr ""
 
-#: classes/class-kp-ajax.php:160
+#: classes/class-kp-ajax.php:159
 msgid "Customer aborted purchase with Klarna."
 msgstr ""
 
-#: classes/class-kp-ajax.php:162
+#: classes/class-kp-ajax.php:161
 msgid "Authorization rejected by Klarna."
 msgstr ""
 
-#: classes/class-kp-api.php:261
+#: classes/class-kp-api.php:262
 msgid "Missing shared secret."
 msgstr ""
 
@@ -412,7 +414,7 @@ msgstr ""
 msgid "The Klarna order was successfully completed by the authorization callback"
 msgstr ""
 
-#: classes/class-kp-callbacks.php:103 classes/class-kp-callbacks.php:161
+#: classes/class-kp-callbacks.php:103 classes/class-kp-callbacks.php:160
 msgid "The Klarna order is pending approval by Klarna"
 msgstr ""
 
@@ -420,15 +422,15 @@ msgstr ""
 msgid "The Klarna order was rejected during the authorization by Klarna"
 msgstr ""
 
-#: classes/class-kp-callbacks.php:148 classes/class-kp-callbacks.php:170
+#: classes/class-kp-callbacks.php:147 classes/class-kp-callbacks.php:169
 msgid "Failed to complete the order when returning from the hosted payment page."
 msgstr ""
 
-#: classes/class-kp-callbacks.php:156
+#: classes/class-kp-callbacks.php:155
 msgid "The Klarna order was successfully completed"
 msgstr ""
 
-#: classes/class-kp-callbacks.php:166
+#: classes/class-kp-callbacks.php:165
 msgid "The Klarna order was rejected by Klarna"
 msgstr ""
 
@@ -464,31 +466,31 @@ msgstr ""
 msgid "Order was not found"
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:85
+#: classes/class-kp-subscriptions.php:119
 #. Translators: Klarna order id.
 msgid "Subscription payment made with Klarna. Klarna order id: %s"
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:90
+#: classes/class-kp-subscriptions.php:124
 #. Translators: Error message.
 msgid "Subscription payment failed with Klarna. Reason: %1$s"
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:129
+#: classes/class-kp-subscriptions.php:163
 msgid "Subscription cancelled with Klarna Payments."
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:133
+#: classes/class-kp-subscriptions.php:167
 #. Translators: Error message.
 msgid "Subscription cancellation failed with Klarna Payments. Reason: %1$s"
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:196
+#: classes/class-kp-subscriptions.php:230
 #. translators: Error message.
 msgid "Failed to create recurring token. Reason: %s"
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:402
+#: classes/class-kp-subscriptions.php:449
 msgid "Klarna recurring token"
 msgstr ""
 
@@ -496,19 +498,19 @@ msgstr ""
 msgid "What is Klarna?"
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:387
+#: classes/class-wc-gateway-klarna-payments.php:394
 msgid "Failed to get required data from the Klarna session. Please try again."
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:450
+#: classes/class-wc-gateway-klarna-payments.php:457
 msgid "Failed to create a session with Klarna. Please try again."
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:480
+#: classes/class-wc-gateway-klarna-payments.php:487
 msgid "Failed to create a hosted payment page with Klarna. Please try again."
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:621
+#: classes/class-wc-gateway-klarna-payments.php:628
 msgid "Klarna did not accept the new order amount, the order has not been updated"
 msgstr ""
 
@@ -898,7 +900,7 @@ msgstr ""
 
 #: dependencies/krokedil/settings-page/src/Navigation.php:54
 #: dependencies/krokedil/settings-page/src/Support.php:30
-#: klarna-payments-for-woocommerce.php:294
+#: klarna-payments-for-woocommerce.php:346
 msgid "Support"
 msgstr ""
 
@@ -1052,6 +1054,52 @@ msgstr ""
 msgid "Theme, button shape & placements"
 msgstr ""
 
+#: dependencies/krokedil/support/src/Logger.php:54
+msgid "Troubleshooting"
+msgstr ""
+
+#: dependencies/krokedil/support/src/Logger.php:54
+msgid ""
+"Logging is required for troubleshooting any issues related to the plugin. "
+"It is recommended that you always have it enabled."
+msgstr ""
+
+#: dependencies/krokedil/support/src/Logger.php:54
+msgid "Detailed logging"
+msgstr ""
+
+#: dependencies/krokedil/support/src/Logger.php:54
+msgid "Enable"
+msgstr ""
+
+#: dependencies/krokedil/support/src/Logger.php:54
+msgid ""
+"Enable detailed logging to capture extra data. Use this only when needed "
+"for debugging hard-to-replicate issues, as it generates significantly more "
+"log entries."
+msgstr ""
+
+#: dependencies/krokedil/support/src/Views/Admin/status-report.php:24
+msgid "Timestamp"
+msgstr ""
+
+#: dependencies/krokedil/support/src/Views/Admin/status-report.php:28
+msgid "Code"
+msgstr ""
+
+#: dependencies/krokedil/support/src/Views/Admin/status-report.php:31
+msgid "Message"
+msgstr ""
+
+#: dependencies/krokedil/support/src/Views/Admin/status-report.php:68
+#: includes/admin/views/status-report.php:61
+msgid "No error logs"
+msgstr ""
+
+#: dependencies/krokedil/support/src/Views/Admin/status-report.php:128
+msgid "Settings could not be retrieved."
+msgstr ""
+
 #: includes/admin/views/status-report.php:17
 msgid "Klarna Payments"
 msgstr ""
@@ -1080,10 +1128,6 @@ msgstr ""
 msgid "Correlation ID"
 msgstr ""
 
-#: includes/admin/views/status-report.php:61
-msgid "No error logs"
-msgstr ""
-
 #: includes/admin/views/status-report.php:95
 msgid "Klarna Payments Countries"
 msgstr ""
@@ -1104,29 +1148,29 @@ msgstr ""
 msgid "Klarna Payments API Error: "
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:273
+#: klarna-payments-for-woocommerce.php:325
 msgid ""
 "Klarna Order Management is not active. Please activate it so you can "
 "capture, cancel, update and refund Klarna orders."
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:292
+#: klarna-payments-for-woocommerce.php:344
 msgid "Settings"
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:293
+#: klarna-payments-for-woocommerce.php:345
 msgid "Docs"
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:335
+#: klarna-payments-for-woocommerce.php:387
 msgid "The WooCommerce plugin must be active for Klarna Payments to work."
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:353
+#: klarna-payments-for-woocommerce.php:405
 msgid "Dismiss"
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:360
+#: klarna-payments-for-woocommerce.php:412
 #. translators: URL to docs.
 msgid ""
 "It looks as if you don't have pretty permalinks enabled in WordPress. In "
@@ -1134,12 +1178,12 @@ msgid ""
 "setting needs to be enabled. <a href=\"%1$s\">Learn more</a>"
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:361
+#: klarna-payments-for-woocommerce.php:413
 msgid "https://wordpress.org/support/article/using-permalinks/"
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:455
-#: klarna-payments-for-woocommerce.php:464
+#: klarna-payments-for-woocommerce.php:507
+#: klarna-payments-for-woocommerce.php:516
 msgid ""
 "Your installation of Klarna Payments is not complete. If you installed this "
 "plugin directly from Github please refer to the README.DEV.md file in the "
