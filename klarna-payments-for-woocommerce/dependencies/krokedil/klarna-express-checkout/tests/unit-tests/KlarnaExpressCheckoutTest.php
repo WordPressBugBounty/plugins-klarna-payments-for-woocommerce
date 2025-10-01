@@ -78,6 +78,7 @@ class KlarnaExpressCheckoutTest extends TestCase
         $mockProduct = Mockery::mock('overload:WC_Product');
         $mockProduct->shouldReceive('is_in_stock')->andReturn(\true);
         $product = $mockProduct;
+        WP_Mock::userFunction('get_option')->with('kp_unavailable_feature_ids', array())->andReturn(array());
         WP_Mock::userFunction('get_option')->with('test_key_enabled', array())->andReturn(array('kec_enabled' => 'yes'));
         $kec = new KlarnaExpressCheckout('test_key_enabled');
         WP_Mock::userFunction('did_action')->with('woocommerce_single_product_summary')->andReturnValues(array(1, 2));
@@ -93,6 +94,7 @@ class KlarnaExpressCheckoutTest extends TestCase
     }
     public function testCanNotAddKecButtonIfKecIsNotEnabled()
     {
+        WP_Mock::userFunction('get_option')->with('kp_unavailable_feature_ids', array())->andReturn(array());
         WP_Mock::userFunction('get_option')->with('test_key_disabled', array())->andReturn(array('kec_enabled' => 'no'));
         $kec = new KlarnaExpressCheckout('test_key_disabled');
         WP_Mock::userFunction('did_action')->with('woocommerce_single_product_summary')->andReturn(1);

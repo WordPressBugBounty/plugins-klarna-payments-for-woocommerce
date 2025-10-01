@@ -11,6 +11,7 @@ return array(
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\Support\\' => array($vendorDir . '/krokedil/support/src'),
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\' => array($vendorDir . '/krokedil/sign-in-with-klarna/src'),
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\SettingsPage\\' => array($vendorDir . '/krokedil/settings-page/src'),
+    'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\' => array($vendorDir . '/krokedil/klarna-order-management/src'),
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\' => array($vendorDir . '/krokedil/klarna-onsite-messaging/src'),
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\' => array($vendorDir . '/krokedil/klarna-express-checkout/src'),
     'KrokedilKlarnaPaymentsDeps\\Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),
