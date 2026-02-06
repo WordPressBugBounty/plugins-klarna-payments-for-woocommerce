@@ -1,35 +1,64 @@
+/**
+ * @var komMetaboxParams
+ */
 jQuery( function ( $ ) {
-    $( document ).ready( function () {
-        const kom = {
-            edit_button: $( ".kom_order_sync_edit" ),
-            order_sync_box: $( ".kom_order_sync--box" ),
-            toggle_button: $( ".kom_order_sync--toggle .woocommerce-input-toggle" ),
-            submit_button: $( ".kom_order_sync--action > .submit_button" ),
-            cancel_button: $( ".kom_order_sync--action > .cancel_button" ),
-            sync_status: function () {
-                return kom.toggle_button.hasClass( "woocommerce-input-toggle--enabled" ) ? "enabled" : "disabled"
-            },
-        }
+    const komMetabox = {
+        init: function () {
+            $( document ).on( "click", ".kom_order_sync--action", this.toggleOrderSync )
+        },
 
-        kom.edit_button.on( "click", function () {
-            if ( "none" !== kom.edit_button.css( "display" ) ) {
-                kom.order_sync_box.fadeIn()
-                kom.edit_button.css( "display", "none" )
+        toggleOrderSync: async function ( e ) {
+            e.preventDefault()
+            const $this = $( this )
+            const $metabox = $( "#klarna-om" )
+            const omStatus = $this.attr( "data-kom-order-sync" )
+
+            // Block the page to prevent changing the order during the request.
+            $metabox.block( {
+                message: null,
+                overlayCSS: {
+                    background: "#fff",
+                    opacity: 0.6,
+                },
+            } )
+
+            // Make the AJAX request to toggle the order sync for the order.
+            const result = await komMetabox.ajaxSetOrderSync( omStatus )
+            if ( result.success ) {
+                komMetabox.toggleButton( $this, "enabled" === omStatus ? true : false )
             } else {
-                kom.edit_button.css( "display", "" )
-                kom.order_sync_box.css( "display", "" )
+                alert( "Failed to toggle order sync. Please try again." )
             }
-        } )
 
-        kom.toggle_button.click( function () {
-            const url = new URL( kom.submit_button.attr( "href" ), window.location )
-            kom.toggle_button.toggleClass( "woocommerce-input-toggle--disabled woocommerce-input-toggle--enabled" )
-            url.searchParams.set( "kom", kom.sync_status() )
-            kom.submit_button.attr( "href", url.toString() )
-        } )
+            // Reload the page to ensure the metadata has been added to the form.
+            location.reload()
+        },
 
-        kom.cancel_button.on( "click", function () {
-            kom.edit_button.click()
-        } )
-    } )
+        toggleButton: function ( $button, enabled ) {
+            $button
+                .attr( "data-kom-order-sync", enabled )
+                .toggleClass( "woocommerce-input-toggle--enabled" )
+                .toggleClass( "woocommerce-input-toggle--disabled" )
+        },
+
+        ajaxSetOrderSync: async function ( omStatus ) {
+            const orderId = komMetaboxParams.orderId
+            const { url, action, nonce } = komMetaboxParams.ajax.setOrderSync
+
+            const data = {
+                nonce: nonce,
+                action: action,
+                order_id: orderId,
+                om_status: omStatus,
+            }
+
+            return $.ajax( {
+                type: "POST",
+                url: url,
+                data: data,
+            } )
+        },
+    }
+
+    komMetabox.init()
 } )

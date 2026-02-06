@@ -27,6 +27,10 @@ class CartCustomer extends CustomerData
     public function __construct($config = array())
     {
         parent::__construct($config);
+        // Make sure checkout is available.
+        if (!WC()->checkout) {
+            return;
+        }
         $this->set_billing_first_name();
         $this->set_billing_last_name();
         $this->set_billing_company();

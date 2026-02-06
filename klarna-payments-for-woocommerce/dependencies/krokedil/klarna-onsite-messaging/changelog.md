@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [2.1.0] - 2026-02-02
+### Added
+* Added support for On-Site messaging on the blocks cart page.
+### Fix
+* Fixed an issue where the Onsite Messaging debug mode was not functioning as expected.
+
+## [2.0.0] - 2025-12-03
+### Changed
+* Migrated to use the Klarna V2 WebSDK.
+
 ## [1.3.2] - 2025-06-09
 ### Fix
 * Resolved notice "_load_textdomain_just_in_time was called incorrectly".

@@ -225,7 +225,7 @@ abstract class Request
      */
     protected function get_user_agent()
     {
-        return apply_filters('http_headers_useragent', 'WordPress/' . get_bloginfo('version') . '; ' . get_bloginfo('url') . ' - WooCommerce: ' . WC()->version . ' - OM: ' . \KrokedilKlarnaPaymentsDeps\KLARNA_ORDER_MANAGEMENT_VERSION . ' - PHP Version: ' . \phpversion() . ' - Krokedil');
+        return apply_filters('http_headers_useragent', 'WordPress/' . get_bloginfo('version') . '; ' . get_bloginfo('url') . ' - WooCommerce: ' . WC()->version . ' - OM: ' . \KLARNA_ORDER_MANAGEMENT_VERSION . ' - PHP Version: ' . \phpversion() . ' - Krokedil');
     }
     /**
      * Get if this order should use the Klarna Playground or not.

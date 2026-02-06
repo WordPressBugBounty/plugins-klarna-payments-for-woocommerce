@@ -7,4 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Krokedil\\Klarna\\Api\\Controllers\\Controller' => $baseDir . '/src/Api/Controllers/Controller.php',
+    'Krokedil\\Klarna\\Api\\Registry' => $baseDir . '/src/Api/Registry.php',
+    'Krokedil\\Klarna\\Compatibility' => $baseDir . '/src/Compatibility.php',
+    'Krokedil\\Klarna\\Compatibility\\FluidCheckout' => $baseDir . '/src/Compatibility/FluidCheckout.php',
+    'Krokedil\\Klarna\\Features' => $baseDir . '/src/Features.php',
+    'Krokedil\\Klarna\\PluginFeatures' => $baseDir . '/src/PluginFeatures.php',
 );

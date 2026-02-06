@@ -18,7 +18,7 @@ class ScheduledActions
      * @param string $session_id The session ID.
      * @return array
      */
-    private static function get_scheduled_actions($session_id)
+    public static function get_scheduled_actions($session_id)
     {
         $statuses = array('complete', 'failed', 'pending');
         $scheduled_actions = array();
@@ -35,10 +35,14 @@ class ScheduledActions
      */
     public static function print_scheduled_actions($session_id)
     {
+        // Allow disabling the display of scheduled actions via a filter.
+        if (apply_filters('kom_skip_scheduled_actions', \false)) {
+            return;
+        }
         $scheduled_actions = self::get_scheduled_actions($session_id);
         $session_query_url = admin_url('admin.php?page=wc-status&tab=action-scheduler&s=' . \rawurlencode($session_id) . '&action=-1&paged=1&action2=-1');
         ?>
-		<strong>
+		<h4>
 			<?php 
         esc_html_e('Scheduled actions ', 'klarna-order-management-for-woocommerce');
         ?>
@@ -47,8 +51,7 @@ class ScheduledActions
         esc_html_e('See all actions scheduled for this order.', 'klarna-order-management-for-woocommerce');
         ?>">
 			</span>
-		</strong>
-		<br />
+		</h4>
 		<a target="_blank" href="<?php 
         echo esc_url($session_query_url);
         ?>">
@@ -62,7 +65,6 @@ class ScheduledActions
         );
         ?>
 		</a>
-		<br />
 		<?php 
     }
 }

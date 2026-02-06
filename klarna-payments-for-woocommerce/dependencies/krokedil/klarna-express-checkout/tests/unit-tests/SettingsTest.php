@@ -13,6 +13,13 @@ class SettingsTest extends TestCase
     public function setUp() : void
     {
         parent::setUp();
+        $kpPluginFeatures = Mockery::mock('KrokedilKlarnaPaymentsDeps\\overload:Krokedil\\Klarna\\PluginFeatures');
+        $kpPluginFeatures->shouldReceive('is_available')->with('klarna-express-checkout:1-step')->andReturn(\false);
+        $kpPluginFeatures->shouldReceive('is_available')->with('klarna-express-checkout:2-step')->andReturn(\true);
+        $kpPluginFeatures->shouldReceive('get_acquiring_partner_key')->with()->andReturn(\false);
+        WP_Mock::userFunction('get_option')->with('kec_webhook', array())->andReturn(array());
+        WP_Mock::userFunction('get_option')->with('kec_signing_key', array())->andReturn(array());
+        WP_Mock::userFunction('get_option')->with('kp_unavailable_feature_ids', array())->andReturn(array());
         WP_Mock::userFunction('get_option')->with('test_key', array())->andReturn(array('kec_enabled' => 'yes', 'kec_credentials_secret' => 'test_credentials_secret', 'kec_theme' => 'dark', 'kec_shape' => 'default', 'kec_placement' => 'both'));
         $this->settings = new Settings('test_key');
     }

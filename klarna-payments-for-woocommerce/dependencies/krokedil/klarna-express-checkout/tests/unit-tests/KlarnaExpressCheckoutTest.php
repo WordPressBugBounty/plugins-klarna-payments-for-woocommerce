@@ -14,10 +14,32 @@ class KlarnaExpressCheckoutTest extends TestCase
     public function setUp() : void
     {
         WP_Mock::userFunction('get_option')->with('test_key', array())->andReturn(array('kec_enabled' => 'yes', 'kec_credentials_secret' => 'test_credentials_secret', 'kec_theme' => 'default', 'kec_shape' => 'default'));
+        Mockery::getConfiguration()->setConstantsMap(['Krokedil\\Klarna\\Features' => ['KEC_ONE_STEP' => 'klarna-express-checkout:1-step', 'KEC_TWO_STEP' => 'klarna-express-checkout:2-step']]);
         parent::setUp();
+    }
+    public static function setupKpMocks()
+    {
+        Mockery::getConfiguration()->setConstantsMap(['Krokedil\\Klarna\\Features' => ['KEC_ONE_STEP' => 'klarna-express-checkout:1-step', 'KEC_TWO_STEP' => 'klarna-express-checkout:2-step']]);
+        $kpFeatures = Mockery::mock('KrokedilKlarnaPaymentsDeps\\overload:Krokedil\\Klarna\\Features');
+        $kpPluginFeatures = Mockery::mock('KrokedilKlarnaPaymentsDeps\\overload:Krokedil\\Klarna\\PluginFeatures');
+        $kpPluginFeatures->shouldReceive('is_available')->with('klarna-express-checkout:1-step')->andReturn(\false);
+        $kpPluginFeatures->shouldReceive('is_available')->with('klarna-express-checkout:2-step')->andReturn(\true);
+        $kpPluginFeatures->shouldReceive('get_acquiring_partner_key')->with()->andReturn(\false);
+        $kpApiRegistry = Mockery::mock('KrokedilKlarnaPaymentsDeps\\overload:Krokedil\\Klarna\\Api\\Registry');
+        $kpApiRegistry->shouldReceive('register_controller')->with(Mockery::type('KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Api\\Controllers\\Notifications'))->once();
+        $kpSession = Mockery::mock('overload:KP_Session');
+        $kpCheckout = Mockery::mock('overload:KP_Checkout');
+        $kpPlugin = Mockery::mock('overload:WC_Klarna_Payments');
+        $kpPlugin->session = $kpSession;
+        $kpPlugin->checkout = $kpCheckout;
+        $kpPlugin->shouldReceive('api_registry')->andReturn($kpApiRegistry);
+        Mockery::mock('KrokedilKlarnaPaymentsDeps\\overload:Krokedil\\Klarna\\Api\\Controllers\\Controller');
+        WP_Mock::userFunction('KP_WC')->andReturn($kpPlugin);
+        return array('kpFeatures' => $kpFeatures, 'kpPluginFeatures' => $kpPluginFeatures, 'kpApiRegistry' => $kpApiRegistry, 'kpSession' => $kpSession, 'kpCheckout' => $kpCheckout, 'kpPlugin' => $kpPlugin);
     }
     public function testConstructor()
     {
+        self::setupKpMocks();
         // Create an instance of KlarnaExpressCheckout
         $kec = new KlarnaExpressCheckout('test_key');
         $this->assertInstanceOf(KlarnaExpressCheckout::class, $kec);
@@ -33,6 +55,7 @@ class KlarnaExpressCheckoutTest extends TestCase
     }
     public function testMaybeUnhookKpActionsCanHandleNoToken()
     {
+        self::setupKpMocks();
         $this->expectNotToPerformAssertions();
         WP_Mock::userFunction('WC')->andReturn((object) array('session' => null));
         $kec = new KlarnaExpressCheckout('test_key');
@@ -40,16 +63,23 @@ class KlarnaExpressCheckoutTest extends TestCase
     }
     public function testMaybeUnhookKpActionsCanHandleKpNotExisting()
     {
+        self::setupKpMocks();
         $this->expectNotToPerformAssertions();
         $wcSession = Mockery::mock('overload:WC_Session_Handler');
         $wcSession->shouldReceive('get')->with('kec_client_token', \false)->andReturn('test_token');
-        WP_Mock::userFunction('WC')->andReturn((object) array('session' => $wcSession));
+        $wcGatewaysClass = Mockery::mock('overload:WC_Payment_Gateways');
+        $wcGatewaysClass->shouldReceive('get_available_payment_gateways')->andReturn(array());
+        $wcClass = Mockery::mock('overload:WC');
+        $wcClass->shouldReceive('payment_gateways')->andReturn($wcGatewaysClass);
+        $wcClass->session = $wcSession;
+        WP_Mock::userFunction('WC')->andReturn($wcClass);
         \define('KrokedilKlarnaPaymentsDeps\\KP_WC', \false);
         $kec = new KlarnaExpressCheckout('test_key');
         $kec->maybe_unhook_kp_actions();
     }
     public function testMaybeUnhookKpActionsCanUnhookKp()
     {
+        $kpMocks = self::setupKpMocks();
         $this->expectNotToPerformAssertions();
         $wcSession = Mockery::mock('overload:WC_Session_Handler');
         $wcSession->shouldReceive('get')->with('kec_client_token', \false)->andReturn('test_token');
@@ -60,13 +90,10 @@ class KlarnaExpressCheckoutTest extends TestCase
         $wcClass->shouldReceive('payment_gateways')->andReturn($wcGatewaysClass);
         $wcClass->session = $wcSession;
         WP_Mock::userFunction('WC')->andReturn($wcClass);
-        $kpSession = Mockery::mock('overload:KP_Session');
-        $kpCheckout = Mockery::mock('overload:KP_Checkout');
-        WP_Mock::userFunction('KP_WC')->andReturn((object) array('session' => $kpSession, 'checkout' => $kpCheckout));
-        WP_Mock::userFunction('remove_action')->with('woocommerce_after_calculate_totals', array($kpSession, 'get_session'), 999999)->once();
-        WP_Mock::userFunction('remove_filter')->with('woocommerce_update_order_review_fragments', array($kpCheckout, 'add_token_fragment'))->once();
-        WP_Mock::userFunction('remove_action')->with('woocommerce_review_order_before_submit', array($kpCheckout, 'html_client_token'))->once();
-        WP_Mock::userFunction('remove_action')->with('woocommerce_pay_order_before_submit', array($kpCheckout, 'html_client_token'))->once();
+        WP_Mock::userFunction('remove_action')->with('woocommerce_after_calculate_totals', array($kpMocks['kpSession'], 'get_session'), 999999)->once();
+        WP_Mock::userFunction('remove_filter')->with('woocommerce_update_order_review_fragments', array($kpMocks['kpCheckout'], 'add_token_fragment'))->once();
+        WP_Mock::userFunction('remove_action')->with('woocommerce_review_order_before_submit', array($kpMocks['kpCheckout'], 'html_client_token'))->once();
+        WP_Mock::userFunction('remove_action')->with('woocommerce_pay_order_before_submit', array($kpMocks['kpCheckout'], 'html_client_token'))->once();
         WP_Mock::userFunction('remove_action')->with('wc_get_template', array($kpGatewayClass, 'override_kp_payment_option'))->once();
         $kec = new KlarnaExpressCheckout('test_key');
         WP_Mock::expectActionAdded('wp_enqueue_scripts', array($kec, 'dequeue_kp_scripts'), 15);
@@ -74,12 +101,16 @@ class KlarnaExpressCheckoutTest extends TestCase
     }
     public function testCanAddKecButtonOnce()
     {
+        self::setupKpMocks();
         global $product;
         $mockProduct = Mockery::mock('overload:WC_Product');
         $mockProduct->shouldReceive('is_in_stock')->andReturn(\true);
         $product = $mockProduct;
+        WP_Mock::userFunction('get_option')->with('kec_webhook', array())->andReturn(array());
+        WP_Mock::userFunction('get_option')->with('kec_signing_key', array())->andReturn(array());
         WP_Mock::userFunction('get_option')->with('kp_unavailable_feature_ids', array())->andReturn(array());
         WP_Mock::userFunction('get_option')->with('test_key_enabled', array())->andReturn(array('kec_enabled' => 'yes'));
+        WP_Mock::userFunction('get_option')->with('key_enabled', array())->andReturn(array('kec_webhook' => ''));
         $kec = new KlarnaExpressCheckout('test_key_enabled');
         WP_Mock::userFunction('did_action')->with('woocommerce_single_product_summary')->andReturnValues(array(1, 2));
         // Expect HTML output.
@@ -94,6 +125,9 @@ class KlarnaExpressCheckoutTest extends TestCase
     }
     public function testCanNotAddKecButtonIfKecIsNotEnabled()
     {
+        self::setupKpMocks();
+        WP_Mock::userFunction('get_option')->with('kec_webhook', array())->andReturn(array());
+        WP_Mock::userFunction('get_option')->with('kec_signing_key', array())->andReturn(array());
         WP_Mock::userFunction('get_option')->with('kp_unavailable_feature_ids', array())->andReturn(array());
         WP_Mock::userFunction('get_option')->with('test_key_disabled', array())->andReturn(array('kec_enabled' => 'no'));
         $kec = new KlarnaExpressCheckout('test_key_disabled');
@@ -106,6 +140,7 @@ class KlarnaExpressCheckoutTest extends TestCase
     }
     public function testCanDequeueKpScript()
     {
+        self::setupKpMocks();
         $this->expectNotToPerformAssertions();
         WP_Mock::userFunction('wp_dequeue_script')->with('klarna_payments')->once();
         $kec = new KlarnaExpressCheckout('test_key');

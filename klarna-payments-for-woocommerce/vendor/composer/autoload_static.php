@@ -6,13 +6,35 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit6f6f11d2d6b76b6bfb0313dde06eeb4f
 {
+    public static $prefixLengthsPsr4 = array (
+        'K' =>
+        array (
+            'Krokedil\\Klarna\\' => 16,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Krokedil\\Klarna\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Krokedil\\Klarna\\Api\\Controllers\\Controller' => __DIR__ . '/../..' . '/src/Api/Controllers/Controller.php',
+        'Krokedil\\Klarna\\Api\\Registry' => __DIR__ . '/../..' . '/src/Api/Registry.php',
+        'Krokedil\\Klarna\\Compatibility' => __DIR__ . '/../..' . '/src/Compatibility.php',
+        'Krokedil\\Klarna\\Compatibility\\FluidCheckout' => __DIR__ . '/../..' . '/src/Compatibility/FluidCheckout.php',
+        'Krokedil\\Klarna\\Features' => __DIR__ . '/../..' . '/src/Features.php',
+        'Krokedil\\Klarna\\PluginFeatures' => __DIR__ . '/../..' . '/src/PluginFeatures.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6f6f11d2d6b76b6bfb0313dde06eeb4f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6f6f11d2d6b76b6bfb0313dde06eeb4f::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit6f6f11d2d6b76b6bfb0313dde06eeb4f::$classMap;
 
         }, null, ClassLoader::class);

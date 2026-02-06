@@ -8,6 +8,8 @@
 defined( 'ABSPATH' ) || exit;
 
 use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaExpressCheckout\KlarnaExpressCheckout;
+use Krokedil\Klarna\Features;
+use Krokedil\Klarna\PluginFeatures;
 
 /**
  * Class KP_Klarna_Express_Checkout
@@ -26,6 +28,19 @@ class KP_Klarna_Express_Checkout {
 	 * @return void
 	 */
 	public function __construct() {
+		add_action( 'kp_plugin_features_initialized', array( $this, 'init' ) );
+	}
+
+	/**
+	 * Initialize the KEC integration.
+	 *
+	 * @return void
+	 */
+	public function init() {
+		if ( ! PluginFeatures::is_available( Features::KEC ) ) {
+			return;
+		}
+
 		$this->klarna_express_checkout = new KlarnaExpressCheckout( 'woocommerce_klarna_payments_settings', kp_get_locale() );
 
 		$this->klarna_express_checkout->ajax()->set_get_payload( array( $this, 'get_payload' ) );
@@ -44,7 +59,7 @@ class KP_Klarna_Express_Checkout {
 	public function maybe_add_pay_button_support( $supports ) {
 
 		// Do not display the pay button if on the cart page, and no payment is needed.
-		if ( is_cart() && ! WC()->cart->needs_payment() ) {
+		if ( is_cart() && WC()->cart && ! WC()->cart->needs_payment() ) {
 			return $supports;
 		}
 

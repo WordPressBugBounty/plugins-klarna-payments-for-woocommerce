@@ -118,7 +118,7 @@ class SettingsPage
             case 'support':
                 // If we are on the support tab. Print the support content.
                 $support->set_icon($icon);
-                $addons->set_plugin_name($this->plugin_name);
+                $support->set_plugin_name($this->plugin_name);
                 $support->output_header();
                 $navigation->output();
                 $support->output();

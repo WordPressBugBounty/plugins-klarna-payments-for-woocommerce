@@ -76,7 +76,7 @@ class Logger
             'timestamp' => \date('Y-m-d H:i:s'),
             // phpcs:ignore WordPress.DateTime.RestrictedFunctions -- Date is not used for display.
             'stack' => self::get_stack(),
-            'plugin_version' => \KrokedilKlarnaPaymentsDeps\KLARNA_ORDER_MANAGEMENT_VERSION,
+            'plugin_version' => \KLARNA_ORDER_MANAGEMENT_VERSION,
         );
     }
     /**

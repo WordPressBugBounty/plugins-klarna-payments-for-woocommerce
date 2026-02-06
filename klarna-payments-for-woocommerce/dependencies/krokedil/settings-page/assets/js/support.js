@@ -49,12 +49,7 @@ jQuery(function ($) {
 
         window.Beacon("prefill", {
           attachments: [
-            {
-              attachmentType: systemReportFile.type,
-              attachmentFileName: systemReportFile.name,
-              attachmentFileSize: systemReportFile.size,
-              attachmentFileObject: systemReportFile,
-            },
+            systemReportFile
           ],
           fields: [
             {

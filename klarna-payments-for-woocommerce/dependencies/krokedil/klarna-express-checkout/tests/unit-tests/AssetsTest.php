@@ -24,9 +24,9 @@ class AssetsTest extends TestCase
         $this->expectNotToPerformAssertions();
         $assets = $this->getAssetsInstance();
         WP_Mock::userFunction('wp_register_style')->with('kec-cart', Mockery::any(), Mockery::any(), Mockery::any())->once();
-        WP_Mock::userFunction('wp_register_script')->with('klarnapayments', Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())->once();
         WP_Mock::userFunction('wp_register_script')->with('kec-cart', Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())->once();
         WP_Mock::userFunction('wp_register_script')->with('kec-checkout', Mockery::any(), Mockery::any(), Mockery::any(), Mockery::any())->once();
+        WP_Mock::userFunction('wp_register_script_module')->with('@klarna/kec-one-step', Mockery::any(), Mockery::any(), Mockery::any())->once();
         $assets->register_assets();
     }
     public function testDoesNotEnqueueAssetsIfNotEnabled()
@@ -44,22 +44,39 @@ class AssetsTest extends TestCase
     {
         $this->expectNotToPerformAssertions();
         $assets = $this->getAssetsInstance();
+        $kpAssets = Mockery::mock('overload:KP_Assets');
+        $kpAssets->shouldReceive('register_module_data')->with(Mockery::any(), '@klarna/kec-one-step')->once();
+        $wcCart = Mockery::mock('overload:WC_Cart');
+        $wcCart->shouldReceive('get_total')->with('raw')->andReturn(100);
+        WP_Mock::userFunction('WC')->andReturn((object) array('cart' => $wcCart));
         $wcAjax = Mockery::mock('overload:WC_AJAX');
         $wcAjax->shouldReceive('get_endpoint')->with('kec_get_payload')->andReturn('test_endpoint');
         $wcAjax->shouldReceive('get_endpoint')->with('kec_auth_callback')->andReturn('test_endpoint');
         $wcAjax->shouldReceive('get_endpoint')->with('kec_set_cart')->andReturn('test_endpoint');
+        $wcAjax->shouldReceive('get_endpoint')->with('kec_one_step_get_initiate_body')->andReturn('test_endpoint');
+        $wcAjax->shouldReceive('get_endpoint')->with('kec_one_step_shipping_address_change')->andReturn('test_endpoint');
+        $wcAjax->shouldReceive('get_endpoint')->with('kec_one_step_shipping_option_changed')->andReturn('test_endpoint');
+        $wcAjax->shouldReceive('get_endpoint')->with('kec_one_step_finalize_order')->andReturn('test_endpoint');
         $wcProduct = Mockery::mock('overload:WC_Product');
         $wcProduct->shouldReceive('get_id')->andReturn(1);
         $wcProduct->shouldReceive('get_type')->andReturn('simple');
         WP_Mock::userFunction('get_the_ID')->andReturn(1);
         WP_Mock::userFunction('wc_get_product')->with(1)->andReturn($wcProduct);
+        WP_Mock::userFunction('wc_get_price_including_tax')->with($wcProduct)->andReturn(100);
+        WP_Mock::userFunction('get_woocommerce_currency')->with()->andReturn('SEK');
         WP_Mock::userFunction('is_cart')->andReturn(\true);
         WP_Mock::userFunction('is_product')->andReturn(\true);
         WP_Mock::userFunction('is_checkout')->andReturn(\false);
         WP_Mock::userFunction('wp_localize_script')->with('kec-cart', 'kec_cart_params', Mockery::any())->once();
         WP_Mock::userFunction('wp_enqueue_style')->with('kec-cart')->once();
-        WP_Mock::userFunction('wp_enqueue_script')->with('klarnapayments')->once();
         WP_Mock::userFunction('wp_enqueue_script')->with('kec-cart')->once();
+        Mockery::getConfiguration()->setConstantsMap(['Krokedil\\Klarna\\Features' => ['KEC_ONE_STEP' => 'klarna-express-checkout:1-step', 'KEC_TWO_STEP' => 'klarna-express-checkout:2-step']]);
+        $kpFeatures = Mockery::mock('KrokedilKlarnaPaymentsDeps\\overload:Krokedil\\Klarna\\Features');
+        //$kpFeatures->shouldReceive('KEC_ONE_STEP')->andReturn( 'klarna-express-checkout:1-step' );
+        $kpPluginFeatures = Mockery::mock('KrokedilKlarnaPaymentsDeps\\overload:Krokedil\\Klarna\\PluginFeatures');
+        $kpPluginFeatures->shouldReceive('is_available')->with('klarna-express-checkout:1-step')->andReturn(\false);
+        $kpPluginFeatures->shouldReceive('is_available')->with('klarna-express-checkout:2-step')->andReturn(\true);
+        $kpPluginFeatures->shouldReceive('get_acquiring_partner_key')->with()->andReturn(\false);
         $assets->enqueue_assets();
     }
     public function testCanEnqueueCheckoutAssets()
@@ -78,8 +95,14 @@ class AssetsTest extends TestCase
         WP_Mock::userFunction('is_product')->andReturn(\false);
         WP_Mock::userFunction('is_checkout')->andReturn(\true);
         WP_Mock::userFunction('wp_localize_script')->with('kec-checkout', 'kec_checkout_params', Mockery::any())->once();
-        WP_Mock::userFunction('wp_enqueue_script')->with('klarnapayments')->once();
         WP_Mock::userFunction('wp_enqueue_script')->with('kec-checkout')->once();
+        $kpAssets = Mockery::mock('overload:KP_Assets');
+        $kpAssets->shouldReceive('register_module_data')->with(Mockery::any(), '@klarna/kec-one-step')->once();
+        Mockery::getConfiguration()->setConstantsMap(['Krokedil\\Klarna\\Features' => ['KEC_ONE_STEP' => 'klarna-express-checkout:1-step', 'KEC_TWO_STEP' => 'klarna-express-checkout:2-step']]);
+        $kpFeatures = Mockery::mock('KrokedilKlarnaPaymentsDeps\\overload:Krokedil\\Klarna\\Features');
+        $kpPluginFeatures = Mockery::mock('KrokedilKlarnaPaymentsDeps\\overload:Krokedil\\Klarna\\PluginFeatures');
+        $kpPluginFeatures->shouldReceive('is_available')->with('klarna-express-checkout:1-step')->andReturn(\false);
+        $kpPluginFeatures->shouldReceive('is_available')->with('klarna-express-checkout:2-step')->andReturn(\true);
         $assets->enqueue_assets();
     }
     public function testDoesNotEnqueueCheckoutAssetsIfTokenMissing()
@@ -100,6 +123,14 @@ class AssetsTest extends TestCase
         WP_Mock::userFunction('wp_localize_script')->with('kec-checkout', 'kec_checkout_params', Mockery::any())->never();
         WP_Mock::userFunction('wp_enqueue_script')->with('klarnapayments')->never();
         WP_Mock::userFunction('wp_enqueue_script')->with('kec-checkout')->never();
+        $kpAssets = Mockery::mock('overload:KP_Assets');
+        $kpAssets->shouldReceive('register_module_data')->with(Mockery::any(), '@klarna/kec-one-step')->once();
+        Mockery::getConfiguration()->setConstantsMap(['Krokedil\\Klarna\\Features' => ['KEC_ONE_STEP' => 'klarna-express-checkout:1-step', 'KEC_TWO_STEP' => 'klarna-express-checkout:2-step']]);
+        $kpFeatures = Mockery::mock('KrokedilKlarnaPaymentsDeps\\overload:Krokedil\\Klarna\\Features');
+        //$kpFeatures->shouldReceive('KEC_ONE_STEP')->andReturn( 'klarna-express-checkout:1-step' );
+        $kpPluginFeatures = Mockery::mock('KrokedilKlarnaPaymentsDeps\\overload:Krokedil\\Klarna\\PluginFeatures');
+        $kpPluginFeatures->shouldReceive('is_available')->with('klarna-express-checkout:1-step')->andReturn(\false);
+        $kpPluginFeatures->shouldReceive('is_available')->with('klarna-express-checkout:2-step')->andReturn(\true);
         $assets->enqueue_assets();
     }
 }

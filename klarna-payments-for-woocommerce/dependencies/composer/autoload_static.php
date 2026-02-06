@@ -4,10 +4,10 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita2f4ea405edf217f6be5228241a2a866
+class ComposerStaticInite8942bdc72982da6a140f91c7311fb32
 {
     public static $prefixLengthsPsr4 = array (
-        'K' => 
+        'K' =>
         array (
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\' => 42,
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\' => 48,
@@ -22,39 +22,39 @@ class ComposerStaticInita2f4ea405edf217f6be5228241a2a866
     );
 
     public static $prefixDirsPsr4 = array (
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\' => 
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\' =>
         array (
             0 => __DIR__ . '/..' . '/krokedil/wp-api/src',
         ),
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\' => 
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\' =>
         array (
             0 => __DIR__ . '/..' . '/krokedil/woocommerce/src',
         ),
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\Support\\' => 
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\Support\\' =>
         array (
             0 => __DIR__ . '/..' . '/krokedil/support/src',
         ),
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\' => 
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\' =>
         array (
             0 => __DIR__ . '/..' . '/krokedil/sign-in-with-klarna/src',
         ),
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\SettingsPage\\' => 
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\SettingsPage\\' =>
         array (
             0 => __DIR__ . '/..' . '/krokedil/settings-page/src',
         ),
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\' => 
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\' =>
         array (
             0 => __DIR__ . '/..' . '/krokedil/klarna-order-management/src',
         ),
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\' => 
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\' =>
         array (
             0 => __DIR__ . '/..' . '/krokedil/klarna-onsite-messaging/src',
         ),
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\' => 
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\' =>
         array (
             0 => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src',
         ),
-        'KrokedilKlarnaPaymentsDeps\\Firebase\\JWT\\' => 
+        'KrokedilKlarnaPaymentsDeps\\Firebase\\JWT\\' =>
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
@@ -71,11 +71,28 @@ class ComposerStaticInita2f4ea405edf217f6be5228241a2a866
         'KrokedilKlarnaPaymentsDeps\\Firebase\\JWT\\Key' => __DIR__ . '/..' . '/firebase/php-jwt/src/Key.php',
         'KrokedilKlarnaPaymentsDeps\\Firebase\\JWT\\SignatureInvalidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/SignatureInvalidException.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\AJAX' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/AJAX.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Api\\Controllers\\Notifications' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Api/Controllers/Notifications.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Api\\Notifications\\Handler' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Api/Notifications/Handler.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Api\\Notifications\\NotificationsProvider' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Api/Notifications/NotificationsProvider.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Api\\Notifications\\PaymentStateCompleted' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Api/Notifications/PaymentStateCompleted.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Api\\Notifications\\PaymentStateExpired' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Api/Notifications/PaymentStateExpired.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Assets' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Assets.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Blocks\\OneStepBlocksIntegration' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Blocks/OneStepBlocksIntegration.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\ClientTokenParser' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/ClientTokenParser.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Interfaces\\AcquiringPartnerIntegration' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Interfaces/AcquiringPartnerIntegration.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\KlarnaExpressCheckout' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/KlarnaExpressCheckout.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\OneStepCheckout' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/OneStepCheckout.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Requests' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Requests.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Requests\\Base' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Requests/Base.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Requests\\Notification\\CreateSigningKey' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Requests/Notification/CreateSigningKey.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Requests\\Notification\\CreateWebhook' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Requests/Notification/CreateWebhook.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Requests\\Notification\\DeleteSigningKey' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Requests/Notification/DeleteSigningKey.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Requests\\Notification\\DeleteWebhook' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Requests/Notification/DeleteWebhook.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Requests\\Notification\\SimulateWebhook' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Requests/Notification/SimulateWebhook.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Session' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Session.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\Settings' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/Settings.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\WebhookSetup' => __DIR__ . '/..' . '/krokedil/klarna-express-checkout/src/WebhookSetup.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\Blocks\\CartBlockIntegration' => __DIR__ . '/..' . '/krokedil/klarna-onsite-messaging/src/Blocks/CartBlockIntegration.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\KlarnaOnsiteMessaging' => __DIR__ . '/..' . '/krokedil/klarna-onsite-messaging/src/KlarnaOnsiteMessaging.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\Pages\\Cart' => __DIR__ . '/..' . '/krokedil/klarna-onsite-messaging/src/Pages/Cart.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\Pages\\Page' => __DIR__ . '/..' . '/krokedil/klarna-onsite-messaging/src/Pages/Page.php',
@@ -84,6 +101,7 @@ class ComposerStaticInita2f4ea405edf217f6be5228241a2a866
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\Shortcode' => __DIR__ . '/..' . '/krokedil/klarna-onsite-messaging/src/Shortcode.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\Utility' => __DIR__ . '/..' . '/krokedil/klarna-onsite-messaging/src/Utility.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\Widget' => __DIR__ . '/..' . '/krokedil/klarna-onsite-messaging/src/Widget.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Ajax' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Ajax.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\KlarnaOrderManagement' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/KlarnaOrderManagement.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Logger' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Logger.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\MetaBox' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/MetaBox.php',
@@ -163,9 +181,9 @@ class ComposerStaticInita2f4ea405edf217f6be5228241a2a866
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita2f4ea405edf217f6be5228241a2a866::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita2f4ea405edf217f6be5228241a2a866::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInita2f4ea405edf217f6be5228241a2a866::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite8942bdc72982da6a140f91c7311fb32::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite8942bdc72982da6a140f91c7311fb32::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInite8942bdc72982da6a140f91c7311fb32::$classMap;
 
         }, null, ClassLoader::class);
     }

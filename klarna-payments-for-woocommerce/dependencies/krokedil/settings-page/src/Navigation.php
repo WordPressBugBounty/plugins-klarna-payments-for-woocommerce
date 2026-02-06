@@ -60,7 +60,7 @@ class Navigation
             $tabs[$key] = $subsection['name'] ?? $key;
         }
         ?>
-		<h2 class="nav-tab-wrapper">
+		<h2 class="nav-tab-wrapper krokedil_nav_tabs">
 			<?php 
         foreach ($tabs as $tab => $label) {
             ?>

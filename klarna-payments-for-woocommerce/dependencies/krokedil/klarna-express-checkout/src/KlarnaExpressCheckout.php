@@ -2,6 +2,10 @@
 
 namespace KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaExpressCheckout;
 
+use Krokedil\Klarna\Features;
+use Krokedil\Klarna\PluginFeatures;
+use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaExpressCheckout\Api\Controllers\Notifications;
+use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaExpressCheckout\Blocks\OneStepBlocksIntegration;
 \defined('ABSPATH') || exit;
 /**
  * Main class for Klarna Express Checkout
@@ -10,7 +14,7 @@ namespace KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaExpressCheckout;
  */
 class KlarnaExpressCheckout
 {
-    const VERSION = '1.4.3';
+    public const VERSION = '2.1.1';
     /**
      * Reference to the Session class.
      *
@@ -42,6 +46,12 @@ class KlarnaExpressCheckout
      */
     private $settings;
     /**
+     * Reference to the WebhookSetup class.
+     *
+     * @var WebhookSetup
+     */
+    private $webhook_setup;
+    /**
      * The ID of the payment button element.
      *
      * @var string
@@ -60,8 +70,13 @@ class KlarnaExpressCheckout
         $this->client_token_parser = new ClientTokenParser($this->settings());
         $this->assets = new Assets($this->settings(), $locale);
         $this->ajax = new AJAX($this->client_token_parser());
+        $this->webhook_setup = new WebhookSetup($this);
         add_action('init', array($this, 'maybe_unhook_kp_actions'), 15);
         add_action('woocommerce_single_product_summary', array($this, 'add_kec_button'), 31);
+        add_action('woocommerce_blocks_loaded', array($this, 'setup_blocks_integration'));
+        OneStepCheckout::register_hooks($this->settings->get_kec_flow());
+        // Register the API controller for handling notifications in the Klarna API.
+        $this->register_api_controller();
     }
     /**
      * Get the ID of the payment button element.
@@ -90,7 +105,10 @@ class KlarnaExpressCheckout
         // Get the instances of the Klarna Payments classes we need to unhook actions from.
         $kp_session = \KP_WC()->session;
         $kp_checkout = \KP_WC()->checkout;
-        $kp_gateway = WC()->payment_gateways()->get_available_payment_gateways()['klarna_payments'];
+        $kp_gateway = WC()->payment_gateways()->get_available_payment_gateways()['klarna_payments'] ?? null;
+        if (empty($kp_session) || empty($kp_checkout) || empty($kp_gateway)) {
+            return;
+        }
         // Unhook session actions.
         remove_action('woocommerce_after_calculate_totals', array($kp_session, 'get_session'), 999999);
         // Unhook checkout actions.
@@ -140,6 +158,31 @@ class KlarnaExpressCheckout
         wp_dequeue_script('klarna_payments');
     }
     /**
+     * Sets up the Blocks integration class.
+     *
+     * @return void
+     */
+    public function setup_blocks_integration()
+    {
+        // Only if One step is the selected flow and available.
+        $flow = $this->settings->get_kec_flow();
+        if ($flow !== 'one_step' || !PluginFeatures::is_available(Features::KEC_ONE_STEP)) {
+            return;
+        }
+        if (!\class_exists('Automattic\\WooCommerce\\Blocks\\Package') || !\version_compare(\Automattic\WooCommerce\Blocks\Package::get_version(), '4.4.0', '>')) {
+            return;
+        }
+        /**
+         * Filter the compatible blocks for Klarna Express Checkout.
+         */
+        $compatible_blocks = apply_filters('kec_compatible_blocks', array('cart', 'mini-cart'));
+        foreach ($compatible_blocks as $block_name) {
+            add_action("woocommerce_blocks_{$block_name}_block_registration", function ($integration_registry) {
+                $integration_registry->register(new OneStepBlocksIntegration());
+            });
+        }
+    }
+    /**
      * Get the session class.
      *
      * @return Session
@@ -183,5 +226,23 @@ class KlarnaExpressCheckout
     public function settings()
     {
         return $this->settings;
+    }
+    /**
+     * Get the webhook setup class.
+     *
+     * @return WebhookSetup
+     */
+    public function webhook_setup()
+    {
+        return $this->webhook_setup;
+    }
+    /**
+     * Register the API controller for handling notifications in the Klarna API.
+     *
+     * @return void
+     */
+    public function register_api_controller()
+    {
+        Notifications::register_controller();
     }
 }

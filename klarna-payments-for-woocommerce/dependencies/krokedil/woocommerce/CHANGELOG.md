@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [1.9.1] - 2025-12-18
+### Fixed
+* Improved error handling in `CartCustomer` by checking the availability of the checkout object before accessing it, preventing potential errors when the checkout is unavailable.
+
 ## [1.9.0] - 2025-08-29
 ### Added
 * Added Subscription class to handle subscription specific logic. Use the 'is_subscription_item' method to check if an cart item is a subscription. This method is compatible with the plugins "WooCommerce Subscriptions" and "WooCommerce All Products for Subscriptions" by WooCommerce.

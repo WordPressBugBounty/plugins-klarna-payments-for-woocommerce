@@ -31,7 +31,8 @@ class KP_Subscription {
 		add_filter( 'wc_klarna_payments_update_session_args', array( $this, 'set_tokenize_intent' ) );
 
 		// For free or trial subscription, we set the order as captured to prevent KOM from setting the order to on-hold when the merchant set the order to "Completed".
-		add_filter( 'woocommerce_payment_complete', array( $this, 'set_subscription_as_captured' ) );
+		// NOTE: we cannot use the 'woocommerce_payment_complete' hook as it is triggered after the order is marked as completed, which is too late.
+		add_filter( 'woocommerce_pre_payment_complete', array( $this, 'set_subscription_as_captured' ) );
 
 		// Override the redirect URLs to redirect back to the change payment method page on failure or to the subscription view on success.
 		add_filter( 'wc_klarna_payments_create_hpp_args', array( $this, 'set_subscription_order_redirect_urls' ) );
@@ -75,9 +76,40 @@ class KP_Subscription {
 		$customer_token = self::create_customer_token( $order, $auth_token );
 		if ( ! is_wp_error( $customer_token ) ) {
 			self::save_recurring_token( $order_id, $customer_token );
-			/* translators: Recurring token. */
-			$order->add_order_note( sprintf( __( 'Recurring token created: %s', 'klarna-payments-for-woocommerce' ), $customer_token ) );
 		}
+	}
+
+	/**
+	 * Create a customer token for the order.
+	 *
+	 * @param WC_Order $order The WooCommerce order.
+	 * @param string   $auth_token The authorization token.
+	 * @return string|WP_Error The recurring token or a WP_Error if the customer token could not be created or should not be processed any further.
+	 * - `TOKEN_FAILED` code if the customer token could not be created.
+	 * - `FREE_TRIAL` code if the order should not be processed any further.
+	 */
+	public function create_customer_token( $order, $auth_token ) {
+		$order_id = $order->get_id();
+
+		$response = KP_WC()->api->create_customer_token( kp_get_klarna_country( $order ), $auth_token, $order_id );
+		if ( is_wp_error( $response ) ) {
+			return new WP_Error( 'TOKEN_FAILED', $response->get_error_message() );
+		}
+
+		$recurring_token = $response['token_id'];
+		/* translators: Recurring token. */
+		$order->add_order_note( sprintf( __( 'Recurring token created: %s', 'klarna-payments-for-woocommerce' ), $recurring_token ) );
+		self::save_recurring_token( $order_id, $recurring_token );
+
+		if ( 0.0 === floatval( $order->get_total() ) ) {
+			$order->payment_complete();
+			self::save_recurring_token( $order_id, $recurring_token );
+			$order->add_order_note( __( 'The order contains a free or trial subscription, and no Klarna order is associated with this purchase. A Klarna order will only be registered once the subscriber is charged.', 'klarna-payments-for-woocommerce' ) );
+
+			return new WP_Error( 'FREE_TRIAL', 'The order contains a free or trial subscription. No further processing is required.' );
+		}
+
+		return $recurring_token;
 	}
 
 	/**
@@ -94,9 +126,12 @@ class KP_Subscription {
 			return $order_id;
 		}
 
+		// Attempting to capture a free trial order will result in an API error from the order management.
+		// This check is generic as the issue isn't related to the type of subscription, but rather the total amount.
+		// Similarly, a synchronized subscription may also be zero if subscription settings is set to never charge the full amount at sign-up.
 		if ( self::order_has_subscription( $order ) && 0.0 === floatval( $order->get_total() ) ) {
 			$order->update_meta_data( '_wc_klarna_capture_id', 'trial' );
-			$order->save();
+			$order->save_meta_data();
 		}
 
 		return $order_id;
@@ -105,7 +140,7 @@ class KP_Subscription {
 	/**
 	 * Process subscription renewal.
 	 *
-	 * @param float    $amount_to_charge
+	 * @param float    $amount_to_charge The amount to charge the customer.
 	 * @param WC_Order $renewal_order The WooCommerce order that will be created as a result of the renewal.
 	 * @return void
 	 */
@@ -185,10 +220,16 @@ class KP_Subscription {
 			return $request;
 		}
 
-		$key          = filter_input( INPUT_GET, 'key', FILTER_SANITIZE_SPECIAL_CHARS );
-		$order_id     = wc_get_order_id_by_order_key( $key );
+		$key      = filter_input( INPUT_GET, 'key', FILTER_SANITIZE_SPECIAL_CHARS );
+		$body     = json_decode( $request['body'], true );
+		$order_id = wc_get_order_id_by_order_key( $key );
+
+		/**
+		 * The subscription object or false if not applicable.
+		 *
+		 * @var WC_Subscription $subscription WC subscription or false.
+		 */
 		$subscription = wc_get_order( $order_id );
-		$body         = json_decode( $request['body'], true );
 
 		$success_url           = add_query_arg(
 			array(
@@ -224,19 +265,13 @@ class KP_Subscription {
 
 		$subscription = wcs_get_subscription( $subscription_id );
 		$response     = KP_WC()->api->create_customer_token( kp_get_klarna_country( $subscription ), $auth_token, $subscription_id );
-		if ( is_wp_error( $response ) ) {
+		if ( is_wp_error( $response ) && 'TOKEN_FAILED' === $response->get_error_code() ) {
 			$message = sprintf(
 				/* translators: Error message. */
 				__( 'Failed to create recurring token. Reason: %s', 'klarna-payments-for-woocommerce' ),
 				$response->get_error_message()
 			);
 		} else {
-			$message = sprintf(
-			/* translators: Recurring token. */
-				__( 'Recurring token created: %s', 'klarna-payments-for-woocommerce' ),
-				$response['token_id']
-			);
-
 			self::save_recurring_token( $subscription_id, $response['token_id'] );
 		}
 
@@ -292,19 +327,6 @@ class KP_Subscription {
 
 		$request['body'] = wp_json_encode( $body );
 		return $request;
-	}
-
-	/**
-	 * Create a customer token from a given authorization token.
-	 *
-	 * @param WC_Order $order The WooCommerce order.
-	 * @param string   $auth_token The Klarna auth token for the session.
-	 * @return string|WP_Error The token ID or the WP_Error associated with the failed request.
-	 */
-	public static function create_customer_token( $order, $auth_token ) {
-		$country  = kp_get_klarna_country( $order );
-		$response = KP_WC()->api->create_customer_token( $country, $auth_token, $order->get_id() );
-		return is_wp_error( $response ) ? $response : $response['token_id'];
 	}
 
 	/**
@@ -373,7 +395,7 @@ class KP_Subscription {
 	 * @return bool
 	 */
 	public static function is_change_payment_method() {
-		return isset( $_GET['change_payment_method'] );
+		return isset( $_GET['change_payment_method'] ); // phpcs:ignore WordPress.Security.NonceVerification
 	}
 
 

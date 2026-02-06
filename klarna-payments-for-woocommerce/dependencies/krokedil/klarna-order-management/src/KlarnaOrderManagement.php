@@ -8,10 +8,10 @@ if (!\defined('ABSPATH')) {
 /**
  * Required minimums and constants
  */
-\define('KrokedilKlarnaPaymentsDeps\\KLARNA_ORDER_MANAGEMENT_VERSION', '1.0.3');
-\define('KrokedilKlarnaPaymentsDeps\\KLARNA_ORDER_MANAGEMENT_MIN_PHP_VER', '5.3.0');
-\define('KrokedilKlarnaPaymentsDeps\\KLARNA_ORDER_MANAGEMENT_MIN_WC_VER', '3.3.0');
-\define('KrokedilKlarnaPaymentsDeps\\KLARNA_ORDER_MANAGEMENT_CHECKOUT_URL', untrailingslashit(plugins_url('/', __FILE__)));
+\define('KLARNA_ORDER_MANAGEMENT_VERSION', '1.1.0');
+\define('KLARNA_ORDER_MANAGEMENT_MIN_PHP_VER', '5.3.0');
+\define('KLARNA_ORDER_MANAGEMENT_MIN_WC_VER', '3.3.0');
+\define('KLARNA_ORDER_MANAGEMENT_CHECKOUT_URL', untrailingslashit(plugins_url('/', __FILE__)));
 use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaOrderManagement\Settings;
 use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaOrderManagement\Request\Get\RequestGetOrder;
 use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaOrderManagement\Request\Post\RequestPostRefund;
@@ -19,6 +19,7 @@ use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaOrderManagement\Request\Post\Reque
 use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaOrderManagement\Request\Patch\RequestPatchUpdate;
 use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaOrderManagement\Request\Post\RequestPostCancel;
 use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaOrderManagement\MetaBox;
+use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaOrderManagement\Ajax;
 /**
  * Klarna Order Management class.
  *
@@ -38,6 +39,12 @@ class KlarnaOrderManagement
      * @var MetaBox $metabox
      */
     public $metabox;
+    /**
+     * Klarna Order Management AJAX handler.
+     *
+     * @var Ajax $ajax
+     */
+    public $ajax;
     /**
      * Klarna Order Management plugin instance.
      *
@@ -95,6 +102,7 @@ class KlarnaOrderManagement
         }
         $this->settings = new Settings();
         $this->metabox = new MetaBox($this);
+        $this->ajax = new Ajax();
         // Add refunds support to Klarna Payments or Klarna Checkout gateways. If not one of these plugins, do nothing.
         switch ($this->plugin_instance) {
             case 'klarna_payments':
@@ -128,6 +136,9 @@ class KlarnaOrderManagement
     {
         wp_enqueue_style('kom-admin-style', plugin_dir_url(__FILE__) . 'assets/css/klarna-order-management.css', array(), '1.0.0');
         wp_enqueue_script('kom-admin-js', plugin_dir_url(__FILE__) . 'assets/js/klarna-order-management.js', array('jquery'), '1.0.0', \true);
+        if (isset($this->metabox) && \method_exists($this->metabox, 'maybe_localize_script')) {
+            $this->metabox->maybe_localize_script('kom-admin-js');
+        }
     }
     /**
      * Add refunds support to Klarna Payments gateway.

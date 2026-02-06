@@ -217,9 +217,9 @@ class SystemReport
     {
         $retention_period = LoggingUtil::get_retention_period();
         $reports = \json_decode(get_option('krokedil_support_' . $this->id, '[]'), \true);
-        foreach ($reports as $report) {
+        foreach ($reports as $key => $report) {
             if (\strtotime($report['timestamp']) < \strtotime("-{$retention_period} days")) {
-                unset($reports[$report]);
+                unset($reports[$key]);
             }
         }
         update_option('krokedil_support_' . $this->id, wp_json_encode($reports));
