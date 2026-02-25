@@ -9,7 +9,7 @@ if (!\defined('ABSPATH')) {
     exit;
 }
 if (!\defined('SIWK_VERSION')) {
-    \define('SIWK_VERSION', '2.0.0');
+    \define('SIWK_VERSION', '2.0.2');
 }
 /**
  * Sign_In_With_Klarna class.
@@ -60,7 +60,7 @@ class SignInWithKlarna
     public function __construct($settings)
     {
         $this->settings = new Settings($settings);
-        add_action('kp_plugin_features_initialized', array($this, 'init'));
+        add_action('init', array($this, 'init'));
     }
     /**
      * Initialize the SignInWithKlarna class.
@@ -69,10 +69,14 @@ class SignInWithKlarna
      */
     public function init()
     {
+        if (!\class_exists(PluginFeatures::class) || !\class_exists(Features::class)) {
+            return;
+        }
         // If the feature for SIWK is not available, do not proceed.
         if (!PluginFeatures::is_available(Features::SIWK)) {
             return;
         }
+        $this->settings->init_settings();
         $this->jwt = new JWT(wc_string_to_bool($this->settings->get('test_mode')), $this->settings);
         $this->user = new User($this->jwt);
         $this->ajax = new AJAX($this->jwt, $this->user);
