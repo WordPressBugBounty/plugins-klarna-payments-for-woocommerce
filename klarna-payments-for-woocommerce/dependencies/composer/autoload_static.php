@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitbf97ff3574882d7f1555a88850275111
+class ComposerStaticInitae263ec5a5f1e4f4b71006cc351ba1a0
 {
     public static $prefixLengthsPsr4 = array (
         'K' =>
@@ -14,7 +14,6 @@ class ComposerStaticInitbf97ff3574882d7f1555a88850275111
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\Support\\' => 44,
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\SignInWithKlarna\\' => 53,
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\SettingsPage\\' => 49,
-            'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\' => 58,
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\' => 58,
             'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaExpressCheckout\\' => 58,
             'KrokedilKlarnaPaymentsDeps\\Firebase\\JWT\\' => 40,
@@ -41,10 +40,6 @@ class ComposerStaticInitbf97ff3574882d7f1555a88850275111
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\SettingsPage\\' =>
         array (
             0 => __DIR__ . '/..' . '/krokedil/settings-page/src',
-        ),
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\' =>
-        array (
-            0 => __DIR__ . '/..' . '/krokedil/klarna-order-management/src',
         ),
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\' =>
         array (
@@ -101,25 +96,6 @@ class ComposerStaticInitbf97ff3574882d7f1555a88850275111
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\Shortcode' => __DIR__ . '/..' . '/krokedil/klarna-onsite-messaging/src/Shortcode.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\Utility' => __DIR__ . '/..' . '/krokedil/klarna-onsite-messaging/src/Utility.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOnsiteMessaging\\Widget' => __DIR__ . '/..' . '/krokedil/klarna-onsite-messaging/src/Widget.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Ajax' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Ajax.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\KlarnaOrderManagement' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/KlarnaOrderManagement.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Logger' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Logger.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\MetaBox' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/MetaBox.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\OrderLines' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/OrderLines.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\PendingOrders' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/PendingOrders.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Request\\Get\\RequestGetOrder' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Request/Get/RequestGetOrder.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Request\\Patch\\RequestPatchUpdate' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Request/Patch/RequestPatchUpdate.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Request\\Post\\RequestPostCancel' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Request/Post/RequestPostCancel.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Request\\Post\\RequestPostCapture' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Request/Post/RequestPostCapture.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Request\\Post\\RequestPostRefund' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Request/Post/RequestPostRefund.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Request\\Request' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Request/Request.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Request\\RequestGet' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Request/RequestGet.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Request\\RequestPatch' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Request/RequestPatch.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Request\\RequestPost' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Request/RequestPost.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\ScheduledActions' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/ScheduledActions.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\SellersApp' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/SellersApp.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Settings' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Settings.php',
-        'KrokedilKlarnaPaymentsDeps\\Krokedil\\KlarnaOrderManagement\\Utility' => __DIR__ . '/..' . '/krokedil/klarna-order-management/src/Utility.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\SettingsPage\\Addons' => __DIR__ . '/..' . '/krokedil/settings-page/src/Addons.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\SettingsPage\\Gateway' => __DIR__ . '/..' . '/krokedil/settings-page/src/Gateway.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\SettingsPage\\Navigation' => __DIR__ . '/..' . '/krokedil/settings-page/src/Navigation.php',
@@ -181,9 +157,9 @@ class ComposerStaticInitbf97ff3574882d7f1555a88850275111
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitbf97ff3574882d7f1555a88850275111::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitbf97ff3574882d7f1555a88850275111::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitbf97ff3574882d7f1555a88850275111::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitae263ec5a5f1e4f4b71006cc351ba1a0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitae263ec5a5f1e4f4b71006cc351ba1a0::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitae263ec5a5f1e4f4b71006cc351ba1a0::$classMap;
 
         }, null, ClassLoader::class);
     }
