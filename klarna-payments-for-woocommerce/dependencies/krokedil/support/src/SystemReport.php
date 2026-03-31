@@ -205,7 +205,7 @@ class SystemReport
         }
         $logs = \json_decode(get_option('krokedil_support_' . $this->id, '[]'), \true);
         $logs[] = array('timestamp' => current_time('mysql'), 'response' => array('code' => $response->get_error_code(), 'message' => $response->get_error_message(), 'extra' => $extra));
-        update_option('krokedil_support_' . $this->id, wp_json_encode($logs));
+        update_option('krokedil_support_' . $this->id, wp_json_encode($logs), \false);
         return $response;
     }
     /**
@@ -222,6 +222,6 @@ class SystemReport
                 unset($reports[$key]);
             }
         }
-        update_option('krokedil_support_' . $this->id, wp_json_encode($reports));
+        update_option('krokedil_support_' . $this->id, wp_json_encode($reports), \false);
     }
 }

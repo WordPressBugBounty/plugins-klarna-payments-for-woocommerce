@@ -12,6 +12,7 @@ return array(
     'Krokedil\\Klarna\\Compatibility' => $baseDir . '/src/Compatibility.php',
     'Krokedil\\Klarna\\Compatibility\\FluidCheckout' => $baseDir . '/src/Compatibility/FluidCheckout.php',
     'Krokedil\\Klarna\\Features' => $baseDir . '/src/Features.php',
+    'Krokedil\\Klarna\\KECOneStepIntegration' => $baseDir . '/src/KECOneStepIntegration.php',
     'Krokedil\\Klarna\\OrderManagement' => $baseDir . '/src/OrderManagement.php',
     'Krokedil\\Klarna\\OrderManagement\\Ajax' => $baseDir . '/src/OrderManagement/Ajax.php',
     'Krokedil\\Klarna\\OrderManagement\\Logger' => $baseDir . '/src/OrderManagement/Logger.php',

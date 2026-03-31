@@ -164,10 +164,9 @@ class Settings
      */
     public function get_kec_flow()
     {
-        // If only the two step flow is available or the merchant does not have a valid acquiring partner key, return two step.
+        // If only the two step flow is available, return two step.
         $one_step_available = PluginFeatures::is_available(Features::KEC_ONE_STEP);
-        $acquiring_partner_key = PluginFeatures::get_acquiring_partner_key();
-        if (!$one_step_available || empty($acquiring_partner_key)) {
+        if (!$one_step_available) {
             return 'two_step';
         }
         return $this->options['kec_flow'] ?? 'two_step';
@@ -192,7 +191,7 @@ class Settings
     {
         $created_webhook = get_option('kec_webhook', array());
         $webhook_created = !empty($created_webhook);
-        $one_step_available = PluginFeatures::is_available(Features::KEC_ONE_STEP) && !empty(PluginFeatures::get_acquiring_partner_key());
+        $one_step_available = PluginFeatures::is_available(Features::KEC_ONE_STEP);
         $two_step_available = PluginFeatures::is_available(Features::KEC_TWO_STEP);
         $flow_options = array();
         if ($two_step_available) {

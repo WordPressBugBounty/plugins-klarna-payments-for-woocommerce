@@ -27,6 +27,7 @@ class ComposerStaticInit118ee68e06679122faa79da391e5b2db
         'Krokedil\\Klarna\\Compatibility' => __DIR__ . '/../..' . '/src/Compatibility.php',
         'Krokedil\\Klarna\\Compatibility\\FluidCheckout' => __DIR__ . '/../..' . '/src/Compatibility/FluidCheckout.php',
         'Krokedil\\Klarna\\Features' => __DIR__ . '/../..' . '/src/Features.php',
+        'Krokedil\\Klarna\\KECOneStepIntegration' => __DIR__ . '/../..' . '/src/KECOneStepIntegration.php',
         'Krokedil\\Klarna\\OrderManagement' => __DIR__ . '/../..' . '/src/OrderManagement.php',
         'Krokedil\\Klarna\\OrderManagement\\Ajax' => __DIR__ . '/../..' . '/src/OrderManagement/Ajax.php',
         'Krokedil\\Klarna\\OrderManagement\\Logger' => __DIR__ . '/../..' . '/src/OrderManagement/Logger.php',
