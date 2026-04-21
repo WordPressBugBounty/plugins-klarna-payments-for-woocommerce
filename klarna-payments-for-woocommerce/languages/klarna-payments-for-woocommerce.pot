@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/klarna-payments-for-woocommerce\n"
-"POT-Creation-Date: 2026-04-16 11:14:46+00:00\n"
+"POT-Creation-Date: 2026-04-21 09:24:01+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -490,6 +490,18 @@ msgstr ""
 msgid "Order was not found"
 msgstr ""
 
+#: classes/class-kp-settings-saved.php:110
+#. translators: 1: environment (production or test), 2: market code (country
+#. code)
+msgid ""
+"The Client ID for %1$s credentials in country %2$s is invalid and has been "
+"cleared."
+msgstr ""
+
+#: classes/class-kp-settings-saved.php:116
+msgid "A Client ID is invalid and was cleared."
+msgstr ""
+
 #: classes/class-kp-subscriptions.php:101
 #. translators: Recurring token.
 msgid "Recurring token created: %s"
@@ -676,10 +688,7 @@ msgid "Flow"
 msgstr ""
 
 #: dependencies/krokedil/klarna-express-checkout/src/Settings.php:203
-msgid ""
-"Select the checkout flow for Klarna Express Checkout. One step is only "
-"available for stores integrating Klarna through a different payment "
-"provider."
+msgid "Select the checkout flow for Klarna Express Checkout."
 msgstr ""
 
 #: dependencies/krokedil/klarna-express-checkout/src/Settings.php:203
@@ -1071,7 +1080,7 @@ msgid "Sections"
 msgstr ""
 
 #: dependencies/krokedil/sign-in-with-klarna/src/Settings.php:134
-#: dependencies/krokedil/sign-in-with-klarna/src/User.php:176
+#: dependencies/krokedil/sign-in-with-klarna/src/User.php:161
 msgid "Sign in with Klarna"
 msgstr ""
 
@@ -1564,4 +1573,15 @@ msgstr ""
 msgid ""
 "There was an error when trying to get the feature availability from Klarna. "
 "Please check your API credentials and try again. Error: %s"
+msgstr ""
+
+#: classes/class-kp-settings-saved.php:100
+#: classes/class-kp-settings-saved.php:103
+msgctxt "environment"
+msgid "production"
+msgstr ""
+
+#: classes/class-kp-settings-saved.php:103
+msgctxt "environment"
+msgid "test"
 msgstr ""
