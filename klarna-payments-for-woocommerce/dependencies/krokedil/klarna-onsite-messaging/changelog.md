@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [2.1.1] - 2026-04-27
+### Fix
+* Fixed a reference to undefined `$settings` variable in the cart block integration.
+* Fixed incorrect script dependencies for the cart block — updated from `wp-blocks`/`wp-editor` to `wp-element`, `wp-i18n`, `wc-blocks-registry`, and `jquery`.
+* Fixed `ExperimentalOrderMeta` destructuring to pull from `window.wc.blocksCheckout` with a safety check for undefined.
+* Fixed cart being replaced with a dummy element when KOSM is enabled on the blocks cart page.
+* Improved null/undefined checking in the cart block component.
+ 
 ## [2.1.0] - 2026-02-02
 ### Added
 * Added support for On-Site messaging on the blocks cart page.

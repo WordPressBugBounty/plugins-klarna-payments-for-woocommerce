@@ -2,27 +2,27 @@
     "packages": [
         {
             "name": "firebase\/php-jwt",
-            "version": "v6.10.0",
-            "version_normalized": "6.10.0.0",
+            "version": "6.x-dev",
+            "version_normalized": "6.9999999.9999999.9999999-dev",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/googleapis\/php-jwt.git",
-                "reference": "a49db6f0a5033aef5143295342f1c95521b075ff"
+                "reference": "d1e91ecf8c598d073d0995afa8cd5c75c6e19e66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/googleapis\/php-jwt\/zipball\/a49db6f0a5033aef5143295342f1c95521b075ff",
-                "reference": "a49db6f0a5033aef5143295342f1c95521b075ff",
+                "url": "https:\/\/api.github.com\/repos\/googleapis\/php-jwt\/zipball\/d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
+                "reference": "d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4||^8.0"
+                "php": "^8.0"
             },
             "require-dev": {
-                "guzzlehttp\/guzzle": "^6.5||^7.4",
+                "guzzlehttp\/guzzle": "^7.4",
                 "phpspec\/prophecy-phpunit": "^2.0",
                 "phpunit\/phpunit": "^9.5",
-                "psr\/cache": "^1.0||^2.0",
+                "psr\/cache": "^2.0||^3.0",
                 "psr\/http-client": "^1.0",
                 "psr\/http-factory": "^1.0"
             },
@@ -30,7 +30,7 @@
                 "ext-sodium": "Support EdDSA (Ed25519) signatures",
                 "paragonie\/sodium_compat": "Support EdDSA (Ed25519) signatures when libsodium is not present"
             },
-            "time": "2023-12-01T16:26:39+00:00",
+            "time": "2025-04-09T20:32:01+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -62,27 +62,26 @@
             ],
             "support": {
                 "issues": "https:\/\/github.com\/googleapis\/php-jwt\/issues",
-                "source": "https:\/\/github.com\/googleapis\/php-jwt\/tree\/v6.10.0"
+                "source": "https:\/\/github.com\/googleapis\/php-jwt\/tree\/v6.11.1"
             },
             "install-path": "..\/firebase\/php-jwt"
         },
         {
             "name": "krokedil\/klarna-express-checkout",
-            "version": "2.1.3",
-            "version_normalized": "2.1.3.0",
+            "version": "2.1.4",
+            "version_normalized": "2.1.4.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/krokedil\/klarna-express-checkout.git",
-                "reference": "b13ec91b8fd121cf145c6e278776fe4e75882bcc"
+                "reference": "4f08e228f46e04b149a6a9a1b49879bbb2f3440b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/krokedil\/klarna-express-checkout\/zipball\/b13ec91b8fd121cf145c6e278776fe4e75882bcc",
-                "reference": "b13ec91b8fd121cf145c6e278776fe4e75882bcc",
+                "url": "https:\/\/api.github.com\/repos\/krokedil\/klarna-express-checkout\/zipball\/4f08e228f46e04b149a6a9a1b49879bbb2f3440b",
+                "reference": "4f08e228f46e04b149a6a9a1b49879bbb2f3440b",
                 "shasum": ""
             },
             "require": {
-                "firebase\/php-jwt": "6.10.0",
                 "php": "~7.4 || ~8.0"
             },
             "require-dev": {
@@ -90,7 +89,7 @@
                 "php-stubs\/woocommerce-stubs": "^8.3",
                 "wp-coding-standards\/wpcs": "^3.0"
             },
-            "time": "2026-04-21T08:33:14+00:00",
+            "time": "2026-04-21T08:48:57+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -136,24 +135,24 @@
             ],
             "description": "A Klarna Express Checkout solution for WooCommerce",
             "support": {
-                "source": "https:\/\/github.com\/krokedil\/klarna-express-checkout\/tree\/2.1.3",
+                "source": "https:\/\/github.com\/krokedil\/klarna-express-checkout\/tree\/2.1.4",
                 "issues": "https:\/\/github.com\/krokedil\/klarna-express-checkout\/issues"
             },
             "install-path": "..\/krokedil\/klarna-express-checkout"
         },
         {
             "name": "krokedil\/klarna-onsite-messaging",
-            "version": "2.1.0",
-            "version_normalized": "2.1.0.0",
+            "version": "2.1.1",
+            "version_normalized": "2.1.1.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/krokedil\/klarna-onsite-messaging.git",
-                "reference": "a874e5253f1ee4949a76cdbe413cd2738ee8500c"
+                "reference": "7087c09d1a4f58dd99c8b4393eb3565f093218c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/krokedil\/klarna-onsite-messaging\/zipball\/a874e5253f1ee4949a76cdbe413cd2738ee8500c",
-                "reference": "a874e5253f1ee4949a76cdbe413cd2738ee8500c",
+                "url": "https:\/\/api.github.com\/repos\/krokedil\/klarna-onsite-messaging\/zipball\/7087c09d1a4f58dd99c8b4393eb3565f093218c0",
+                "reference": "7087c09d1a4f58dd99c8b4393eb3565f093218c0",
                 "shasum": ""
             },
             "require": {
@@ -164,7 +163,7 @@
                 "php-stubs\/woocommerce-stubs": "^8.3",
                 "wp-coding-standards\/wpcs": "^3.0"
             },
-            "time": "2026-02-02T13:15:26+00:00",
+            "time": "2026-04-27T11:01:39+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -210,7 +209,7 @@
             ],
             "description": "Klarna On-Site Messaging for WooCommerce",
             "support": {
-                "source": "https:\/\/github.com\/krokedil\/klarna-onsite-messaging\/tree\/2.1.0",
+                "source": "https:\/\/github.com\/krokedil\/klarna-onsite-messaging\/tree\/2.1.1",
                 "issues": "https:\/\/github.com\/krokedil\/klarna-onsite-messaging\/issues"
             },
             "install-path": "..\/krokedil\/klarna-onsite-messaging"

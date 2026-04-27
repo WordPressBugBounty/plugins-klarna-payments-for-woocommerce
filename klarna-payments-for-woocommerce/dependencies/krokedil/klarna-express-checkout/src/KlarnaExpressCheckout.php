@@ -14,7 +14,7 @@ use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaExpressCheckout\Blocks\OneStepBloc
  */
 class KlarnaExpressCheckout
 {
-    public const VERSION = '2.1.3';
+    public const VERSION = '2.1.4';
     /**
      * Reference to the Session class.
      *
