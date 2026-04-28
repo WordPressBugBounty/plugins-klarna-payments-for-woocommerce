@@ -15,7 +15,6 @@ return array(
     'Krokedil\\Klarna\\KECOneStepIntegration' => $baseDir . '/src/KECOneStepIntegration.php',
     'Krokedil\\Klarna\\OrderManagement' => $baseDir . '/src/OrderManagement.php',
     'Krokedil\\Klarna\\OrderManagement\\Ajax' => $baseDir . '/src/OrderManagement/Ajax.php',
-    'Krokedil\\Klarna\\OrderManagement\\Logger' => $baseDir . '/src/OrderManagement/Logger.php',
     'Krokedil\\Klarna\\OrderManagement\\MetaBox' => $baseDir . '/src/OrderManagement/MetaBox.php',
     'Krokedil\\Klarna\\OrderManagement\\PendingOrders' => $baseDir . '/src/OrderManagement/PendingOrders.php',
     'Krokedil\\Klarna\\OrderManagement\\Request\\Get\\RequestGetOrder' => $baseDir . '/src/OrderManagement/Request/Get/RequestGetOrder.php',

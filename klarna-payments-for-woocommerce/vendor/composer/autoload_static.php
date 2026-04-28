@@ -30,7 +30,6 @@ class ComposerStaticInit118ee68e06679122faa79da391e5b2db
         'Krokedil\\Klarna\\KECOneStepIntegration' => __DIR__ . '/../..' . '/src/KECOneStepIntegration.php',
         'Krokedil\\Klarna\\OrderManagement' => __DIR__ . '/../..' . '/src/OrderManagement.php',
         'Krokedil\\Klarna\\OrderManagement\\Ajax' => __DIR__ . '/../..' . '/src/OrderManagement/Ajax.php',
-        'Krokedil\\Klarna\\OrderManagement\\Logger' => __DIR__ . '/../..' . '/src/OrderManagement/Logger.php',
         'Krokedil\\Klarna\\OrderManagement\\MetaBox' => __DIR__ . '/../..' . '/src/OrderManagement/MetaBox.php',
         'Krokedil\\Klarna\\OrderManagement\\PendingOrders' => __DIR__ . '/../..' . '/src/OrderManagement/PendingOrders.php',
         'Krokedil\\Klarna\\OrderManagement\\Request\\Get\\RequestGetOrder' => __DIR__ . '/../..' . '/src/OrderManagement/Request/Get/RequestGetOrder.php',
