@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [1.3.4] - 2026-04-23
+### Fixed
+
+* Fixed an issue causing settings page fields to not display correctly.
+
+## [1.3.3] - 2026-04-16
+### Changed
+
+* Enhanced error handling to ensure more robust and reliable settings output.
+
 ## [1.3.2] - 2026-01-23
 ### Fixed
 
