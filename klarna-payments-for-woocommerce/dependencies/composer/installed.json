@@ -68,17 +68,17 @@
         },
         {
             "name": "krokedil\/klarna-express-checkout",
-            "version": "2.1.4",
-            "version_normalized": "2.1.4.0",
+            "version": "2.1.5",
+            "version_normalized": "2.1.5.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/krokedil\/klarna-express-checkout.git",
-                "reference": "4f08e228f46e04b149a6a9a1b49879bbb2f3440b"
+                "reference": "3e1c080d4d651f77f3c06fa48f7fa5bd03cbdddb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/krokedil\/klarna-express-checkout\/zipball\/4f08e228f46e04b149a6a9a1b49879bbb2f3440b",
-                "reference": "4f08e228f46e04b149a6a9a1b49879bbb2f3440b",
+                "url": "https:\/\/api.github.com\/repos\/krokedil\/klarna-express-checkout\/zipball\/3e1c080d4d651f77f3c06fa48f7fa5bd03cbdddb",
+                "reference": "3e1c080d4d651f77f3c06fa48f7fa5bd03cbdddb",
                 "shasum": ""
             },
             "require": {
@@ -89,7 +89,7 @@
                 "php-stubs\/woocommerce-stubs": "^8.3",
                 "wp-coding-standards\/wpcs": "^3.0"
             },
-            "time": "2026-04-21T08:48:57+00:00",
+            "time": "2026-05-11T12:14:57+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -135,24 +135,24 @@
             ],
             "description": "A Klarna Express Checkout solution for WooCommerce",
             "support": {
-                "source": "https:\/\/github.com\/krokedil\/klarna-express-checkout\/tree\/2.1.4",
+                "source": "https:\/\/github.com\/krokedil\/klarna-express-checkout\/tree\/2.1.5",
                 "issues": "https:\/\/github.com\/krokedil\/klarna-express-checkout\/issues"
             },
             "install-path": "..\/krokedil\/klarna-express-checkout"
         },
         {
             "name": "krokedil\/klarna-onsite-messaging",
-            "version": "2.1.1",
-            "version_normalized": "2.1.1.0",
+            "version": "2.1.2",
+            "version_normalized": "2.1.2.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/krokedil\/klarna-onsite-messaging.git",
-                "reference": "7087c09d1a4f58dd99c8b4393eb3565f093218c0"
+                "reference": "8cd2f46884bad3c244e2787e0fe498213ac4a75c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/krokedil\/klarna-onsite-messaging\/zipball\/7087c09d1a4f58dd99c8b4393eb3565f093218c0",
-                "reference": "7087c09d1a4f58dd99c8b4393eb3565f093218c0",
+                "url": "https:\/\/api.github.com\/repos\/krokedil\/klarna-onsite-messaging\/zipball\/8cd2f46884bad3c244e2787e0fe498213ac4a75c",
+                "reference": "8cd2f46884bad3c244e2787e0fe498213ac4a75c",
                 "shasum": ""
             },
             "require": {
@@ -163,7 +163,7 @@
                 "php-stubs\/woocommerce-stubs": "^8.3",
                 "wp-coding-standards\/wpcs": "^3.0"
             },
-            "time": "2026-04-27T11:01:39+00:00",
+            "time": "2026-05-11T12:21:02+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -209,7 +209,7 @@
             ],
             "description": "Klarna On-Site Messaging for WooCommerce",
             "support": {
-                "source": "https:\/\/github.com\/krokedil\/klarna-onsite-messaging\/tree\/2.1.1",
+                "source": "https:\/\/github.com\/krokedil\/klarna-onsite-messaging\/tree\/2.1.2",
                 "issues": "https:\/\/github.com\/krokedil\/klarna-onsite-messaging\/issues"
             },
             "install-path": "..\/krokedil\/klarna-onsite-messaging"
