@@ -70,7 +70,7 @@ class Assets
         wp_register_script('kec-admin', "{$this->assets_path}js/kec-admin.js", array('jquery'), KlarnaExpressCheckout::VERSION, \true);
         wp_register_script('kec-cart', "{$this->assets_path}js/kec-cart.js", array('jquery', 'klarnapayments'), KlarnaExpressCheckout::VERSION, \true);
         wp_register_script('kec-checkout', "{$this->assets_path}js/kec-checkout.js", array('jquery', 'klarnapayments'), KlarnaExpressCheckout::VERSION, \true);
-        wp_register_script_module('@klarna/kec-one-step', "{$this->assets_path}js/kec-one-step.js", array('@klarna/interoperability_token'), KlarnaExpressCheckout::VERSION);
+        wp_register_script_module('@klarna/kec-one-step', "{$this->assets_path}js/kec-one-step.js", array('@klarna/network_session_token'), KlarnaExpressCheckout::VERSION);
     }
     /**
      * Enqueue scripts.
@@ -173,8 +173,10 @@ class Assets
             $product = wc_get_product(get_the_ID());
             $amount = $product ? wc_get_price_including_tax($product) : 0;
         }
-        $one_step_params = array('ajax' => array('get_initiate_body' => array('url' => \WC_AJAX::get_endpoint('kec_one_step_get_initiate_body'), 'nonce' => wp_create_nonce('kec_one_step_get_initiate_body'), 'method' => 'POST'), 'shipping_change' => array('url' => \WC_AJAX::get_endpoint('kec_one_step_shipping_address_change'), 'nonce' => wp_create_nonce('kec_one_step_shipping_address_change'), 'method' => 'POST'), 'shipping_option_change' => array('url' => \WC_AJAX::get_endpoint('kec_one_step_shipping_option_changed'), 'nonce' => wp_create_nonce('kec_one_step_shipping_option_changed'), 'method' => 'POST'), 'finalize_order' => array('url' => \WC_AJAX::get_endpoint('kec_one_step_finalize_order'), 'nonce' => wp_create_nonce('kec_one_step_finalize_order'), 'method' => 'POST')), 'client_id' => $client_id, 'testmode' => $this->settings->is_testmode(), 'theme' => $this->settings->get_theme(), 'shape' => $this->settings->get_shape(), 'locale' => $this->locale, 'currency' => get_woocommerce_currency(), 'amount' => \intval(\floatval($amount) * 100), 'source' => is_cart() ? 'cart' : (is_product() ? get_the_ID() : 'unknown'), 'is_variation' => is_product() ? wc_get_product(get_the_ID())->is_type('variation') ? \true : \false : \false);
+        $one_step_params = array('ajax' => array('get_initiate_body' => array('url' => \WC_AJAX::get_endpoint('kec_one_step_get_initiate_body'), 'nonce' => wp_create_nonce('kec_one_step_get_initiate_body'), 'method' => 'POST'), 'shipping_change' => array('url' => \WC_AJAX::get_endpoint('kec_one_step_shipping_address_change'), 'nonce' => wp_create_nonce('kec_one_step_shipping_address_change'), 'method' => 'POST'), 'shipping_option_change' => array('url' => \WC_AJAX::get_endpoint('kec_one_step_shipping_option_changed'), 'nonce' => wp_create_nonce('kec_one_step_shipping_option_changed'), 'method' => 'POST'), 'finalize_order' => array('url' => \WC_AJAX::get_endpoint('kec_one_step_finalize_order'), 'nonce' => wp_create_nonce('kec_one_step_finalize_order'), 'method' => 'POST')), 'client_id' => $client_id, 'testmode' => $this->settings->is_testmode(), 'theme' => $this->settings->get_theme(), 'shape' => $this->settings->get_shape(), 'locale' => $this->locale, 'currency' => get_woocommerce_currency(), 'amount' => \intval(\floatval($amount) * 100), 'source' => is_cart() ? 'cart' : (is_product() ? get_the_ID() : 'unknown'), 'is_variable_product' => is_product() && $product && $product->is_type('variable'));
         KP_Assets::register_module_data($one_step_params, '@klarna/kec-one-step');
         wp_enqueue_script_module('@klarna/kec-one-step');
+        // Enqueue the style for the one-step flow on cart and product pages.
+        wp_enqueue_style('kec-cart');
     }
 }

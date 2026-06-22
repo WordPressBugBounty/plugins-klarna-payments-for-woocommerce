@@ -11,7 +11,7 @@ use KrokedilKlarnaPaymentsDeps\Krokedil\KlarnaOnsiteMessaging\Blocks\CartBlockIn
 if (!\defined('ABSPATH')) {
     exit;
 }
-\define('KOSM_VERSION', '2.1.2');
+\define('KOSM_VERSION', '2.1.3');
 /**
  * The orchestrator class.
  */
@@ -163,7 +163,7 @@ class KlarnaOnsiteMessaging
         wp_deregister_script('klarna-onsite-messaging');
         wp_deregister_script('onsite_messaging_script');
         $script_path = plugin_dir_url(__FILE__) . 'assets/js/klarna-onsite-messaging.js';
-        wp_register_script_module('@klarna/onsite_messaging', $script_path, array('@klarna/interoperability_token'), \KOSM_VERSION);
+        wp_register_script_module('@klarna/onsite_messaging', $script_path, array('@klarna/network_session_token'), \KOSM_VERSION);
         $localize = array('client_id' => $client_id, 'ajaxurl' => admin_url('admin-ajax.php'), 'get_cart_total_url' => \WC_AJAX::get_endpoint('kosm_get_cart_total'));
         if (isset($_GET['osmDebug'])) {
             $localize['debug_info'] = array('product' => is_product(), 'cart' => is_cart(), 'shortcode' => $has_shortcode, 'data_client' => !empty($client_id), 'locale' => Utility::get_locale_from_currency(), 'currency' => get_woocommerce_currency(), 'library' => wp_scripts()->registered[KP_Assets::KP_WEBSDK_HANDLE_V2]->src ?? $region, 'base_location' => $base_location['country'], 'hide_placement' => has_filter('kosm_hide_placement'));

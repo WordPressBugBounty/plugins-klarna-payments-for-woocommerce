@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [2.1.3] - 2026-06-16
+### Changed
+* Updated to use the Klarna network session token instead of an interoperability token.
+
 ## [2.1.2] - 2026-05-11
 ### Fix
 * Added a check to ensure a valid client ID is found before attempting to register module data.

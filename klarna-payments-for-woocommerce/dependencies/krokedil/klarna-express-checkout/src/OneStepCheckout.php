@@ -145,7 +145,7 @@ class OneStepCheckout
             $shipping_options = self::get_shipping_options(WC()->shipping->get_packages());
         } else {
             // Klarna still expects shipping options for virtual carts, so provide a default one with free shipping and digital delivery.
-            $shipping_options = array(array('shippingOptionReference' => 'digital-delivery', 'amount' => 0, 'displayName' => __('Digital delivery', 'klarna-express-checkout'), 'description' => __('Digital delivery', 'klarna-express-checkout')));
+            $shipping_options = array(array('shippingOptionReference' => 'digital-delivery', 'amount' => 0, 'displayName' => __('Digital delivery', 'klarna-express-checkout'), 'description' => __('Digital delivery', 'klarna-express-checkout'), 'shippingType' => 'DIGITAL_EMAIL'));
         }
         $selected_shipping_option_reference = WC()->session->get('chosen_shipping_methods', array());
         $selected_shipping_option_reference = !empty($selected_shipping_option_reference) ? $selected_shipping_option_reference[0] : '';
