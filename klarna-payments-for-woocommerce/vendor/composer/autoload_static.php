@@ -4,12 +4,16 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit118ee68e06679122faa79da391e5b2db
+class ComposerStaticInit08baea6ba95c33b489070df9a7ab6a11
 {
     public static $prefixLengthsPsr4 = array (
         'K' =>
         array (
             'Krokedil\\Klarna\\' => 16,
+        ),
+        'F' =>
+        array (
+            'Firebase\\JWT\\' => 13,
         ),
     );
 
@@ -18,16 +22,59 @@ class ComposerStaticInit118ee68e06679122faa79da391e5b2db
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
+        'Firebase\\JWT\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+        ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Firebase\\JWT\\BeforeValidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/BeforeValidException.php',
+        'Firebase\\JWT\\CachedKeySet' => __DIR__ . '/..' . '/firebase/php-jwt/src/CachedKeySet.php',
+        'Firebase\\JWT\\ExpiredException' => __DIR__ . '/..' . '/firebase/php-jwt/src/ExpiredException.php',
+        'Firebase\\JWT\\JWK' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWK.php',
+        'Firebase\\JWT\\JWT' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWT.php',
+        'Firebase\\JWT\\JWTExceptionWithPayloadInterface' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWTExceptionWithPayloadInterface.php',
+        'Firebase\\JWT\\Key' => __DIR__ . '/..' . '/firebase/php-jwt/src/Key.php',
+        'Firebase\\JWT\\SignatureInvalidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/SignatureInvalidException.php',
         'Krokedil\\Klarna\\Api\\Controllers\\Controller' => __DIR__ . '/../..' . '/src/Api/Controllers/Controller.php',
         'Krokedil\\Klarna\\Api\\Registry' => __DIR__ . '/../..' . '/src/Api/Registry.php',
         'Krokedil\\Klarna\\Compatibility' => __DIR__ . '/../..' . '/src/Compatibility.php',
         'Krokedil\\Klarna\\Compatibility\\FluidCheckout' => __DIR__ . '/../..' . '/src/Compatibility/FluidCheckout.php',
+        'Krokedil\\Klarna\\ExpressCheckout' => __DIR__ . '/../..' . '/src/ExpressCheckout.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\AJAX' => __DIR__ . '/../..' . '/src/ExpressCheckout/AJAX.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Api\\Controllers\\Notifications' => __DIR__ . '/../..' . '/src/ExpressCheckout/Api/Controllers/Notifications.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Api\\Notifications\\Handler' => __DIR__ . '/../..' . '/src/ExpressCheckout/Api/Notifications/Handler.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Api\\Notifications\\NotificationsProvider' => __DIR__ . '/../..' . '/src/ExpressCheckout/Api/Notifications/NotificationsProvider.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Api\\Notifications\\PaymentStateCompleted' => __DIR__ . '/../..' . '/src/ExpressCheckout/Api/Notifications/PaymentStateCompleted.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Api\\Notifications\\PaymentStateExpired' => __DIR__ . '/../..' . '/src/ExpressCheckout/Api/Notifications/PaymentStateExpired.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Assets' => __DIR__ . '/../..' . '/src/ExpressCheckout/Assets.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Blocks\\OneStepBlocksIntegration' => __DIR__ . '/../..' . '/src/ExpressCheckout/Blocks/OneStepBlocksIntegration.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\ClientTokenParser' => __DIR__ . '/../..' . '/src/ExpressCheckout/ClientTokenParser.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Interfaces\\AcquiringPartnerIntegration' => __DIR__ . '/../..' . '/src/ExpressCheckout/Interfaces/AcquiringPartnerIntegration.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\KECOneStepIntegration' => __DIR__ . '/../..' . '/src/ExpressCheckout/KECOneStepIntegration.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\OneStepCheckout' => __DIR__ . '/../..' . '/src/ExpressCheckout/OneStepCheckout.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Requests' => __DIR__ . '/../..' . '/src/ExpressCheckout/Requests.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Requests\\Base' => __DIR__ . '/../..' . '/src/ExpressCheckout/Requests/Base.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Requests\\Notification\\CreateSigningKey' => __DIR__ . '/../..' . '/src/ExpressCheckout/Requests/Notification/CreateSigningKey.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Requests\\Notification\\CreateWebhook' => __DIR__ . '/../..' . '/src/ExpressCheckout/Requests/Notification/CreateWebhook.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Requests\\Notification\\DeleteSigningKey' => __DIR__ . '/../..' . '/src/ExpressCheckout/Requests/Notification/DeleteSigningKey.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Requests\\Notification\\DeleteWebhook' => __DIR__ . '/../..' . '/src/ExpressCheckout/Requests/Notification/DeleteWebhook.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Requests\\Notification\\SimulateWebhook' => __DIR__ . '/../..' . '/src/ExpressCheckout/Requests/Notification/SimulateWebhook.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Session' => __DIR__ . '/../..' . '/src/ExpressCheckout/Session.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Settings' => __DIR__ . '/../..' . '/src/ExpressCheckout/Settings.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\WebhookSetup' => __DIR__ . '/../..' . '/src/ExpressCheckout/WebhookSetup.php',
         'Krokedil\\Klarna\\Features' => __DIR__ . '/../..' . '/src/Features.php',
-        'Krokedil\\Klarna\\KECOneStepIntegration' => __DIR__ . '/../..' . '/src/KECOneStepIntegration.php',
+        'Krokedil\\Klarna\\OnsiteMessaging\\Blocks\\CartBlockIntegration' => __DIR__ . '/../..' . '/src/OnsiteMessaging/Blocks/CartBlockIntegration.php',
+        'Krokedil\\Klarna\\OnsiteMessaging\\KlarnaOnsiteMessaging' => __DIR__ . '/../..' . '/src/OnsiteMessaging/KlarnaOnsiteMessaging.php',
+        'Krokedil\\Klarna\\OnsiteMessaging\\Pages\\Cart' => __DIR__ . '/../..' . '/src/OnsiteMessaging/Pages/Cart.php',
+        'Krokedil\\Klarna\\OnsiteMessaging\\Pages\\Page' => __DIR__ . '/../..' . '/src/OnsiteMessaging/Pages/Page.php',
+        'Krokedil\\Klarna\\OnsiteMessaging\\Pages\\Product' => __DIR__ . '/../..' . '/src/OnsiteMessaging/Pages/Product.php',
+        'Krokedil\\Klarna\\OnsiteMessaging\\Settings' => __DIR__ . '/../..' . '/src/OnsiteMessaging/Settings.php',
+        'Krokedil\\Klarna\\OnsiteMessaging\\Shortcode' => __DIR__ . '/../..' . '/src/OnsiteMessaging/Shortcode.php',
+        'Krokedil\\Klarna\\OnsiteMessaging\\Utility' => __DIR__ . '/../..' . '/src/OnsiteMessaging/Utility.php',
+        'Krokedil\\Klarna\\OnsiteMessaging\\Widget' => __DIR__ . '/../..' . '/src/OnsiteMessaging/Widget.php',
         'Krokedil\\Klarna\\OrderManagement' => __DIR__ . '/../..' . '/src/OrderManagement.php',
         'Krokedil\\Klarna\\OrderManagement\\Ajax' => __DIR__ . '/../..' . '/src/OrderManagement/Ajax.php',
         'Krokedil\\Klarna\\OrderManagement\\MetaBox' => __DIR__ . '/../..' . '/src/OrderManagement/MetaBox.php',
@@ -46,14 +93,20 @@ class ComposerStaticInit118ee68e06679122faa79da391e5b2db
         'Krokedil\\Klarna\\OrderManagement\\SellersApp' => __DIR__ . '/../..' . '/src/OrderManagement/SellersApp.php',
         'Krokedil\\Klarna\\OrderManagement\\Settings' => __DIR__ . '/../..' . '/src/OrderManagement/Settings.php',
         'Krokedil\\Klarna\\PluginFeatures' => __DIR__ . '/../..' . '/src/PluginFeatures.php',
+        'Krokedil\\Klarna\\SignInWithKlarna' => __DIR__ . '/../..' . '/src/SignInWithKlarna.php',
+        'Krokedil\\Klarna\\SignInWithKlarna\\Ajax' => __DIR__ . '/../..' . '/src/SignInWithKlarna/Ajax.php',
+        'Krokedil\\Klarna\\SignInWithKlarna\\JWT' => __DIR__ . '/../..' . '/src/SignInWithKlarna/JWT.php',
+        'Krokedil\\Klarna\\SignInWithKlarna\\Redirect' => __DIR__ . '/../..' . '/src/SignInWithKlarna/Redirect.php',
+        'Krokedil\\Klarna\\SignInWithKlarna\\Settings' => __DIR__ . '/../..' . '/src/SignInWithKlarna/Settings.php',
+        'Krokedil\\Klarna\\SignInWithKlarna\\User' => __DIR__ . '/../..' . '/src/SignInWithKlarna/User.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit118ee68e06679122faa79da391e5b2db::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit118ee68e06679122faa79da391e5b2db::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit118ee68e06679122faa79da391e5b2db::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit08baea6ba95c33b489070df9a7ab6a11::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit08baea6ba95c33b489070df9a7ab6a11::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit08baea6ba95c33b489070df9a7ab6a11::$classMap;
 
         }, null, ClassLoader::class);
     }
