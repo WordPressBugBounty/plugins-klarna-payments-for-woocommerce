@@ -206,6 +206,20 @@ abstract class OrderLineData extends Base
      */
     public abstract function set_compatibility();
     /**
+     * Divide two numbers safely, returning 0 if the denominator is 0 to avoid a DivisionByZeroError.
+     *
+     * @param float $numerator The numerator.
+     * @param float $denominator The denominator.
+     * @return float
+     */
+    protected function safe_divide($numerator, $denominator)
+    {
+        if (\is_numeric($denominator) && 0.0 === \floatval($denominator)) {
+            return 0.0;
+        }
+        return $numerator / $denominator;
+    }
+    /**
      * Function to get product name
      *
      * @return string
@@ -257,7 +271,7 @@ abstract class OrderLineData extends Base
      */
     public function get_unit_tax_amount()
     {
-        return $this->total_tax_amount / $this->quantity;
+        return $this->safe_divide($this->total_tax_amount, $this->quantity);
     }
     /**
      * Function to get product unit tax amount
@@ -266,7 +280,7 @@ abstract class OrderLineData extends Base
      */
     public function get_subtotal_unit_tax_amount()
     {
-        return $this->subtotal_tax_amount / $this->quantity;
+        return $this->safe_divide($this->subtotal_tax_amount, $this->quantity);
     }
     /**
      * Function to get product tax rate

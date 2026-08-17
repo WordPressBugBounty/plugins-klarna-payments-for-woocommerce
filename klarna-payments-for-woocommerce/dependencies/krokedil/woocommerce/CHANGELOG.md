@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [1.9.2] - 2026-08-14
+### Fixed
+* Fixed a `DivisionByZeroError` fatal error in cart/order line item price calculations when an item's quantity is 0.
+
 ## [1.9.1] - 2025-12-18
 ### Fixed
 * Improved error handling in `CartCustomer` by checking the availability of the checkout object before accessing it, preventing potential errors when the checkout is unavailable.

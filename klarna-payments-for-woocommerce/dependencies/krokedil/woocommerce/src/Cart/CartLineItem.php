@@ -104,7 +104,7 @@ class CartLineItem extends OrderLineData
      */
     public function set_unit_price()
     {
-        $unit_price = $this->cart_item['line_total'] / $this->cart_item['quantity'];
+        $unit_price = $this->safe_divide($this->cart_item['line_total'], $this->cart_item['quantity']);
         $this->unit_price = apply_filters($this->get_filter_name('unit_price'), $this->format_price($unit_price), $this->cart_item);
     }
     /**
@@ -114,7 +114,7 @@ class CartLineItem extends OrderLineData
      */
     public function set_subtotal_unit_price()
     {
-        $subtotal_unit_price = $this->cart_item['line_subtotal'] / $this->cart_item['quantity'];
+        $subtotal_unit_price = $this->safe_divide($this->cart_item['line_subtotal'], $this->cart_item['quantity']);
         $this->subtotal_unit_price = apply_filters($this->get_filter_name('subtotal_unit_price'), $this->format_price($subtotal_unit_price), $this->cart_item);
     }
     /**
