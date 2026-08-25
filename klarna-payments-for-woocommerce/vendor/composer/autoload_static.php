@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf21855b277b37795824eba0af1070dbc
+class ComposerStaticInit0ed5b09134dea5544891b4124b1616a7
 {
     public static $prefixLengthsPsr4 = array (
         'K' =>
@@ -99,14 +99,15 @@ class ComposerStaticInitf21855b277b37795824eba0af1070dbc
         'Krokedil\\Klarna\\SignInWithKlarna\\Redirect' => __DIR__ . '/../..' . '/src/SignInWithKlarna/Redirect.php',
         'Krokedil\\Klarna\\SignInWithKlarna\\Settings' => __DIR__ . '/../..' . '/src/SignInWithKlarna/Settings.php',
         'Krokedil\\Klarna\\SignInWithKlarna\\User' => __DIR__ . '/../..' . '/src/SignInWithKlarna/User.php',
+        'Krokedil\\Klarna\\Utilities\\ApiCredentialsUtility' => __DIR__ . '/../..' . '/src/Utilities/ApiCredentialsUtility.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf21855b277b37795824eba0af1070dbc::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf21855b277b37795824eba0af1070dbc::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitf21855b277b37795824eba0af1070dbc::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit0ed5b09134dea5544891b4124b1616a7::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit0ed5b09134dea5544891b4124b1616a7::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit0ed5b09134dea5544891b4124b1616a7::$classMap;
 
         }, null, ClassLoader::class);
     }

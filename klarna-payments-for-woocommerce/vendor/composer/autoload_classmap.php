@@ -76,4 +76,5 @@ return array(
     'Krokedil\\Klarna\\SignInWithKlarna\\Redirect' => $baseDir . '/src/SignInWithKlarna/Redirect.php',
     'Krokedil\\Klarna\\SignInWithKlarna\\Settings' => $baseDir . '/src/SignInWithKlarna/Settings.php',
     'Krokedil\\Klarna\\SignInWithKlarna\\User' => $baseDir . '/src/SignInWithKlarna/User.php',
+    'Krokedil\\Klarna\\Utilities\\ApiCredentialsUtility' => $baseDir . '/src/Utilities/ApiCredentialsUtility.php',
 );

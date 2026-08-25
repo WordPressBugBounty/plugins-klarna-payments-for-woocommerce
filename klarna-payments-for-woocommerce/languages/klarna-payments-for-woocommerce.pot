@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/klarna-payments-for-woocommerce\n"
-"POT-Creation-Date: 2026-08-17 08:53:51+00:00\n"
+"POT-Creation-Date: 2026-08-25 08:37:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,169 +14,169 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: classes/admin/class-kp-form-fields.php:167
+#: classes/admin/class-kp-form-fields.php:177
 #. translators: [merchant-facing].
 msgid "Austria"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:169
+#: classes/admin/class-kp-form-fields.php:179
 #. translators: [merchant-facing].
 msgid "Belgium"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:171
+#: classes/admin/class-kp-form-fields.php:181
 #. translators: [merchant-facing].
 msgid "Czech Republic"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:173
+#: classes/admin/class-kp-form-fields.php:183
 #. translators: [merchant-facing].
 msgid "Denmark"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:175
+#: classes/admin/class-kp-form-fields.php:185
 #. translators: [merchant-facing].
 msgid "Finland"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:177
+#: classes/admin/class-kp-form-fields.php:187
 #. translators: [merchant-facing].
 msgid "France"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:179
+#: classes/admin/class-kp-form-fields.php:189
 #. translators: [merchant-facing].
 msgid "Germany"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:181
+#: classes/admin/class-kp-form-fields.php:191
 #. translators: [merchant-facing].
 msgid "Greece"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:183
+#: classes/admin/class-kp-form-fields.php:193
 #. translators: [merchant-facing].
 msgid "Hungary"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:185
+#: classes/admin/class-kp-form-fields.php:195
 #. translators: [merchant-facing].
 msgid "Ireland"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:187
+#: classes/admin/class-kp-form-fields.php:197
 #. translators: [merchant-facing].
 msgid "Italy"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:189
+#: classes/admin/class-kp-form-fields.php:199
 #. translators: [merchant-facing].
 msgid "Netherlands"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:191
+#: classes/admin/class-kp-form-fields.php:201
 #. translators: [merchant-facing].
 msgid "Norway"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:193
+#: classes/admin/class-kp-form-fields.php:203
 #. translators: [merchant-facing].
 msgid "Poland"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:195
+#: classes/admin/class-kp-form-fields.php:205
 #. translators: [merchant-facing].
 msgid "Portugal"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:197
+#: classes/admin/class-kp-form-fields.php:207
 #. translators: [merchant-facing].
 msgid "Romania"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:199
+#: classes/admin/class-kp-form-fields.php:209
 #. translators: [merchant-facing].
 msgid "Slovakia"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:201
+#: classes/admin/class-kp-form-fields.php:211
 #. translators: [merchant-facing].
 msgid "Spain"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:203
+#: classes/admin/class-kp-form-fields.php:213
 #. translators: [merchant-facing].
 msgid "Sweden"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:205
+#: classes/admin/class-kp-form-fields.php:215
 #. translators: [merchant-facing].
 msgid "Switzerland"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:207
+#: classes/admin/class-kp-form-fields.php:217
 #. translators: [merchant-facing].
 msgid "United Kingdom"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:212
+#: classes/admin/class-kp-form-fields.php:222
 #. translators: [merchant-facing].
 msgid "Canada"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:214
+#: classes/admin/class-kp-form-fields.php:224
 #. translators: [merchant-facing].
 msgid "Mexico"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:216
+#: classes/admin/class-kp-form-fields.php:226
 #. translators: [merchant-facing].
 msgid "United States"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:221
+#: classes/admin/class-kp-form-fields.php:231
 #. translators: [merchant-facing].
 msgid "Australia"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:223
+#: classes/admin/class-kp-form-fields.php:233
 #. translators: [merchant-facing].
 msgid "New Zealand"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:257
+#: classes/admin/class-kp-form-fields.php:269
 #. translators: [merchant-facing].
 msgid "Klarna Merchant Portal"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:260
+#: classes/admin/class-kp-form-fields.php:272
 #. translators: [merchant-facing].
 msgid "Klarna Merchant Privacy Notice"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:262
+#: classes/admin/class-kp-form-fields.php:274
 #. translators: [merchant-facing]. %s: privacy policy link.
 msgid "By activating Klarna using API credentials you agree to and accept the %s."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:269
+#: classes/admin/class-kp-form-fields.php:281
 #. translators: [merchant-facing].
 msgid "To unlock the plugin's features, enter your credentials"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:275
-#: classes/admin/class-kp-form-fields.php:424
-#: src/ExpressCheckout/Settings.php:227 src/SignInWithKlarna/Settings.php:168
+#: classes/admin/class-kp-form-fields.php:287
+#: classes/admin/class-kp-form-fields.php:436
+#: src/ExpressCheckout/Settings.php:230 src/SignInWithKlarna/Settings.php:168
 #. translators: [merchant-facing].
 msgid "Documentation"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:282
+#: classes/admin/class-kp-form-fields.php:294
 #. translators: [merchant-facing].
 msgid "Client Identifier & API Credentials"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:284
+#: classes/admin/class-kp-form-fields.php:296
 #. translators: [merchant-facing]. %s: merchant portal link.
 msgid ""
 "Enter the credentials for production and test for each market Klarna is "
@@ -184,64 +184,64 @@ msgid ""
 "Settings. <br><br><b>%2$s</b>"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:288
+#: classes/admin/class-kp-form-fields.php:300
 #. translators: [merchant-facing].
 msgid "Enter the countries where Klarna will be available"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:293
+#: classes/admin/class-kp-form-fields.php:305
 #. translators: [merchant-facing].
 msgid "Start typing"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:298
+#: classes/admin/class-kp-form-fields.php:310
 #: src/OnsiteMessaging/Settings.php:59
 #. translators: [merchant-facing].
 msgid "Test mode"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:300
+#: classes/admin/class-kp-form-fields.php:312
 #. translators: [merchant-facing].
 msgid "Enable Klarna in Klarna's test environment."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:307
+#: classes/admin/class-kp-form-fields.php:319
 #: dependencies/krokedil/support/src/Logger.php:54
 #. translators: [merchant-facing].
 msgid "Logging"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:309
+#: classes/admin/class-kp-form-fields.php:321
 #. translators: [merchant-facing].
 msgid "Log debug messages"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:312
+#: classes/admin/class-kp-form-fields.php:324
 #. translators: [merchant-facing].
 msgid "Save debug messages to the WooCommerce System Status log."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:316
+#: classes/admin/class-kp-form-fields.php:328
 #. translators: [merchant-facing].
 msgid "No"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:318
+#: classes/admin/class-kp-form-fields.php:330
 #. translators: [merchant-facing].
 msgid "Yes"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:320
+#: classes/admin/class-kp-form-fields.php:332
 #. translators: [merchant-facing].
 msgid "Yes (with extra debug data)"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:326
+#: classes/admin/class-kp-form-fields.php:338
 #. translators: [merchant-facing].
 msgid "Shopping data"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:331
+#: classes/admin/class-kp-form-fields.php:343
 #. translators: [merchant-facing]. %s: link to Klarna's privacy policy
 msgid ""
 "Sharing your customer's data with Klarna improves the customer's experience "
@@ -251,154 +251,154 @@ msgid ""
 "country) will be included in this data."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:338
+#: classes/admin/class-kp-form-fields.php:350
 #. translators: [merchant-facing].
 msgid "Share shopping data with Klarna"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:343
+#: classes/admin/class-kp-form-fields.php:355
 #. translators: [merchant-facing].
 msgid "European Market"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:352
+#: classes/admin/class-kp-form-fields.php:364
 #. translators: [merchant-facing].
 msgid "Credentials for Europe"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:360
+#: classes/admin/class-kp-form-fields.php:372
 #. translators: [merchant-facing].
 msgid "Combine EU credentials"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:362
+#: classes/admin/class-kp-form-fields.php:374
 #. translators: [merchant-facing].
 msgid "Combine all EU country credentials into a single set of credentials"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:371
+#: classes/admin/class-kp-form-fields.php:383
 #. translators: [merchant-facing].
 msgid "North American Market"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:376
+#: classes/admin/class-kp-form-fields.php:388
 #. translators: [merchant-facing].
 msgid "Credentials for the US"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:378
+#: classes/admin/class-kp-form-fields.php:390
 #. translators: [merchant-facing].
 msgid "Credentials for Canada"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:380
+#: classes/admin/class-kp-form-fields.php:392
 #. translators: [merchant-facing].
 msgid "Credentials for Mexico"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:387
+#: classes/admin/class-kp-form-fields.php:399
 #. translators: [merchant-facing].
 msgid "Oceania Market"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:392
+#: classes/admin/class-kp-form-fields.php:404
 #. translators: [merchant-facing].
 msgid "Credentials for Australia"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:394
+#: classes/admin/class-kp-form-fields.php:406
 #. translators: [merchant-facing].
 msgid "Credentials for New Zealand"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:419
+#: classes/admin/class-kp-form-fields.php:431
 #. translators: [merchant-facing].
 msgid ""
 "Give your customers the ability to pay in flexible ways such as Buy now, "
 "Pay Later, Invoicing, Installments and Financing."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:431
-#: src/ExpressCheckout/Settings.php:233 src/OnsiteMessaging/Settings.php:195
+#: classes/admin/class-kp-form-fields.php:443
+#: src/ExpressCheckout/Settings.php:236 src/OnsiteMessaging/Settings.php:195
 #: src/SignInWithKlarna/Settings.php:175
 #. translators: [merchant-facing].
 msgid "Enable/Disable"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:433
+#: classes/admin/class-kp-form-fields.php:445
 #. translators: [merchant-facing].
 msgid "Enable Klarna Payments"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:440
+#: classes/admin/class-kp-form-fields.php:452
 #. translators: [merchant-facing].
 msgid "Hide \"What is Klarna?\" link"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:443
+#: classes/admin/class-kp-form-fields.php:455
 #. translators: [merchant-facing].
 msgid "If checked, \"What is Klarna?\" will not be shown."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:449
+#: classes/admin/class-kp-form-fields.php:461
 #. translators: [merchant-facing].
 msgid "Float \"What is Klarna?\" link"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:452
+#: classes/admin/class-kp-form-fields.php:464
 #. translators: [merchant-facing].
 msgid "If checked, \"What is Klarna?\" will be floated right."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:458
+#: classes/admin/class-kp-form-fields.php:470
 #. translators: [merchant-facing].
 msgid "Product URLs"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:461
+#: classes/admin/class-kp-form-fields.php:473
 #. translators: [merchant-facing].
 msgid "Send product and product image URLs to Klarna"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:467
+#: classes/admin/class-kp-form-fields.php:479
 #. translators: [merchant-facing].
 msgid "Add Klarna URLs to order email"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:470
+#: classes/admin/class-kp-form-fields.php:482
 #. translators: [merchant-facing].
 msgid ""
 "This will add Klarna URLs to the order emails that are sent. You can read "
 "more about this here: "
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:476
-#: classes/admin/class-kp-form-fields.php:479
+#: classes/admin/class-kp-form-fields.php:488
+#: classes/admin/class-kp-form-fields.php:491
 #. translators: [merchant-facing].
 msgid "Customer type"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:481
+#: classes/admin/class-kp-form-fields.php:493
 #. translators: [merchant-facing].
 msgid "Select the customer for the store."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:484
+#: classes/admin/class-kp-form-fields.php:496
 #. translators: [merchant-facing].
 msgid "Business to Consumer (B2C)"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:486
+#: classes/admin/class-kp-form-fields.php:498
 #. translators: [merchant-facing].
 msgid "Business to Business (B2B)"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:493
+#: classes/admin/class-kp-form-fields.php:505
 #. translators: [merchant-facing].
 msgid "Combine payment methods"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:496
+#: classes/admin/class-kp-form-fields.php:508
 #. translators: [merchant-facing].
 msgid ""
 "Display Klarna as a single payment method in the checkout. The customer can "
@@ -406,46 +406,46 @@ msgid ""
 "widget."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:502
-#: classes/admin/class-kp-form-fields.php:505
+#: classes/admin/class-kp-form-fields.php:514
+#: classes/admin/class-kp-form-fields.php:517
 #. translators: [merchant-facing].
 msgid "Checkout Flow"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:507
+#: classes/admin/class-kp-form-fields.php:519
 #. translators: [merchant-facing].
 msgid "Choose between Redirect or Pop-out checkout flow."
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:510
+#: classes/admin/class-kp-form-fields.php:522
 #. translators: [merchant-facing].
 msgid "Pop-out"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:512
+#: classes/admin/class-kp-form-fields.php:524
 #. translators: [merchant-facing].
 msgid "Redirect"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:522
-#: src/ExpressCheckout/Settings.php:300 src/SignInWithKlarna/Settings.php:311
+#: classes/admin/class-kp-form-fields.php:534
+#: src/ExpressCheckout/Settings.php:303 src/SignInWithKlarna/Settings.php:311
 #. translators: [merchant-facing].
 msgid "Preview"
 msgstr ""
 
-#: classes/admin/class-kp-form-fields.php:542
+#: classes/admin/class-kp-form-fields.php:554
 #. translators: [merchant-facing]. %s: country name.
 msgid "Credentials for %s:"
 msgstr ""
 
 #: classes/admin/class-kp-settings-page.php:78
-#: classes/class-wc-gateway-klarna-payments.php:80
+#: classes/class-wc-gateway-klarna-payments.php:81
 #. translators: [merchant-facing].
 msgid "Klarna for WooCommerce"
 msgstr ""
 
 #: classes/admin/class-kp-settings-page.php:80
-#: classes/class-wc-gateway-klarna-payments.php:82
+#: classes/class-wc-gateway-klarna-payments.php:83
 #. translators: [merchant-facing].
 msgid ""
 "Supercharge your business with one single plugin for increased sales and "
@@ -507,17 +507,17 @@ msgstr ""
 msgid "Authorization rejected by Klarna."
 msgstr ""
 
-#: classes/class-kp-api.php:271
+#: classes/class-kp-api.php:294
 #. translators: [merchant-facing].
 msgid "Missing shared secret."
 msgstr ""
 
-#: classes/class-kp-assets.php:251
+#: classes/class-kp-assets.php:252
 #. translators: [customer-facing].
 msgid "Please read and accept the terms and conditions to proceed with your order."
 msgstr ""
 
-#: classes/class-kp-assets.php:302
+#: classes/class-kp-assets.php:303
 #. translators: [merchant-facing].
 msgid "Select all"
 msgstr ""
@@ -585,7 +585,7 @@ msgid ""
 "payments via Klarna.com or in the %2$s"
 msgstr ""
 
-#: classes/class-kp-session.php:240
+#: classes/class-kp-session.php:325
 #. translators: [customer-facing].
 msgid "Order was not found"
 msgstr ""
@@ -603,7 +603,7 @@ msgid "A Client ID is invalid and was cleared."
 msgstr ""
 
 #: classes/class-kp-subscriptions.php:101
-#: classes/class-kp-subscriptions.php:281
+#: classes/class-kp-subscriptions.php:317
 #. translators: [merchant-facing]. Recurring token.
 #. translators: Recurring token.
 msgid "Recurring token created: %s"
@@ -617,63 +617,63 @@ msgid ""
 "the subscriber is charged."
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:155
+#: classes/class-kp-subscriptions.php:156
 #. translators: [merchant-facing]. Klarna order id.
 msgid "Subscription payment made with Klarna. Klarna order id: %s"
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:160
+#: classes/class-kp-subscriptions.php:164
 #. translators: [merchant-facing]. Error message.
 msgid "Subscription payment failed with Klarna. Reason: %1$s"
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:200
+#: classes/class-kp-subscriptions.php:236
 #. translators: [merchant-facing].
 msgid "Subscription cancelled with Klarna Payments."
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:204
+#: classes/class-kp-subscriptions.php:240
 #. translators: [merchant-facing]. Error message.
 msgid "Subscription cancellation failed with Klarna Payments. Reason: %1$s"
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:273
+#: classes/class-kp-subscriptions.php:309
 #. translators: [merchant-facing]. Error message.
 msgid "Failed to create recurring token. Reason: %s"
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:478
+#: classes/class-kp-subscriptions.php:514
 #. translators: [merchant-facing].
 msgid "Klarna recurring token"
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:167
+#: classes/class-wc-gateway-klarna-payments.php:168
 #. translators: [customer-facing].
 msgid "What is Klarna?"
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:222
+#: classes/class-wc-gateway-klarna-payments.php:223
 msgid ""
 "Could not load the enhanced settings page. Showing the standard settings "
 "instead."
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:462
+#: classes/class-wc-gateway-klarna-payments.php:440
 #. translators: [customer-facing].
 msgid "Failed to get required data from the Klarna session. Please try again."
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:524
+#: classes/class-wc-gateway-klarna-payments.php:498
 #. translators: [customer-facing].
 msgid "Failed to create a session with Klarna. Please try again."
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:552
+#: classes/class-wc-gateway-klarna-payments.php:521
 #. translators: [customer-facing].
 msgid "Failed to create a hosted payment page with Klarna. Please try again."
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:676
+#: classes/class-wc-gateway-klarna-payments.php:645
 #. translators: [customer-facing].
 msgid "Klarna did not accept the new order amount, the order has not been updated"
 msgstr ""
@@ -715,7 +715,7 @@ msgstr ""
 
 #: dependencies/krokedil/settings-page/src/Navigation.php:54
 #: dependencies/krokedil/settings-page/src/Support.php:30
-#: klarna-payments-for-woocommerce.php:384
+#: klarna-payments-for-woocommerce.php:449
 #. translators: [merchant-facing].
 msgid "Support"
 msgstr ""
@@ -854,38 +854,38 @@ msgstr ""
 msgid "Test Countries"
 msgstr ""
 
-#: includes/kp-functions.php:31
+#: includes/kp-functions.php:32
 #. translators: 1: Klarna API error code, 2: Klarna API error message.
 #. [merchant-facing].
 msgid "Klarna Payments API Error: %1$s %2$s"
 msgstr ""
 
-#: includes/kp-functions.php:662 klarna-payments-for-woocommerce.php:600
+#: includes/kp-functions.php:735 klarna-payments-for-woocommerce.php:665
 #. translators: [customer-facing].
 msgid "Pay with Klarna"
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:380
+#: klarna-payments-for-woocommerce.php:445
 #. translators: [merchant-facing].
 msgid "Settings"
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:382
+#: klarna-payments-for-woocommerce.php:447
 #. translators: [merchant-facing].
 msgid "Docs"
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:426
+#: klarna-payments-for-woocommerce.php:491
 #. translators: [merchant-facing].
 msgid "The WooCommerce plugin must be active for Klarna Payments to work."
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:445
+#: klarna-payments-for-woocommerce.php:510
 #. translators: [merchant-facing].
 msgid "Dismiss"
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:452
+#: klarna-payments-for-woocommerce.php:517
 #. translators: [merchant-facing]. URL to docs.
 msgid ""
 "It looks as if you don't have pretty permalinks enabled in WordPress. In "
@@ -893,15 +893,15 @@ msgid ""
 "setting needs to be enabled. <a href=\"%1$s\">Learn more</a>"
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:546
-#: klarna-payments-for-woocommerce.php:555
+#: klarna-payments-for-woocommerce.php:611
+#: klarna-payments-for-woocommerce.php:620
 msgid ""
 "Your installation of Klarna Payments is not complete. If you installed this "
 "plugin directly from Github please refer to the README.DEV.md file in the "
 "plugin."
 msgstr ""
 
-#: klarna-payments-for-woocommerce.php:590
+#: klarna-payments-for-woocommerce.php:655
 #. translators: [customer-facing].
 msgid "Pay with Klarna (free)"
 msgstr ""
@@ -938,134 +938,134 @@ msgstr ""
 msgid "Digital delivery"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:212
+#: src/ExpressCheckout/Settings.php:215
 msgid "Two step"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:216
+#: src/ExpressCheckout/Settings.php:219
 msgid "One step"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:223
+#: src/ExpressCheckout/Settings.php:226
 msgid ""
 "Offer a 5x faster check-out process that lowers the threshold for shoppers "
 "to complete a purchase."
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:235
+#: src/ExpressCheckout/Settings.php:238
 msgid "Enable Klarna Express Checkout"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:240
+#: src/ExpressCheckout/Settings.php:243
 msgid "Placements & button style"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:241
+#: src/ExpressCheckout/Settings.php:244
 msgid ""
 "Tailor the express checkout button to fit your brand by adjusting the "
 "button theme, shape and selecting placements."
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:244
+#: src/ExpressCheckout/Settings.php:247
 msgid "Theme"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:246
+#: src/ExpressCheckout/Settings.php:249
 msgid "Select the theme for the Klarna Express Checkout."
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:249 src/OnsiteMessaging/Settings.php:108
+#: src/ExpressCheckout/Settings.php:252 src/OnsiteMessaging/Settings.php:108
 #: src/OnsiteMessaging/Settings.php:147 src/OnsiteMessaging/Settings.php:235
 #: src/OnsiteMessaging/Settings.php:276 src/SignInWithKlarna/Settings.php:198
 msgid "Dark"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:250 src/OnsiteMessaging/Settings.php:234
+#: src/ExpressCheckout/Settings.php:253 src/OnsiteMessaging/Settings.php:234
 #: src/OnsiteMessaging/Settings.php:275 src/SignInWithKlarna/Settings.php:199
 msgid "Light"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:251 src/SignInWithKlarna/Settings.php:200
+#: src/ExpressCheckout/Settings.php:254 src/SignInWithKlarna/Settings.php:200
 msgid "Outlined"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:256
+#: src/ExpressCheckout/Settings.php:259
 msgid "Shape"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:258
+#: src/ExpressCheckout/Settings.php:261
 msgid "Select the shape for the Klarna Express Checkout."
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:261 src/SignInWithKlarna/Settings.php:211
+#: src/ExpressCheckout/Settings.php:264 src/SignInWithKlarna/Settings.php:211
 msgid "Rounded"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:262 src/SignInWithKlarna/Settings.php:212
+#: src/ExpressCheckout/Settings.php:265 src/SignInWithKlarna/Settings.php:212
 msgid "Rectangular"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:263 src/SignInWithKlarna/Settings.php:213
+#: src/ExpressCheckout/Settings.php:266 src/SignInWithKlarna/Settings.php:213
 msgid "Pill"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:268
+#: src/ExpressCheckout/Settings.php:271
 msgid "Placements"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:272
+#: src/ExpressCheckout/Settings.php:275
 msgid "All (recommended)"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:273
+#: src/ExpressCheckout/Settings.php:276
 msgid "Product pages"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:274
+#: src/ExpressCheckout/Settings.php:277
 msgid "Cart page"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:278
+#: src/ExpressCheckout/Settings.php:281
 msgid "Flow"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:279
+#: src/ExpressCheckout/Settings.php:282
 msgid "Select the checkout flow for Klarna Express Checkout."
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:288
+#: src/ExpressCheckout/Settings.php:291
 #. translators: %s is the webhook status badge HTML.
 msgid "Webhook %s"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:289
+#: src/ExpressCheckout/Settings.php:292
 msgid ""
 "For one step Express Checkout to function, Klarna needs to be able to send "
 "callbacks to your store. Enable the callbacks and configure a signing key "
 "to use for the authentication."
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:337
+#: src/ExpressCheckout/Settings.php:340
 msgid "Created"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:339
+#: src/ExpressCheckout/Settings.php:342
 msgid "Not Created"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:363
+#: src/ExpressCheckout/Settings.php:366
 msgid "Test Webhook"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:366
+#: src/ExpressCheckout/Settings.php:369
 msgid "Remove Webhook"
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:378
+#: src/ExpressCheckout/Settings.php:381
 msgid "Create the necessary webhook in Klarna for the Express Checkout."
 msgstr ""
 
-#: src/ExpressCheckout/Settings.php:380
+#: src/ExpressCheckout/Settings.php:383
 msgid "Create Webhook"
 msgstr ""
 
@@ -1460,7 +1460,7 @@ msgstr ""
 msgid "Return fee"
 msgstr ""
 
-#: src/OrderManagement/Request/Request.php:172
+#: src/OrderManagement/Request/Request.php:164
 #. translators: [merchant-facing].
 msgid "Invalid JSON response from the server."
 msgstr ""
@@ -1495,7 +1495,7 @@ msgstr ""
 msgid "Return fee: %1$s<br>%2$s"
 msgstr ""
 
-#: src/OrderManagement/SellersApp.php:142
+#: src/OrderManagement/SellersApp.php:143
 #. translators: [merchant-facing].
 msgid "Order address updated by Klarna Order management."
 msgstr ""
@@ -1630,7 +1630,7 @@ msgstr ""
 msgid " (original amount of %1$s - return fee of %2$s)"
 msgstr ""
 
-#: src/PluginFeatures.php:192 src/PluginFeatures.php:236
+#: src/PluginFeatures.php:230 src/PluginFeatures.php:280
 #. translators: [merchant-facing]. %s: The error message from the API request.
 msgid ""
 "There was an error when trying to get the feature availability from Klarna. "
