@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/klarna-payments-for-woocommerce\n"
-"POT-Creation-Date: 2026-08-25 08:37:49+00:00\n"
+"POT-Creation-Date: 2026-09-15 08:04:50+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -439,13 +439,13 @@ msgid "Credentials for %s:"
 msgstr ""
 
 #: classes/admin/class-kp-settings-page.php:78
-#: classes/class-wc-gateway-klarna-payments.php:81
+#: classes/class-wc-gateway-klarna-payments.php:79
 #. translators: [merchant-facing].
 msgid "Klarna for WooCommerce"
 msgstr ""
 
 #: classes/admin/class-kp-settings-page.php:80
-#: classes/class-wc-gateway-klarna-payments.php:83
+#: classes/class-wc-gateway-klarna-payments.php:81
 #. translators: [merchant-facing].
 msgid ""
 "Supercharge your business with one single plugin for increased sales and "
@@ -647,33 +647,33 @@ msgstr ""
 msgid "Klarna recurring token"
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:168
+#: classes/class-wc-gateway-klarna-payments.php:166
 #. translators: [customer-facing].
 msgid "What is Klarna?"
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:223
+#: classes/class-wc-gateway-klarna-payments.php:221
 msgid ""
 "Could not load the enhanced settings page. Showing the standard settings "
 "instead."
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:440
+#: classes/class-wc-gateway-klarna-payments.php:438
 #. translators: [customer-facing].
 msgid "Failed to get required data from the Klarna session. Please try again."
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:498
+#: classes/class-wc-gateway-klarna-payments.php:496
 #. translators: [customer-facing].
 msgid "Failed to create a session with Klarna. Please try again."
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:521
+#: classes/class-wc-gateway-klarna-payments.php:519
 #. translators: [customer-facing].
 msgid "Failed to create a hosted payment page with Klarna. Please try again."
 msgstr ""
 
-#: classes/class-wc-gateway-klarna-payments.php:645
+#: classes/class-wc-gateway-klarna-payments.php:643
 #. translators: [customer-facing].
 msgid "Klarna did not accept the new order amount, the order has not been updated"
 msgstr ""
@@ -1069,39 +1069,39 @@ msgstr ""
 msgid "Create Webhook"
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:126
+#: src/ExpressCheckout/WebhookSetup.php:130
 msgid "Could not send test webhook"
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:130
+#: src/ExpressCheckout/WebhookSetup.php:134
 msgid "Test webhook sent successfully."
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:151
+#: src/ExpressCheckout/WebhookSetup.php:155
 msgid "Could not remove webhook"
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:162
+#: src/ExpressCheckout/WebhookSetup.php:166
 msgid "Could not remove signing key"
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:169
+#: src/ExpressCheckout/WebhookSetup.php:173
 msgid "Webhook removed successfully."
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:182
+#: src/ExpressCheckout/WebhookSetup.php:186
 msgid "Could not create signing key"
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:209
+#: src/ExpressCheckout/WebhookSetup.php:213
 msgid "Could not create a signing key with Klarna for the webhook."
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:224
+#: src/ExpressCheckout/WebhookSetup.php:228
 msgid "Could not create webhook with Klarna"
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:229
+#: src/ExpressCheckout/WebhookSetup.php:233
 msgid "Webhook created successfully."
 msgstr ""
 
@@ -1630,7 +1630,7 @@ msgstr ""
 msgid " (original amount of %1$s - return fee of %2$s)"
 msgstr ""
 
-#: src/PluginFeatures.php:230 src/PluginFeatures.php:280
+#: src/PluginFeatures.php:216 src/PluginFeatures.php:267
 #. translators: [merchant-facing]. %s: The error message from the API request.
 msgid ""
 "There was an error when trying to get the feature availability from Klarna. "
