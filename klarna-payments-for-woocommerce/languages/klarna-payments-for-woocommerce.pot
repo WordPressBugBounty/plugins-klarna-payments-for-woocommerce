@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/klarna-payments-for-woocommerce\n"
-"POT-Creation-Date: 2026-09-15 08:04:50+00:00\n"
+"POT-Creation-Date: 2026-09-28 08:33:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -512,12 +512,12 @@ msgstr ""
 msgid "Missing shared secret."
 msgstr ""
 
-#: classes/class-kp-assets.php:252
+#: classes/class-kp-assets.php:250
 #. translators: [customer-facing].
 msgid "Please read and accept the terms and conditions to proceed with your order."
 msgstr ""
 
-#: classes/class-kp-assets.php:303
+#: classes/class-kp-assets.php:301
 #. translators: [merchant-facing].
 msgid "Select all"
 msgstr ""
@@ -532,7 +532,7 @@ msgstr ""
 msgid "The Klarna order was successfully completed by the authorization callback"
 msgstr ""
 
-#: classes/class-kp-callbacks.php:106 classes/class-kp-callbacks.php:187
+#: classes/class-kp-callbacks.php:106 classes/class-kp-callbacks.php:192
 #. translators: [merchant-facing].
 msgid "The Klarna order is pending approval by Klarna"
 msgstr ""
@@ -542,24 +542,24 @@ msgstr ""
 msgid "The Klarna order was rejected during the authorization by Klarna"
 msgstr ""
 
-#: classes/class-kp-callbacks.php:152
+#: classes/class-kp-callbacks.php:157
 #. translators: [merchant-facing].
 msgid ""
 "Failed to create a recurring token when returning from the hosted payment "
 "page."
 msgstr ""
 
-#: classes/class-kp-callbacks.php:172 classes/class-kp-callbacks.php:198
+#: classes/class-kp-callbacks.php:177 classes/class-kp-callbacks.php:203
 #. translators: [merchant-facing].
 msgid "Failed to complete the order when returning from the hosted payment page."
 msgstr ""
 
-#: classes/class-kp-callbacks.php:181
+#: classes/class-kp-callbacks.php:186
 #. translators: [merchant-facing].
 msgid "The Klarna order was successfully completed"
 msgstr ""
 
-#: classes/class-kp-callbacks.php:193
+#: classes/class-kp-callbacks.php:198
 #. translators: [merchant-facing].
 msgid "The Klarna order was rejected by Klarna"
 msgstr ""
@@ -590,7 +590,7 @@ msgstr ""
 msgid "Order was not found"
 msgstr ""
 
-#: classes/class-kp-settings-saved.php:110
+#: classes/class-kp-settings-saved.php:112
 #. translators: 1: environment (production or test), 2: market code (country
 #. code)
 msgid ""
@@ -598,18 +598,18 @@ msgid ""
 "cleared."
 msgstr ""
 
-#: classes/class-kp-settings-saved.php:116
+#: classes/class-kp-settings-saved.php:118
 msgid "A Client ID is invalid and was cleared."
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:101
-#: classes/class-kp-subscriptions.php:317
+#: classes/class-kp-subscriptions.php:105
+#: classes/class-kp-subscriptions.php:321
 #. translators: [merchant-facing]. Recurring token.
 #. translators: Recurring token.
 msgid "Recurring token created: %s"
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:108
+#: classes/class-kp-subscriptions.php:112
 #. translators: [merchant-facing].
 msgid ""
 "The order contains a free or trial subscription, and no Klarna order is "
@@ -617,32 +617,39 @@ msgid ""
 "the subscriber is charged."
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:156
+#: classes/class-kp-subscriptions.php:160
 #. translators: [merchant-facing]. Klarna order id.
 msgid "Subscription payment made with Klarna. Klarna order id: %s"
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:164
+#: classes/class-kp-subscriptions.php:168
 #. translators: [merchant-facing]. Error message.
 msgid "Subscription payment failed with Klarna. Reason: %1$s"
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:236
+#: classes/class-kp-subscriptions.php:240
 #. translators: [merchant-facing].
 msgid "Subscription cancelled with Klarna Payments."
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:240
+#: classes/class-kp-subscriptions.php:244
 #. translators: [merchant-facing]. Error message.
 msgid "Subscription cancellation failed with Klarna Payments. Reason: %1$s"
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:309
+#: classes/class-kp-subscriptions.php:313
 #. translators: [merchant-facing]. Error message.
 msgid "Failed to create recurring token. Reason: %s"
 msgstr ""
 
-#: classes/class-kp-subscriptions.php:514
+#: classes/class-kp-subscriptions.php:448
+#. translators: 1: The payment gateway title. 2: The order number.
+msgid ""
+"Payment method set to %1$s. Automatic renewals enabled since a recurring "
+"token was created for order %2$s."
+msgstr ""
+
+#: classes/class-kp-subscriptions.php:581
 #. translators: [merchant-facing].
 msgid "Klarna recurring token"
 msgstr ""
@@ -854,13 +861,13 @@ msgstr ""
 msgid "Test Countries"
 msgstr ""
 
-#: includes/kp-functions.php:32
+#: includes/kp-functions.php:34
 #. translators: 1: Klarna API error code, 2: Klarna API error message.
 #. [merchant-facing].
 msgid "Klarna Payments API Error: %1$s %2$s"
 msgstr ""
 
-#: includes/kp-functions.php:735 klarna-payments-for-woocommerce.php:665
+#: includes/kp-functions.php:738 klarna-payments-for-woocommerce.php:665
 #. translators: [customer-facing].
 msgid "Pay with Klarna"
 msgstr ""
@@ -923,18 +930,17 @@ msgid "Mismatch in payment request ID for order ID: %s"
 msgstr ""
 
 #: src/ExpressCheckout/Api/Notifications/PaymentStateExpired.php:43
-#: src/ExpressCheckout/KECOneStepIntegration.php:99
+#: src/ExpressCheckout/KECOneStepIntegration.php:101
 #. translators: [merchant-facing].
 msgid "Order cancelled due to expired payment request."
 msgstr ""
 
-#: src/ExpressCheckout/OneStepCheckout.php:53
-#: src/ExpressCheckout/OneStepCheckout.php:62
+#: src/ExpressCheckout/OneStepCheckout.php:142
 msgid "Your order could not be processed"
 msgstr ""
 
-#: src/ExpressCheckout/OneStepCheckout.php:200
-#: src/ExpressCheckout/OneStepCheckout.php:201
+#: src/ExpressCheckout/OneStepCheckout.php:434
+#: src/ExpressCheckout/OneStepCheckout.php:435
 msgid "Digital delivery"
 msgstr ""
 
@@ -1340,23 +1346,23 @@ msgstr ""
 msgid "Product preview"
 msgstr ""
 
-#: src/OnsiteMessaging/Widget.php:24
+#: src/OnsiteMessaging/Widget.php:26
 msgid "Klarna On-Site Messaging"
 msgstr ""
 
-#: src/OnsiteMessaging/Widget.php:25
+#: src/OnsiteMessaging/Widget.php:27
 msgid "Displays a Klarna banner in your store."
 msgstr ""
 
-#: src/OnsiteMessaging/Widget.php:82
+#: src/OnsiteMessaging/Widget.php:84
 msgid "Title:"
 msgstr ""
 
-#: src/OnsiteMessaging/Widget.php:86
+#: src/OnsiteMessaging/Widget.php:88
 msgid "Placement Key"
 msgstr ""
 
-#: src/OnsiteMessaging/Widget.php:92
+#: src/OnsiteMessaging/Widget.php:94
 msgid "Placement Theme:"
 msgstr ""
 
@@ -1414,12 +1420,12 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:369
+#: src/OrderManagement/MetaBox.php:356
 #. translators: [merchant-facing].
 msgid "Order management"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:371
+#: src/OrderManagement/MetaBox.php:358
 #. translators: [merchant-facing].
 msgid ""
 "Disable this to turn off the automatic synchronization with the Klarna "
@@ -1427,30 +1433,30 @@ msgid ""
 "done manually."
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:483 src/OrderManagement/MetaBox.php:498
+#: src/OrderManagement/MetaBox.php:470 src/OrderManagement/MetaBox.php:485
 #. translators: [merchant-facing].
 msgid "Capture order"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:498
+#: src/OrderManagement/MetaBox.php:485
 msgid "Activates the order with Klarna."
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:513 src/OrderManagement/MetaBox.php:528
+#: src/OrderManagement/MetaBox.php:500 src/OrderManagement/MetaBox.php:515
 #. translators: [merchant-facing].
 msgid "Cancel order"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:528
+#: src/OrderManagement/MetaBox.php:515
 msgid "Cancels the order with Klarna."
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:543 src/OrderManagement/MetaBox.php:558
+#: src/OrderManagement/MetaBox.php:530 src/OrderManagement/MetaBox.php:545
 #. translators: [merchant-facing].
 msgid "Get customer"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:558
+#: src/OrderManagement/MetaBox.php:545
 msgid "Gets the customer data from Klarna and saves it to the WooCommerce order."
 msgstr ""
 
@@ -1630,7 +1636,7 @@ msgstr ""
 msgid " (original amount of %1$s - return fee of %2$s)"
 msgstr ""
 
-#: src/PluginFeatures.php:216 src/PluginFeatures.php:267
+#: src/PluginFeatures.php:218 src/PluginFeatures.php:269
 #. translators: [merchant-facing]. %s: The error message from the API request.
 msgid ""
 "There was an error when trying to get the feature availability from Klarna. "
@@ -1763,13 +1769,17 @@ msgstr ""
 msgid "This account must be signed in with your username and password."
 msgstr ""
 
-#: classes/class-kp-settings-saved.php:100
-#: classes/class-kp-settings-saved.php:103
+#: templates/kec-one-step-wait.php:16
+msgid "Please wait while we confirm your payment with Klarna."
+msgstr ""
+
+#: classes/class-kp-settings-saved.php:102
+#: classes/class-kp-settings-saved.php:105
 msgctxt "environment"
 msgid "production"
 msgstr ""
 
-#: classes/class-kp-settings-saved.php:103
+#: classes/class-kp-settings-saved.php:105
 msgctxt "environment"
 msgid "test"
 msgstr ""
