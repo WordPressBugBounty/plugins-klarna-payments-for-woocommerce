@@ -19,7 +19,7 @@ class Subscription
      */
     public static function is_subscription_item($cart_item)
     {
-        if (\class_exists('KrokedilKlarnaPaymentsDeps\\WC_Subscriptions_Product') && \KrokedilKlarnaPaymentsDeps\WC_Subscriptions_Product::is_subscription($cart_item['data'])) {
+        if (\class_exists('WC_Subscriptions_Product') && \WC_Subscriptions_Product::is_subscription($cart_item['data'])) {
             return \true;
         }
         if (\method_exists('WCS_ATT_Cart', 'get_subscription_scheme') && \false !== \KrokedilKlarnaPaymentsDeps\WCS_ATT_Cart::get_subscription_scheme($cart_item)) {

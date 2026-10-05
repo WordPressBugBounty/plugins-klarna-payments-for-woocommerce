@@ -8,6 +8,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+## [1.3.7] - 2026-09-28
+### Fixed
+
+* Fixed an "Undefined array key" PHP warning that could occur with certain settings configurations.
+
+## [1.3.6] - 2026-08-14
+### Fixed
+
+* Restored the `Shipping` settings page rendering. The refactor to the `WcSettingsPage` base class dropped the shipping-specific `output_page_content()`, which made shipping pages render through WooCommerce's generic field display instead of the shipping method's own `generate_settings_html()`, so saved values were not populated.
+
+### Changed
+
+* Extended the robust settings output error handling (output buffering, `try/catch`, `fallback_content` and `error_notice` support) to the `WcSettingsPage` base class, so gateway and shipping settings pages also degrade gracefully when a renderer throws. When no `fallback_content` is provided, the form fields are re-rendered using WooCommerce's default field display.
+
+## [1.3.5] - 2026-07-13
+### Fixed
+
+* Fixed a PHP 8.1+ deprecation warning (`stripos(): Passing null to parameter #1`) caused by passing `null` to `wp_add_inline_script` when the HelpScout beacon is disabled.
+
 ## [1.3.4] - 2026-04-23
 ### Fixed
 
@@ -46,7 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 * Added links to plugin and additional resources.
-* Allowed for customizing the partner logo. 
+* Allowed for customizing the partner logo.
 
 ### Fixed
 

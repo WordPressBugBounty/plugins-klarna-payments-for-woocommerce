@@ -14,8 +14,8 @@ jQuery(function ($) {
          * Moves the submit button to a new placement or restores it.
          */
         moveSubmitButton: function () {
-            let $submitBtn = $('.krokedil_settings__gateway_page p.submit');
-            let $newSubmitPlacement = $('.krokedil_settings__gateway_page.styled');
+            let $submitBtn = $('.krokedil_settings_page p.submit');
+            let $newSubmitPlacement = $('.krokedil_settings_page.styled');
 
             if(!krokedil_styled_settings.originalSubmitPlacement) {
                 krokedil_styled_settings.originalSubmitPlacement = $submitBtn.parent();
@@ -151,11 +151,29 @@ jQuery(function ($) {
             $('.krokedil_ppu_setting__title').next('p').toggle(!upsellPluginIsActive);
         },
 
+        styleCustomSettings: function () {
+            // Move custom buttons that should be aligned with the previous row.
+            $('.krokedil_settings__section_content .krokedil_button:not(.no-align)').each(function () {
+                const $currentTr = $(this).closest('tr');
+                $currentTr.prev('tr').append(this);
+
+                const alignmentClass = (($(this).attr('class') || '').split(' ').find(c => c.startsWith('align-')));
+                if (alignmentClass) {
+                    $('.' + alignmentClass.replace('align-', '')).after(this);
+                }
+
+                const messageClass = alignmentClass ? alignmentClass.replace('align-', 'message-') : '';
+                $(this).after('<div class="krokedil_button_message ' + messageClass + '"></div>');
+
+                $currentTr.remove();
+            });
+        },
+
         /**
          * Initializes the events for this file.
          */
         init: function () {
-            if ( ! $('.krokedil_settings__gateway_page.styled').length ) {
+            if ( ! $('.krokedil_settings_page.styled').length ) {
                 return;
             }
 
@@ -165,7 +183,8 @@ jQuery(function ($) {
                 .ready(this.smoothScroll)
                 .ready(this.openSettingsSection)
                 .ready(this.conditionalSettings)
-                .ready(this.upsellSettings);
+                .ready(this.upsellSettings)
+                .ready(this.styleCustomSettings);
 
             $(window).on('resize', this.moveSubmitButton);
             

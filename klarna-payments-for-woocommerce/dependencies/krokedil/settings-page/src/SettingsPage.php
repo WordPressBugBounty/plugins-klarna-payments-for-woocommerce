@@ -19,7 +19,7 @@ class SettingsPage
     /**
      * Array of pages to extend.
      *
-     * @var array $pages
+     * @var array<string, array<string, mixed>> $pages
      */
     protected $pages = array();
     /**
@@ -36,7 +36,7 @@ class SettingsPage
      *
      * @return void
      */
-    public function init()
+    public function init() : void
     {
         $this->load_textdomain();
         $this->register_scripts();
@@ -46,7 +46,7 @@ class SettingsPage
      *
      * @return void
      */
-    public function load_textdomain()
+    public function load_textdomain() : void
     {
         $filename = \dirname(__DIR__) . '/languages/krokedil-settings-' . get_locale() . '.mo';
         if (\file_exists($filename)) {
@@ -58,13 +58,13 @@ class SettingsPage
      *
      * @return void
      */
-    public function register_scripts()
+    public function register_scripts() : void
     {
-        wp_register_style('krokedil-settings-page', plugin_dir_url(__FILE__) . '../assets/css/settings.css', array(), \filemtime(__DIR__ . '/../assets/css/settings.css'));
-        wp_register_style('krokedil-support-page', plugin_dir_url(__FILE__) . '../assets/css/support.css', array('krokedil-settings-page'), \filemtime(__DIR__ . '/../assets/css/support.css'));
-        wp_register_style('krokedil-addons-page', plugin_dir_url(__FILE__) . '../assets/css/addons.css', array('krokedil-settings-page'), \filemtime(__DIR__ . '/../assets/css/addons.css'));
-        wp_register_script('krokedil-support-page', plugin_dir_url(__FILE__) . '../assets/js/support.js', array('jquery'), \filemtime(__DIR__ . '/../assets/js/support.js'), \false);
-        wp_register_script('krokedil-settings-page', plugin_dir_url(__FILE__) . '../assets/js/styled-settings.js', array('jquery'), \filemtime(__DIR__ . '/../assets/js/styled-settings.js'), \false);
+        wp_register_style('krokedil-settings-page', plugin_dir_url(__FILE__) . '../assets/css/settings.css', array(), (string) \filemtime(__DIR__ . '/../assets/css/settings.css'));
+        wp_register_style('krokedil-support-page', plugin_dir_url(__FILE__) . '../assets/css/support.css', array('krokedil-settings-page'), (string) \filemtime(__DIR__ . '/../assets/css/support.css'));
+        wp_register_style('krokedil-addons-page', plugin_dir_url(__FILE__) . '../assets/css/addons.css', array('krokedil-settings-page'), (string) \filemtime(__DIR__ . '/../assets/css/addons.css'));
+        wp_register_script('krokedil-support-page', plugin_dir_url(__FILE__) . '../assets/js/support.js', array('jquery'), (string) \filemtime(__DIR__ . '/../assets/js/support.js'), \false);
+        wp_register_script('krokedil-settings-page', plugin_dir_url(__FILE__) . '../assets/js/styled-settings.js', array('jquery'), (string) \filemtime(__DIR__ . '/../assets/js/styled-settings.js'), \false);
     }
     /**
      * Set the plugin name.
@@ -73,7 +73,7 @@ class SettingsPage
      *
      * @return self
      */
-    public function set_plugin_name($plugin_name)
+    public function set_plugin_name(?string $plugin_name) : self
     {
         $this->plugin_name = $plugin_name;
         return $this;
@@ -81,17 +81,17 @@ class SettingsPage
     /**
      * Register a page for extension.
      *
-     * @param string                   $id   ID of the page.
-     * @param array                    $args Arguments for the page.
-     * @param \WC_Payment_Gateway|null $gateway The gateway object.
+     * @param string               $id    ID of the page.
+     * @param array<string, mixed> $args  Arguments for the page.
+     * @param object|null          $owner The object the page belongs to, e.g. a WC_Payment_Gateway, WC_Shipping_Method, or a plugin's own settings class.
      *
      * @return self
      */
-    public function register_page($id, $args, $gateway = null)
+    public function register_page(string $id, array $args, $owner = null) : self
     {
         $default_args = array('page' => '', 'tab' => '', 'section' => '', 'extra_subsections' => array(), 'support' => null, 'addons' => null, 'general_content' => null, 'fallback_content' => null, 'error_notice' => '');
         $args = wp_parse_args($args, $default_args);
-        $this->pages[$id] = array('navigation' => new Navigation($args), 'support' => $args['support'] ? new Support($args['support'], $args['sidebar'], $gateway) : null, 'addons' => $args['addons'] ? new Addons($args['addons'], $args['sidebar'], $gateway) : null, 'args' => $args);
+        $this->pages[$id] = array('navigation' => new Navigation($args), 'support' => $args['support'] ? new Support($args['support'], $args['sidebar'], $owner) : null, 'addons' => $args['addons'] ? new Addons($args['addons'], $args['sidebar'], $owner) : null, 'args' => $args);
         return $this;
     }
     /**
@@ -99,9 +99,10 @@ class SettingsPage
      *
      * @param string $id ID of the page.
      *
+     * @throws \InvalidArgumentException If the content for the default subsection is not a string or callable.
      * @return self
      */
-    public function output($id)
+    public function output(string $id) : self
     {
         // Get the registered page.
         if (!isset($this->pages[$id])) {
@@ -183,7 +184,7 @@ class SettingsPage
      *
      * @return Navigation|null
      */
-    public function navigation($id)
+    public function navigation(string $id) : ?Navigation
     {
         if (!isset($this->pages[$id])) {
             return null;
@@ -197,7 +198,7 @@ class SettingsPage
      *
      * @return Support|null
      */
-    public function support($id)
+    public function support(string $id) : ?Support
     {
         if (!isset($this->pages[$id])) {
             return null;
@@ -211,7 +212,7 @@ class SettingsPage
      *
      * @return Addons|null
      */
-    public function addons($id)
+    public function addons(string $id) : ?Addons
     {
         if (!isset($this->pages[$id])) {
             return null;

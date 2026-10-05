@@ -15,10 +15,10 @@ trait Singleton
      *
      * @return self
      */
-    public static function get_instance()
+    public static function get_instance() : self
     {
         if (null === static::$instance) {
-            static::$instance = new static();
+            static::$instance = new self();
         }
         return static::$instance;
     }

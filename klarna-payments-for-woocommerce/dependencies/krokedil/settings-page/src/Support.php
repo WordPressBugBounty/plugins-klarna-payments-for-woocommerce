@@ -13,22 +13,28 @@ class Support
     /**
      * The Support for the page.
      *
-     * @var array $support
+     * @var array<string, mixed> $support
      */
     protected $support = array();
     /**
+     * The object the page belongs to.
+     *
+     * @var object|null
+     */
+    protected $owner = null;
+    /**
      * Class constructor.
      *
-     * @param array                    $support Support for the page.
-     * @param array                    $sidebar Sidebar content.
-     * @param \WC_Payment_Gateway|null $gateway The gateway object.
+     * @param array<string, mixed> $support Support for the page.
+     * @param array<string, mixed> $sidebar Sidebar content.
+     * @param object|null          $owner   The object the page belongs to, e.g. a WC_Payment_Gateway, WC_Shipping_Method, or a plugin's own settings class.
      *
      * @return void
      */
-    public function __construct($support, $sidebar, $gateway = null)
+    public function __construct(array $support, array $sidebar, $owner = null)
     {
         $this->title = __('Support', 'krokedil-settings');
-        $this->gateway = $gateway;
+        $this->owner = $owner;
         $this->support = $support;
         $this->sidebar = $sidebar;
     }
@@ -36,12 +42,12 @@ class Support
      * Return the Helpscout beacon script.
      *
      * @param string $use_helpscout Whether to include the Helpscout beacon.
-     * @return string|null
+     * @return string
      */
-    public static function hs_beacon_script($use_helpscout = 'no')
+    public static function hs_beacon_script(string $use_helpscout = 'no') : string
     {
         if ('yes' !== $use_helpscout) {
-            return;
+            return '';
         }
         return '!function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});';
     }
@@ -50,7 +56,7 @@ class Support
      *
      * @return void
      */
-    public function enqueue_scripts()
+    public function enqueue_scripts() : void
     {
         // Load CSS.
         wp_enqueue_style('krokedil-support-page');
@@ -67,8 +73,11 @@ class Support
         $beacon_id = '9c22f83e-3611-42aa-a148-1ca06de53566';
         // Localize the support scrip.
         wp_localize_script('krokedil-support-page', 'krokedil_support_params', array('systemReport' => $system_report, 'beaconId' => $beacon_id));
-        // Load JS.
-        wp_add_inline_script('krokedil-support-page', self::hs_beacon_script($this->support['use_helpscout'] ?? 'yes'), 'before');
+        // Load JS. Only add the inline script if there is one, since wp_add_inline_script does not accept empty data.
+        $beacon_script = self::hs_beacon_script($this->support['use_helpscout'] ?? 'yes');
+        if (!empty($beacon_script)) {
+            wp_add_inline_script('krokedil-support-page', $beacon_script, 'before');
+        }
         wp_enqueue_script('krokedil-support-page');
     }
     /**
@@ -76,7 +85,7 @@ class Support
      *
      * @return void
      */
-    public function output_page_content()
+    public function output_page_content() : void
     {
         global $hide_save_button;
         $hide_save_button = \true;

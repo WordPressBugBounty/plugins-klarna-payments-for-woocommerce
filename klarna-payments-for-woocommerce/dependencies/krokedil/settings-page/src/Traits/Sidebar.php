@@ -7,7 +7,7 @@ trait Sidebar
     /**
      * The sidebar content.
      *
-     * @var array $sidebar
+     * @var array<string, mixed> $sidebar
      */
     protected $sidebar = array();
     /**
@@ -21,7 +21,7 @@ trait Sidebar
      *
      * @return void
      */
-    public function output_developed_by()
+    public function output_developed_by() : void
     {
         $default_text = 'Developed by:';
         $developed_by = $this->sidebar['developed_by'] ?? $default_text;
@@ -74,7 +74,7 @@ trait Sidebar
      *
      * @return void
      */
-    public function output_sidebar()
+    public function output_sidebar() : void
     {
         $plugin_resources = $this->sidebar['plugin_resources']['links'] ?? array();
         $additional_resources = $this->sidebar['additional_resources']['links'] ?? array();

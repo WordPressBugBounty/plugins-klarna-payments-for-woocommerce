@@ -19,12 +19,12 @@ class Page
     /**
      * Class constructor.
      *
-     * @param string $content The content for the page.
-     * @param array  $sidebar Sidebar content.
+     * @param string               $content The content for the page.
+     * @param array<string, mixed> $sidebar Sidebar content.
      *
      * @return void
      */
-    public function __construct($content, $sidebar)
+    public function __construct(string $content, array $sidebar)
     {
         $this->content = $content;
         $this->sidebar = $sidebar;
@@ -34,7 +34,7 @@ class Page
      *
      * @return void
      */
-    public function output()
+    public function output() : void
     {
         wp_enqueue_style('krokedil-settings-page');
         ?>
@@ -55,7 +55,7 @@ class Page
      *
      * @return void
      */
-    public function output_page_content()
+    public function output_page_content() : void
     {
         echo $this->content;
         // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

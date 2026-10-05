@@ -69,7 +69,7 @@ class Cart extends OrderData
         if ($this->cart->needs_shipping() && $this->cart->show_shipping()) {
             $chosen_shipping_methods = WC()->session->get('chosen_shipping_methods');
             // If the cart contain only free trial, we'll ignore the shipping methods. The shipping method will still be included in the subscription renewal.
-            if (\class_exists('KrokedilKlarnaPaymentsDeps\\WC_Subscriptions_Cart') && \KrokedilKlarnaPaymentsDeps\WC_Subscriptions_Cart::all_cart_items_have_free_trial()) {
+            if (\class_exists('WC_Subscriptions_Cart') && \WC_Subscriptions_Cart::all_cart_items_have_free_trial()) {
                 // When a renewal fails for free trial subscription, it will need payment. Only on the initial subscription is payment not needed, and we must therefore not charge for shipping.
                 if (!WC()->cart->needs_payment()) {
                     return;
@@ -85,7 +85,7 @@ class Cart extends OrderData
             $packages = WC()->shipping->get_packages();
             foreach ($packages as $index => $package) {
                 foreach ($package['contents'] as $cart_item_key => $cart_item) {
-                    if (\class_exists('KrokedilKlarnaPaymentsDeps\\WC_Subscriptions_Product') && \KrokedilKlarnaPaymentsDeps\WC_Subscriptions_Product::get_trial_length($cart_item['data']) > 0) {
+                    if (\class_exists('WC_Subscriptions_Product') && \WC_Subscriptions_Product::get_trial_length($cart_item['data']) > 0) {
                         unset($packages[$index]['contents'][$cart_item_key]);
                     }
                 }
@@ -99,7 +99,7 @@ class Cart extends OrderData
             }
             foreach ($shipping_ids as $key => $shipping_id) {
                 // Skip shipping lines for free trials.
-                if (\class_exists('KrokedilKlarnaPaymentsDeps\\WC_Subscriptions_Cart') && \KrokedilKlarnaPaymentsDeps\WC_Subscriptions_Cart::cart_contains_subscription()) {
+                if (\class_exists('WC_Subscriptions_Cart') && \WC_Subscriptions_Cart::cart_contains_subscription()) {
                     $pattern = '/_after_a_\\d+_\\w+_trial/';
                     if (\preg_match($pattern, $key)) {
                         continue;

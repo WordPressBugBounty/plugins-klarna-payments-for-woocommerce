@@ -13,32 +13,38 @@ class Addons
     /**
      * The addons for the page.
      *
-     * @var array $addons
+     * @var array<string, mixed> $addons
      */
     protected $addons = array();
     /**
      * Installed plugins on the site to check if the addons are installed.
      *
-     * @var array $installed_plugins
+     * @var string[] $installed_plugins
      */
     protected $installed_plugins = array();
     /**
      * List of active plugins on the site to check if the addons are active.
      *
-     * @var array $active_plugins
+     * @var string[] $active_plugins
      */
     protected $active_plugins = array();
     /**
+     * The object the page belongs to.
+     *
+     * @var object|null
+     */
+    protected $owner;
+    /**
      * Class constructor.
      *
-     * @param array                    $addons Addons for the page.
-     * @param array                    $sidebar Sidebar content.
-     * @param \WC_Payment_Gateway|null $gateway The gateway object.
+     * @param array<string, mixed> $addons  Addons for the page.
+     * @param array<string, mixed> $sidebar Sidebar content.
+     * @param object|null          $owner   The object the page belongs to, e.g. a WC_Payment_Gateway, WC_Shipping_Method, or a plugin's own settings class.
      * @return void
      */
-    public function __construct($addons, $sidebar, $gateway = null)
+    public function __construct(array $addons, array $sidebar, $owner = null)
     {
-        $this->gateway = $gateway;
+        $this->owner = $owner;
         $this->title = __('Addons', 'krokedil-settings');
         $this->addons = $addons;
         $this->sidebar = $sidebar;
@@ -48,10 +54,11 @@ class Addons
     /**
      * Parse the list of installed plugins and store the slug only.
      *
-     * @return array
+     * @return string[]
      */
-    private static function get_installed_plugins()
+    private static function get_installed_plugins() : array
     {
+        $installed_plugins = array();
         $plugins = get_plugins();
         foreach ($plugins as $plugin => $data) {
             $slug = \explode('/', $plugin);
@@ -63,9 +70,9 @@ class Addons
     /**
      * Parse the list of active plugins and get the slug only.
      *
-     * @return array
+     * @return string[]
      */
-    private static function get_active_plugins()
+    private static function get_active_plugins() : array
     {
         $active_plugins = get_option('active_plugins');
         foreach ($active_plugins as $plugin) {
@@ -82,7 +89,7 @@ class Addons
      *
      * @return bool
      */
-    private function is_plugin_installed($slug)
+    private function is_plugin_installed(string $slug) : bool
     {
         return \in_array($slug, $this->installed_plugins, \true);
     }
@@ -93,7 +100,7 @@ class Addons
      *
      * @return bool
      */
-    private function is_plugin_active($slug)
+    private function is_plugin_active(string $slug) : bool
     {
         return \in_array($slug, $this->active_plugins, \true);
     }
@@ -102,7 +109,7 @@ class Addons
      *
      * @return void
      */
-    public function output_page_content()
+    public function output_page_content() : void
     {
         global $hide_save_button;
         $hide_save_button = \true;
@@ -111,47 +118,59 @@ class Addons
         wp_enqueue_script('plugin-install');
         add_thickbox();
         // Required for the plugin installer to work.
-        $addons = $this->addons['items'];
-        $content = $this->addons['content'];
+        $addons = $this->addons['items'] ?? array();
+        $content = $this->addons['content'] ?? array();
         ?>
 		<div class="krokedil_addons">
-		<div class="krokedil_addons__info">
-				<?php 
-        foreach ($content as $item) {
+			<?php 
+        if (!empty($content)) {
             ?>
+			<div class="krokedil_addons__info">
+				<?php 
+            foreach ($content as $item) {
+                ?>
 					<?php 
-            echo wp_kses_post(self::print_content($item));
-            ?>
+                echo wp_kses_post(self::print_content($item));
+                ?>
 				<?php 
+            }
+            ?>
+			</div>
+			<?php 
         }
         ?>
-			</div>
 
 			<?php 
         // translators: %s is the plugin name.
         ?>
+			<?php 
+        if (!empty($addons)) {
+            ?>
 			<div class='krokedil_addons__cards'>
 				<?php 
-        foreach ($addons as $addon) {
-            ?>
+            foreach ($addons as $addon) {
+                ?>
 					<?php 
-            $this->print_addon_card($addon);
-            ?>
+                $this->print_addon_card($addon);
+                ?>
 				<?php 
+            }
+            ?>
+			</div>
+			<?php 
         }
         ?>
-			</div>
 		</div>
 		<?php 
     }
     /**
      * Print the output for a single addon card.
      *
-     * @param array $addon Addon data.
+     * @param array<string, mixed> $addon Addon data.
      *
      * @return void
      */
-    public function print_addon_card($addon)
+    public function print_addon_card(array $addon) : void
     {
         $title = $addon['title'];
         $read_more = $addon['links']['read_more'] ?? array();
@@ -189,11 +208,11 @@ class Addons
     /**
      * Print the action buttons/links for the addon card.
      *
-     * @param array $addon Addon data.
+     * @param array<string, mixed> $addon Addon data.
      *
      * @return void
      */
-    public function print_addon_actions($addon)
+    public function print_addon_actions(array $addon) : void
     {
         $buy_now = $addon['links']['buy_now'] ?? array();
         $price = $addon['price'] ?? array();
@@ -225,14 +244,14 @@ class Addons
     /**
      * Get the action button for the plugin based on the status.
      *
-     * @param array  $link The link resource.
-     * @param string $status The status of the plugin.
-     * @param string $source The plugin source.
-     * @param string $slug The plugin slug.
+     * @param array<string, mixed> $link The link resource.
+     * @param string               $status The status of the plugin.
+     * @param string               $source The plugin source.
+     * @param string               $slug The plugin slug.
      *
      * @return void
      */
-    protected static function get_action_button($link, $status, $source, $slug)
+    protected static function get_action_button(array $link, string $status, string $source, string $slug) : void
     {
         $plugin_page_url = add_query_arg('s', $slug, home_url('/wp-admin/plugins.php'));
         $text = $link['text'] ?? '';
