@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc3911f91ac7a4070427b96bb312df1e3
+class ComposerStaticInit82df93fcb7d0af6c2c95e9a438100386
 {
     public static $prefixLengthsPsr4 = array (
         'K' =>
@@ -87,16 +87,19 @@ class ComposerStaticInitc3911f91ac7a4070427b96bb312df1e3
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\StoreApi\\StoreApiLineItem' => __DIR__ . '/..' . '/krokedil/woocommerce/src/StoreApi/StoreApiLineItem.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\StoreApi\\StoreApiLineShipping' => __DIR__ . '/..' . '/krokedil/woocommerce/src/StoreApi/StoreApiLineShipping.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Subscription' => __DIR__ . '/..' . '/krokedil/woocommerce/src/Subscription.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\FieldMasker' => __DIR__ . '/..' . '/krokedil/wp-api/src/FieldMasker.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\KeyMasker' => __DIR__ . '/..' . '/krokedil/wp-api/src/KeyMasker.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\Logger' => __DIR__ . '/..' . '/krokedil/wp-api/src/Logger.php',
+        'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\Masking' => __DIR__ . '/..' . '/krokedil/wp-api/src/Masking.php',
         'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\Request' => __DIR__ . '/..' . '/krokedil/wp-api/src/Request.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc3911f91ac7a4070427b96bb312df1e3::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc3911f91ac7a4070427b96bb312df1e3::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitc3911f91ac7a4070427b96bb312df1e3::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit82df93fcb7d0af6c2c95e9a438100386::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit82df93fcb7d0af6c2c95e9a438100386::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit82df93fcb7d0af6c2c95e9a438100386::$classMap;
 
         }, null, ClassLoader::class);
     }

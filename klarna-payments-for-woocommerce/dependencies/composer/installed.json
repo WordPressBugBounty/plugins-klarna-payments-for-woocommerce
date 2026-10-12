@@ -198,31 +198,51 @@
         },
         {
             "name": "krokedil\/wp-api",
-            "version": "1.1.1",
-            "version_normalized": "1.1.1.0",
+            "version": "1.2.0",
+            "version_normalized": "1.2.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/krokedil\/wp-api.git",
-                "reference": "a3ba33f7ac640456dad36a33d711d20091c71aea"
+                "reference": "3473dd2fb6b31ed5060ecd69877c98b5287ebe48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/krokedil\/wp-api\/zipball\/a3ba33f7ac640456dad36a33d711d20091c71aea",
-                "reference": "a3ba33f7ac640456dad36a33d711d20091c71aea",
+                "url": "https:\/\/api.github.com\/repos\/krokedil\/wp-api\/zipball\/3473dd2fb6b31ed5060ecd69877c98b5287ebe48",
+                "reference": "3473dd2fb6b31ed5060ecd69877c98b5287ebe48",
                 "shasum": ""
             },
             "require-dev": {
+                "dealerdirect\/phpcodesniffer-composer-installer": "^1.0",
                 "php": "~7.1 || ~8.0",
                 "php-stubs\/woocommerce-stubs": "^7.2",
-                "php-stubs\/wordpress-stubs": "^6.1"
+                "php-stubs\/wordpress-stubs": "^6.1",
+                "phpstan\/phpstan": "^2.0",
+                "phpunit\/phpunit": "^9.6",
+                "squizlabs\/php_codesniffer": "^3.13",
+                "szepeviktor\/phpstan-wordpress": "^2.0",
+                "wp-coding-standards\/wpcs": "^3.1"
             },
-            "time": "2024-04-22T09:03:39+00:00",
+            "time": "2026-10-07T08:46:15+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\": "src\/"
                 }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "phpcs": [
+                    "phpcs"
+                ],
+                "phpcbf": [
+                    "phpcbf"
+                ],
+                "phpstan": [
+                    "phpstan analyse --memory-limit=1G"
+                ]
             },
             "license": [
                 "GPL-V2"
@@ -235,7 +255,7 @@
             ],
             "description": "A composer library for Krokedil WordPress plugins that contains classes for working with wp_remote_request to setup request classes. Also uses the WooCommerce logger to log request reponses.",
             "support": {
-                "source": "https:\/\/github.com\/krokedil\/wp-api\/tree\/1.1.1",
+                "source": "https:\/\/github.com\/krokedil\/wp-api\/tree\/1.2.0",
                 "issues": "https:\/\/github.com\/krokedil\/wp-api\/issues"
             },
             "install-path": "..\/krokedil\/wp-api"

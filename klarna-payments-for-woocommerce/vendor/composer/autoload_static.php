@@ -66,6 +66,8 @@ class ComposerStaticInit2fbab6c1b05c216cdddd61813583dc9e
         'Krokedil\\Klarna\\ExpressCheckout\\Settings' => __DIR__ . '/../..' . '/src/ExpressCheckout/Settings.php',
         'Krokedil\\Klarna\\ExpressCheckout\\WebhookSetup' => __DIR__ . '/../..' . '/src/ExpressCheckout/WebhookSetup.php',
         'Krokedil\\Klarna\\Features' => __DIR__ . '/../..' . '/src/Features.php',
+        'Krokedil\\Klarna\\Logging\\LogMasking' => __DIR__ . '/../..' . '/src/Logging/LogMasking.php',
+        'Krokedil\\Klarna\\Logging\\LogWriter' => __DIR__ . '/../..' . '/src/Logging/LogWriter.php',
         'Krokedil\\Klarna\\OnsiteMessaging\\Blocks\\CartBlockIntegration' => __DIR__ . '/../..' . '/src/OnsiteMessaging/Blocks/CartBlockIntegration.php',
         'Krokedil\\Klarna\\OnsiteMessaging\\KlarnaOnsiteMessaging' => __DIR__ . '/../..' . '/src/OnsiteMessaging/KlarnaOnsiteMessaging.php',
         'Krokedil\\Klarna\\OnsiteMessaging\\Pages\\Cart' => __DIR__ . '/../..' . '/src/OnsiteMessaging/Pages/Cart.php',

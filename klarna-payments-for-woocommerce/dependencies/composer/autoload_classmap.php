@@ -57,6 +57,9 @@ return array(
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\StoreApi\\StoreApiLineItem' => $vendorDir . '/krokedil/woocommerce/src/StoreApi/StoreApiLineItem.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\StoreApi\\StoreApiLineShipping' => $vendorDir . '/krokedil/woocommerce/src/StoreApi/StoreApiLineShipping.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WooCommerce\\Subscription' => $vendorDir . '/krokedil/woocommerce/src/Subscription.php',
+    'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\FieldMasker' => $vendorDir . '/krokedil/wp-api/src/FieldMasker.php',
+    'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\KeyMasker' => $vendorDir . '/krokedil/wp-api/src/KeyMasker.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\Logger' => $vendorDir . '/krokedil/wp-api/src/Logger.php',
+    'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\Masking' => $vendorDir . '/krokedil/wp-api/src/Masking.php',
     'KrokedilKlarnaPaymentsDeps\\Krokedil\\WpApi\\Request' => $vendorDir . '/krokedil/wp-api/src/Request.php',
 );

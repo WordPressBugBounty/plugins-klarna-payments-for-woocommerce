@@ -43,6 +43,8 @@ return array(
     'Krokedil\\Klarna\\ExpressCheckout\\Settings' => $baseDir . '/src/ExpressCheckout/Settings.php',
     'Krokedil\\Klarna\\ExpressCheckout\\WebhookSetup' => $baseDir . '/src/ExpressCheckout/WebhookSetup.php',
     'Krokedil\\Klarna\\Features' => $baseDir . '/src/Features.php',
+    'Krokedil\\Klarna\\Logging\\LogMasking' => $baseDir . '/src/Logging/LogMasking.php',
+    'Krokedil\\Klarna\\Logging\\LogWriter' => $baseDir . '/src/Logging/LogWriter.php',
     'Krokedil\\Klarna\\OnsiteMessaging\\Blocks\\CartBlockIntegration' => $baseDir . '/src/OnsiteMessaging/Blocks/CartBlockIntegration.php',
     'Krokedil\\Klarna\\OnsiteMessaging\\KlarnaOnsiteMessaging' => $baseDir . '/src/OnsiteMessaging/KlarnaOnsiteMessaging.php',
     'Krokedil\\Klarna\\OnsiteMessaging\\Pages\\Cart' => $baseDir . '/src/OnsiteMessaging/Pages/Cart.php',
