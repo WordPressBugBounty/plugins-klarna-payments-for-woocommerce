@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/klarna-payments-for-woocommerce\n"
-"POT-Creation-Date: 2026-10-12 09:04:01+00:00\n"
+"POT-Creation-Date: 2026-10-26 10:02:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -179,8 +179,8 @@ msgstr ""
 #: classes/admin/class-kp-form-fields.php:296
 #. translators: [merchant-facing]. %s: merchant portal link.
 msgid ""
-"Enter the credentials for production and test for each market Klarna is "
-"used. Get the client identifier and API credentials from the %1$s, under "
+"Enter the credentials for production and test for each market where Klarna "
+"is used. Get the client identifier and API credentials from the %1$s, under "
 "Settings. <br><br><b>%2$s</b>"
 msgstr ""
 
@@ -298,7 +298,7 @@ msgstr ""
 
 #: classes/admin/class-kp-form-fields.php:399
 #. translators: [merchant-facing].
-msgid "Oceania Market"
+msgid "Oceanian Market"
 msgstr ""
 
 #: classes/admin/class-kp-form-fields.php:404
@@ -414,7 +414,7 @@ msgstr ""
 
 #: classes/admin/class-kp-form-fields.php:519
 #. translators: [merchant-facing].
-msgid "Choose between Redirect or Pop-out checkout flow."
+msgid "Choose between Redirect and Pop-out checkout flow."
 msgstr ""
 
 #: classes/admin/class-kp-form-fields.php:522
@@ -1057,9 +1057,9 @@ msgstr ""
 
 #: src/ExpressCheckout/Settings.php:292
 msgid ""
-"For one step Express Checkout to function, Klarna needs to be able to send "
-"callbacks to your store. Enable the callbacks and configure a signing key "
-"to use for the authentication."
+"For One step Express Checkout to function, Klarna needs to be able to send "
+"callbacks to your store. Click the Create Webhook button to create the "
+"necessary webhook in Klarna for Express Checkout."
 msgstr ""
 
 #: src/ExpressCheckout/Settings.php:340
@@ -1079,7 +1079,7 @@ msgid "Remove Webhook"
 msgstr ""
 
 #: src/ExpressCheckout/Settings.php:381
-msgid "Create the necessary webhook in Klarna for the Express Checkout."
+msgid "Create the necessary webhook in Klarna for Express Checkout."
 msgstr ""
 
 #: src/ExpressCheckout/Settings.php:383
@@ -1232,19 +1232,19 @@ msgid "Select where to display the widget on your cart page"
 msgstr ""
 
 #: src/OnsiteMessaging/Settings.php:132 src/OnsiteMessaging/Settings.php:220
-msgid "Above cross sell"
+msgid "Above Cross-sells"
 msgstr ""
 
 #: src/OnsiteMessaging/Settings.php:133 src/OnsiteMessaging/Settings.php:221
-msgid "Above cart totals"
+msgid "Above Cart totals"
 msgstr ""
 
 #: src/OnsiteMessaging/Settings.php:134 src/OnsiteMessaging/Settings.php:222
-msgid "Between cart totals and proceed to checkout button"
+msgid "Between Cart totals and Proceed to checkout button"
 msgstr ""
 
 #: src/OnsiteMessaging/Settings.php:135 src/OnsiteMessaging/Settings.php:223
-msgid "After proceed to checkout button"
+msgid "After Proceed to checkout button"
 msgstr ""
 
 #: src/OnsiteMessaging/Settings.php:136 src/OnsiteMessaging/Settings.php:224
@@ -1754,11 +1754,11 @@ msgstr ""
 #: src/SignInWithKlarna/Settings.php:279
 msgid ""
 "These scopes are included by default, as necessary for creating a "
-"WooCommerce customer account in your shop.  More about available scopes "
+"WooCommerce customer account in your shop. Read more about available scopes "
 "with Sign in with Klarna <a "
 "href=\"https://docs.klarna.com/conversion-boosters/sign-in-with-klarna/"
 "integrate-sign-in-with-klarna/web-sdk-integration/#scopes-and-claims\""
-">here</a>. Additional scopes can be customized if applicable, more info <a "
+">here</a>. Additional scopes can be customized if applicable – more info <a "
 "href=\"https://gist.github.com/mntzrr/4bf23ca394109d40575f2abc05811ddc\""
 ">here</a>."
 msgstr ""
