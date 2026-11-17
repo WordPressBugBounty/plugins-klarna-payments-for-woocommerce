@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/klarna-payments-for-woocommerce\n"
-"POT-Creation-Date: 2026-11-02 09:43:01+00:00\n"
+"POT-Creation-Date: 2026-11-17 10:52:22+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -770,6 +770,27 @@ msgstr ""
 msgid "Sections"
 msgstr ""
 
+#: dependencies/krokedil/support/src/AJAX.php:53
+msgid "Invalid order ID."
+msgstr ""
+
+#: dependencies/krokedil/support/src/AJAX.php:57
+#: dependencies/krokedil/support/src/Api/Controllers/OrderSupportController.php:47
+msgid "Order not found."
+msgstr ""
+
+#: dependencies/krokedil/support/src/Api/Controllers/OrderSupportController.php:26
+msgid "The ID of the order."
+msgstr ""
+
+#: dependencies/krokedil/support/src/Api/Controllers/OrderSupportController.php:26
+msgid "The context or slug of the log files to search for."
+msgstr ""
+
+#: dependencies/krokedil/support/src/Api/Controllers/OrderSupportController.php:26
+msgid "The metadata key to use for searching in the log."
+msgstr ""
+
 #: dependencies/krokedil/support/src/Logger.php:54
 msgid "Troubleshooting"
 msgstr ""
@@ -795,6 +816,10 @@ msgid ""
 "log entries."
 msgstr ""
 
+#: dependencies/krokedil/support/src/OrderSupport.php:87
+msgid "Export order for support"
+msgstr ""
+
 #: dependencies/krokedil/support/src/Views/Admin/status-report.php:24
 msgid "Timestamp"
 msgstr ""
@@ -808,8 +833,6 @@ msgid "Message"
 msgstr ""
 
 #: dependencies/krokedil/support/src/Views/Admin/status-report.php:68
-#: includes/admin/views/status-report.php:74
-#. translators: [merchant-facing].
 msgid "No error logs"
 msgstr ""
 
@@ -817,59 +840,29 @@ msgstr ""
 msgid "Settings could not be retrieved."
 msgstr ""
 
-#: includes/admin/views/status-report.php:20
+#: includes/admin/views/status-report.php:28
 #. translators: [merchant-facing].
-msgid "Klarna Payments"
+msgid "No countries configured"
 msgstr ""
 
-#: includes/admin/views/status-report.php:22
+#: includes/admin/views/status-report.php:31
 #. translators: [merchant-facing].
-msgid "Klarna Payments System Status."
+msgid "Production countries"
 msgstr ""
 
-#: includes/admin/views/status-report.php:34
+#: includes/admin/views/status-report.php:33
 #. translators: [merchant-facing].
-msgid "Time"
-msgstr ""
-
-#: includes/admin/views/status-report.php:37
-#. translators: [merchant-facing].
-msgid "Request"
-msgstr ""
-
-#: includes/admin/views/status-report.php:39
-#. translators: [merchant-facing].
-msgid "Response Code"
+msgid "Test countries"
 msgstr ""
 
 #: includes/admin/views/status-report.php:41
 #. translators: [merchant-facing].
-msgid "Response Message"
+msgid "Klarna for WooCommerce credentials"
 msgstr ""
 
-#: includes/admin/views/status-report.php:43
+#: includes/admin/views/status-report.php:41
 #. translators: [merchant-facing].
-msgid "Correlation ID"
-msgstr ""
-
-#: includes/admin/views/status-report.php:109
-#. translators: [merchant-facing].
-msgid "Klarna Payments Countries"
-msgstr ""
-
-#: includes/admin/views/status-report.php:109
-#. translators: [merchant-facing].
-msgid "Klarna Payments Countries System Status."
-msgstr ""
-
-#: includes/admin/views/status-report.php:116
-#. translators: [merchant-facing].
-msgid "Production Countries"
-msgstr ""
-
-#: includes/admin/views/status-report.php:122
-#. translators: [merchant-facing].
-msgid "Test Countries"
+msgid "The countries that have a Klarna merchant ID configured."
 msgstr ""
 
 #: includes/kp-functions.php:34
@@ -940,18 +933,42 @@ msgstr ""
 msgid "Mismatch in payment request ID for order ID: %s"
 msgstr ""
 
-#: src/ExpressCheckout/Api/Notifications/PaymentStateExpired.php:43
+#: src/ExpressCheckout/Api/Notifications/PaymentStateCompleted.php:61
+#. translators: [merchant-facing]. %s: Klarna payment request ID.
+msgid ""
+"Klarna Express Checkout: payment completed notification received (payment "
+"request %s)."
+msgstr ""
+
+#: src/ExpressCheckout/Api/Notifications/PaymentStateCompleted.php:87
+#. translators: [merchant-facing].
+msgid ""
+"Klarna Express Checkout: the customer completed the payment, but no active "
+"payment provider integration could update this order automatically. If the "
+"order stays pending, verify the payment in your Klarna or payment provider "
+"portal before processing it."
+msgstr ""
+
+#: src/ExpressCheckout/Api/Notifications/PaymentStateExpired.php:45
 #: src/ExpressCheckout/KECOneStepIntegration.php:102
 #. translators: [merchant-facing].
 msgid "Order cancelled due to expired payment request."
 msgstr ""
 
-#: src/ExpressCheckout/OneStepCheckout.php:142
+#: src/ExpressCheckout/OneStepCheckout.php:170
 msgid "Your order could not be processed"
 msgstr ""
 
-#: src/ExpressCheckout/OneStepCheckout.php:434
-#: src/ExpressCheckout/OneStepCheckout.php:435
+#: src/ExpressCheckout/OneStepCheckout.php:209
+#. translators: [merchant-facing].
+msgid ""
+"Klarna Express Checkout: the payment was not confirmed by Klarna in time, "
+"so the customer was sent to the order received page before the payment was "
+"confirmed."
+msgstr ""
+
+#: src/ExpressCheckout/OneStepCheckout.php:477
+#: src/ExpressCheckout/OneStepCheckout.php:478
 msgid "Digital delivery"
 msgstr ""
 
@@ -1086,39 +1103,53 @@ msgstr ""
 msgid "Create Webhook"
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:130
+#: src/ExpressCheckout/WebhookSetup.php:128
+msgid ""
+"No webhook is registered, so no test webhook could be sent. Create the "
+"webhook first."
+msgstr ""
+
+#: src/ExpressCheckout/WebhookSetup.php:136
 msgid "Could not send test webhook"
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:134
+#: src/ExpressCheckout/WebhookSetup.php:141
 msgid "Test webhook sent successfully."
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:155
+#: src/ExpressCheckout/WebhookSetup.php:156
+msgid "No webhook is registered, so there was nothing to remove."
+msgstr ""
+
+#: src/ExpressCheckout/WebhookSetup.php:165
 msgid "Could not remove webhook"
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:166
+#: src/ExpressCheckout/WebhookSetup.php:178
 msgid "Could not remove signing key"
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:173
+#: src/ExpressCheckout/WebhookSetup.php:186
 msgid "Webhook removed successfully."
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:186
+#: src/ExpressCheckout/WebhookSetup.php:200
 msgid "Could not create signing key"
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:213
+#: src/ExpressCheckout/WebhookSetup.php:222
+msgid "A webhook is already registered."
+msgstr ""
+
+#: src/ExpressCheckout/WebhookSetup.php:232
 msgid "Could not create a signing key with Klarna for the webhook."
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:228
+#: src/ExpressCheckout/WebhookSetup.php:248
 msgid "Could not create webhook with Klarna"
 msgstr ""
 
-#: src/ExpressCheckout/WebhookSetup.php:233
+#: src/ExpressCheckout/WebhookSetup.php:263
 msgid "Webhook created successfully."
 msgstr ""
 
@@ -1377,66 +1408,66 @@ msgstr ""
 msgid "Placement Theme:"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:118
+#: src/OrderManagement/MetaBox.php:134
 #. translators: [merchant-facing].
 msgid "The payment has not been finalized with Klarna."
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:128
+#: src/OrderManagement/MetaBox.php:144
 #. translators: [merchant-facing].
 msgid "Failed to retrieve the order from Klarna."
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:162
+#: src/OrderManagement/MetaBox.php:178
 #. translators: [merchant-facing].
 msgid "Klarna Environment"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:174
+#: src/OrderManagement/MetaBox.php:190
 #. translators: [merchant-facing].
 msgid "Klarna order status"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:186
+#: src/OrderManagement/MetaBox.php:202
 #. translators: [merchant-facing].
 msgid "Initial Payment method"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:203
+#: src/OrderManagement/MetaBox.php:219
 #. translators: [merchant-facing].
 msgid "Scheduled actions"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:232
+#: src/OrderManagement/MetaBox.php:248
 #. translators: [merchant-facing].
 msgid "Orders with same reference"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:235
+#: src/OrderManagement/MetaBox.php:251
 #. translators: [merchant-facing].
 msgid "These orders share the same Klarna transaction ID."
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:242
+#: src/OrderManagement/MetaBox.php:258
 #. translators: [merchant-facing].
 msgid "Advanced"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:266
+#: src/OrderManagement/MetaBox.php:282
 msgid "Choose an action..."
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:280
+#: src/OrderManagement/MetaBox.php:296
 #. translators: [merchant-facing].
 msgid "Apply"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:356
+#: src/OrderManagement/MetaBox.php:372
 #. translators: [merchant-facing].
 msgid "Order management"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:358
+#: src/OrderManagement/MetaBox.php:374
 #. translators: [merchant-facing].
 msgid ""
 "Disable this to turn off the automatic synchronization with the Klarna "
@@ -1444,30 +1475,30 @@ msgid ""
 "done manually."
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:470 src/OrderManagement/MetaBox.php:485
+#: src/OrderManagement/MetaBox.php:486 src/OrderManagement/MetaBox.php:501
 #. translators: [merchant-facing].
 msgid "Capture order"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:485
+#: src/OrderManagement/MetaBox.php:501
 msgid "Activates the order with Klarna."
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:500 src/OrderManagement/MetaBox.php:515
+#: src/OrderManagement/MetaBox.php:516 src/OrderManagement/MetaBox.php:531
 #. translators: [merchant-facing].
 msgid "Cancel order"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:515
+#: src/OrderManagement/MetaBox.php:531
 msgid "Cancels the order with Klarna."
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:530 src/OrderManagement/MetaBox.php:545
+#: src/OrderManagement/MetaBox.php:546 src/OrderManagement/MetaBox.php:561
 #. translators: [merchant-facing].
 msgid "Get customer"
 msgstr ""
 
-#: src/OrderManagement/MetaBox.php:545
+#: src/OrderManagement/MetaBox.php:561
 msgid "Gets the customer data from Klarna and saves it to the WooCommerce order."
 msgstr ""
 
@@ -1477,7 +1508,7 @@ msgstr ""
 msgid "Return fee"
 msgstr ""
 
-#: src/OrderManagement/Request/Request.php:165
+#: src/OrderManagement/Request/Request.php:166
 #. translators: [merchant-facing].
 msgid "Invalid JSON response from the server."
 msgstr ""
@@ -1553,12 +1584,12 @@ msgid ""
 "ERP system."
 msgstr ""
 
-#: src/OrderManagement.php:86
+#: src/OrderManagement.php:87
 #. translators: [merchant-facing].
 msgid "Klarna Order Management is now included in Klarna for WooCommerce."
 msgstr ""
 
-#: src/OrderManagement.php:88
+#: src/OrderManagement.php:89
 #. translators: [merchant-facing].
 msgid ""
 "Starting with version 4.3.0, you no longer need the separate Klarna Order "
@@ -1566,44 +1597,44 @@ msgid ""
 "(formerly Klarna Checkout)."
 msgstr ""
 
-#: src/OrderManagement.php:93
+#: src/OrderManagement.php:94
 #. translators: [merchant-facing].
 msgid "Read more about this change here."
 msgstr ""
 
-#: src/OrderManagement.php:179
+#: src/OrderManagement.php:171
 #. translators: [merchant-facing].
 msgid "minus a return fee of"
 msgstr ""
 
-#: src/OrderManagement.php:181
+#: src/OrderManagement.php:173
 #. translators: [merchant-facing].
 msgid "Refund amount is less than the return fee."
 msgstr ""
 
-#: src/OrderManagement.php:336
+#: src/OrderManagement.php:328
 #. translators: [merchant-facing]. 1: User name, 2: Existing token, 3: New
 #. token.
 msgid "%1$s updated the subscription recurring token from \"%2$s\" to \"%3$s\"."
 msgstr ""
 
-#: src/OrderManagement.php:399
+#: src/OrderManagement.php:391
 #. translators: [merchant-facing]. %s: error message from Klarna.
 msgid "Could not update Klarna order lines: %s."
 msgstr ""
 
-#: src/OrderManagement.php:402
+#: src/OrderManagement.php:394
 #. translators: [merchant-facing].
 msgid "Could not update Klarna order lines. An unknown error occurred."
 msgstr ""
 
-#: src/OrderManagement.php:455
+#: src/OrderManagement.php:447
 msgid ""
 "Klarna capture request was not sent because order management is disabled "
 "for this order."
 msgstr ""
 
-#: src/OrderManagement.php:530
+#: src/OrderManagement.php:524
 #. translators: [merchant-facing].
 msgid ""
 "Klarna could not charge the customer. Please try again later. If that still "
@@ -1612,37 +1643,43 @@ msgid ""
 msgstr ""
 
 #: src/OrderManagement.php:540
+#. translators: [merchant-facing]. %s: Remaining authorized amount, formatted
+#. as a price.
+msgid "Remaining authorized amount: %s."
+msgstr ""
+
+#: src/OrderManagement.php:544
 #. translators: [merchant-facing]. %s: Error message from Klarna.
 msgid "Could not capture Klarna order. %s"
 msgstr ""
 
-#: src/OrderManagement.php:551
+#: src/OrderManagement.php:555
 msgid ""
 "Klarna capture request was not sent because order management is disabled "
 "for capture."
 msgstr ""
 
-#: src/OrderManagement.php:587 src/OrderManagement.php:607
+#: src/OrderManagement.php:591 src/OrderManagement.php:611
 #. translators: [merchant-facing].
 msgid "Klarna order has not been captured and cannot be refunded."
 msgstr ""
 
-#: src/OrderManagement.php:598 src/OrderManagement.php:645
+#: src/OrderManagement.php:602 src/OrderManagement.php:649
 #. translators: [merchant-facing]. %s Klarna error message.
 msgid "Could not refund Klarna order. %s."
 msgstr ""
 
-#: src/OrderManagement.php:620
+#: src/OrderManagement.php:624
 #. translators: [merchant-facing].
 msgid "Could not retrieve the refund order."
 msgstr ""
 
-#: src/OrderManagement.php:660
+#: src/OrderManagement.php:664
 #. translators: [merchant-facing]. refund amount, refund id.
 msgid "Processing a refund of %1$s with Klarna"
 msgstr ""
 
-#: src/OrderManagement.php:670
+#: src/OrderManagement.php:674
 #. translators: [merchant-facing]. 1: original amount, 2: return fee amount.
 msgid " (original amount of %1$s - return fee of %2$s)"
 msgstr ""

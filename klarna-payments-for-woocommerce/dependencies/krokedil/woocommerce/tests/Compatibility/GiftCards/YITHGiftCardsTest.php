@@ -59,11 +59,11 @@ class YITHGiftCardsTest extends TestCase
      *
      * @return \WC_Order
      */
-    private function get_mock_order()
+    private function get_mock_order($updated_as_fee = '')
     {
         // Arrange.
         $mock_order = $this->getMockBuilder('WC_Order')->setMethods(array('get_meta'))->getMock();
-        $mock_order->expects($this->once())->method('get_meta')->with('_ywgc_applied_gift_cards')->willReturn(array('coupon1' => 100, 'coupon2' => 200));
+        $mock_order->method('get_meta')->willReturnMap(array(array('_ywgc_applied_gift_cards', \true, array('coupon1' => 100, 'coupon2' => 200)), array('ywgc_gift_card_updated_as_fee', \true, $updated_as_fee)));
         return $mock_order;
     }
     /**
@@ -132,5 +132,20 @@ class YITHGiftCardsTest extends TestCase
         $this->assertEquals(0, $actual[1]->get_total_tax_amount());
         $this->assertEquals(0, $actual[1]->get_tax_rate());
         $this->assertEquals('gift_card', $actual[1]->get_type());
+    }
+    /**
+     * Test get_order_giftcards when YITH has already added the gift cards as a fee.
+     *
+     * @return void
+     */
+    public function test_get_order_giftcards_skips_giftcards_added_as_fee()
+    {
+        // Arrange.
+        $mock_order = $this->get_mock_order('1');
+        // Act
+        $yith_gift_cards = new YITHGiftCards($this->mock_package);
+        $actual = $yith_gift_cards->get_order_giftcards($mock_order);
+        // Assert
+        $this->assertCount(0, $actual);
     }
 }

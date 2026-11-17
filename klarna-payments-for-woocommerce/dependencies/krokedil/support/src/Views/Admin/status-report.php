@@ -51,7 +51,7 @@ if (!empty($report)) {
         echo esc_html($log['response']['code']);
         ?></td>
 					<td><?php 
-        echo esc_html(\trim($log['response']['message'], '"'));
+        echo esc_html(\trim((string) ($log['response']['message'] ?? ''), '"'));
         ?></td>
 					<td><?php 
         echo esc_html(\trim(empty($log['response']['extra']) ? '' : wp_json_encode($log['response']['extra']), '"'));

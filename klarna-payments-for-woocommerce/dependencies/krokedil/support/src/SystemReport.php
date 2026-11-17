@@ -76,6 +76,22 @@ class SystemReport
         return $output;
     }
     /**
+     * Get the WooCommerce system report as an array.
+     *
+     * @return array|\WP_Error The system report data as an array, or a WP_Error if the report cannot be retrieved.
+     */
+    public static function get_report()
+    {
+        $legacy_wc = \version_compare(WC_VERSION, '9.0', '<=');
+        $system_report = '';
+        if ($legacy_wc) {
+            $system_report = WC()->api->get_endpoint_data('/wc/v3/system_status');
+        } elseif (\class_exists(\Automattic\WooCommerce\Utilities\RestApiUtil::class)) {
+            $system_report = wc_get_container()->get(\Automattic\WooCommerce\Utilities\RestApiUtil::class)->get_endpoint_data('/wc/v3/system_status');
+        }
+        return $system_report;
+    }
+    /**
      * Check if a form field is valid for the system report output.
      *
      * @param array  $form_field The form field to check.
@@ -166,13 +182,13 @@ class SystemReport
     private function is_match($form_field)
     {
         foreach ($this->included_settings as $setting) {
-            if (isset($setting['type']) && $setting['type'] === $form_field['type']) {
+            if (isset($setting['type'], $form_field['type']) && $setting['type'] === $form_field['type']) {
                 return $setting;
             }
-            if (isset($setting['id']) && $setting['id'] === $form_field['id']) {
+            if (isset($setting['id'], $form_field['id']) && $setting['id'] === $form_field['id']) {
                 return $setting;
             }
-            if (isset($setting['class']) && $setting['class'] === $form_field['class']) {
+            if (isset($setting['class'], $form_field['class']) && $setting['class'] === $form_field['class']) {
                 return $setting;
             }
         }

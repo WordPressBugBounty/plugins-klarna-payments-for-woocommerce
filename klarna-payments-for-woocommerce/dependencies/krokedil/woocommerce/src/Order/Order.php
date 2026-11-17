@@ -16,7 +16,7 @@ class Order extends OrderData
     /**
      * Filter prefix.
      *
-     * @var mixed
+     * @var string
      */
     public $filter_prefix = 'order';
     /**
@@ -105,7 +105,9 @@ class Order extends OrderData
         // YITY Giftcards.
         if (\class_exists('KrokedilKlarnaPaymentsDeps\\YITH_YWGC_Gift_Card')) {
             $yith_meta = $this->order->get_meta('_ywgc_applied_gift_cards', \true);
-            if (!empty($yith_meta)) {
+            // Skip once YITH has added the gift cards as a negative fee, the fee line carries the amount.
+            $added_as_fee = !empty($this->order->get_meta('ywgc_gift_card_updated_as_fee', \true));
+            if (!empty($yith_meta) && !$added_as_fee) {
                 foreach ($yith_meta as $gift_card_code => $gift_card_amount) {
                     $coupon_line = new OrderLineCoupon($this->config);
                     $coupon_line->set_yith_wc_gc_data($gift_card_code, $gift_card_amount);

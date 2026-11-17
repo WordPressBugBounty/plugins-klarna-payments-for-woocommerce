@@ -42,6 +42,7 @@ class ComposerStaticInit2fbab6c1b05c216cdddd61813583dc9e
         'Krokedil\\Klarna\\Api\\Registry' => __DIR__ . '/../..' . '/src/Api/Registry.php',
         'Krokedil\\Klarna\\Compatibility' => __DIR__ . '/../..' . '/src/Compatibility.php',
         'Krokedil\\Klarna\\Compatibility\\FluidCheckout' => __DIR__ . '/../..' . '/src/Compatibility/FluidCheckout.php',
+        'Krokedil\\Klarna\\Compatibility\\YITHGiftCards' => __DIR__ . '/../..' . '/src/Compatibility/YITHGiftCards.php',
         'Krokedil\\Klarna\\ExpressCheckout' => __DIR__ . '/../..' . '/src/ExpressCheckout.php',
         'Krokedil\\Klarna\\ExpressCheckout\\AJAX' => __DIR__ . '/../..' . '/src/ExpressCheckout/AJAX.php',
         'Krokedil\\Klarna\\ExpressCheckout\\Api\\Controllers\\Notifications' => __DIR__ . '/../..' . '/src/ExpressCheckout/Api/Controllers/Notifications.php',
@@ -54,6 +55,7 @@ class ComposerStaticInit2fbab6c1b05c216cdddd61813583dc9e
         'Krokedil\\Klarna\\ExpressCheckout\\ClientTokenParser' => __DIR__ . '/../..' . '/src/ExpressCheckout/ClientTokenParser.php',
         'Krokedil\\Klarna\\ExpressCheckout\\Interfaces\\AcquiringPartnerIntegration' => __DIR__ . '/../..' . '/src/ExpressCheckout/Interfaces/AcquiringPartnerIntegration.php',
         'Krokedil\\Klarna\\ExpressCheckout\\KECOneStepIntegration' => __DIR__ . '/../..' . '/src/ExpressCheckout/KECOneStepIntegration.php',
+        'Krokedil\\Klarna\\ExpressCheckout\\Logger' => __DIR__ . '/../..' . '/src/ExpressCheckout/Logger.php',
         'Krokedil\\Klarna\\ExpressCheckout\\OneStepCheckout' => __DIR__ . '/../..' . '/src/ExpressCheckout/OneStepCheckout.php',
         'Krokedil\\Klarna\\ExpressCheckout\\Requests' => __DIR__ . '/../..' . '/src/ExpressCheckout/Requests.php',
         'Krokedil\\Klarna\\ExpressCheckout\\Requests\\Base' => __DIR__ . '/../..' . '/src/ExpressCheckout/Requests/Base.php',
@@ -80,6 +82,7 @@ class ComposerStaticInit2fbab6c1b05c216cdddd61813583dc9e
         'Krokedil\\Klarna\\OrderManagement' => __DIR__ . '/../..' . '/src/OrderManagement.php',
         'Krokedil\\Klarna\\OrderManagement\\Ajax' => __DIR__ . '/../..' . '/src/OrderManagement/Ajax.php',
         'Krokedil\\Klarna\\OrderManagement\\MetaBox' => __DIR__ . '/../..' . '/src/OrderManagement/MetaBox.php',
+        'Krokedil\\Klarna\\OrderManagement\\OrderSupport' => __DIR__ . '/../..' . '/src/OrderManagement/OrderSupport.php',
         'Krokedil\\Klarna\\OrderManagement\\PendingOrders' => __DIR__ . '/../..' . '/src/OrderManagement/PendingOrders.php',
         'Krokedil\\Klarna\\OrderManagement\\Request\\Get\\RequestGetOrder' => __DIR__ . '/../..' . '/src/OrderManagement/Request/Get/RequestGetOrder.php',
         'Krokedil\\Klarna\\OrderManagement\\Request\\Patch\\RequestPatchUpdate' => __DIR__ . '/../..' . '/src/OrderManagement/Request/Patch/RequestPatchUpdate.php',
@@ -102,6 +105,7 @@ class ComposerStaticInit2fbab6c1b05c216cdddd61813583dc9e
         'Krokedil\\Klarna\\SignInWithKlarna\\Settings' => __DIR__ . '/../..' . '/src/SignInWithKlarna/Settings.php',
         'Krokedil\\Klarna\\SignInWithKlarna\\User' => __DIR__ . '/../..' . '/src/SignInWithKlarna/User.php',
         'Krokedil\\Klarna\\Utilities\\ApiCredentialsUtility' => __DIR__ . '/../..' . '/src/Utilities/ApiCredentialsUtility.php',
+        'Krokedil\\Klarna\\Utilities\\IntegrationMetadataUtility' => __DIR__ . '/../..' . '/src/Utilities/IntegrationMetadataUtility.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

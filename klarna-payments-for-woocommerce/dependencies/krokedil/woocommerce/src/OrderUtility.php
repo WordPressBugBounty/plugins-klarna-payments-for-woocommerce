@@ -13,12 +13,12 @@ class OrderUtility
     /**
      * Add the environment information for the order from the plugin and WooCommerce environment.
      *
-     * @param WC_Order    $order
+     * @param \WC_Order   $order
      * @param string|null $plugin_version The version of the plugin that created the order, or empty to skip.
      * @param string|null $checkout_flow The checkout flow that was used to create the order, or empty to skip.
      * @param bool        $save Whether to save the order after updating the meta data. Default is true.
      *
-     * @return WC_Order The updated order.
+     * @return \WC_Order The updated order.
      */
     public static function add_environment_info($order, $plugin_version = null, $checkout_flow = null, $save = \true)
     {

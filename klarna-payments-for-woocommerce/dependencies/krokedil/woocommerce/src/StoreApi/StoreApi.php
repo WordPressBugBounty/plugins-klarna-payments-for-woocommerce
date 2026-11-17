@@ -22,7 +22,7 @@ class StoreApi extends OrderData
     /**
      * Filter prefix.
      *
-     * @var mixed
+     * @var string
      */
     public $filter_prefix = 'store_api_cart';
     /**

@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ------------------
+
+## [1.9.3] - 2026-11-10
+### Fixed
+* YITH Gift Cards: the gift card is no longer added to the order lines twice once YITH has added it to the order as a negative fee, which made the order lines add up to less than the order total.
+
 ## [1.9.2] - 2026-08-14
 ### Fixed
 * Fixed a `DivisionByZeroError` fatal error in cart/order line item price calculations when an item's quantity is 0.

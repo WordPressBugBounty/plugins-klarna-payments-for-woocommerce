@@ -16,7 +16,7 @@ class CartCustomer extends CustomerData
     /**
      * Filter prefix.
      *
-     * @var mixed
+     * @var string
      */
     public $filter_prefix = 'cart';
     /**

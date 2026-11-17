@@ -178,7 +178,7 @@ abstract class OrderMetabox implements MetaboxInterface
     /**
      * Get the order ID from the current screen.
      *
-     * @return int|null
+     * @return int|false
      */
     public function get_id()
     {

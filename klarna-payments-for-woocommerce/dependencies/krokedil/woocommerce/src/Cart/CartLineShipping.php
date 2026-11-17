@@ -16,7 +16,7 @@ class CartLineShipping extends OrderLineData
     /**
      * Filter prefix.
      *
-     * @var mixed
+     * @var string
      */
     public $filter_prefix = 'cart_line_shipping';
     /**

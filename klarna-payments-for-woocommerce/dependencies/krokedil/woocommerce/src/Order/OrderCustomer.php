@@ -16,7 +16,7 @@ class OrderCustomer extends CustomerData
     /**
      * Filter prefix.
      *
-     * @var mixed
+     * @var string
      */
     public $filter_prefix = 'order';
     /**

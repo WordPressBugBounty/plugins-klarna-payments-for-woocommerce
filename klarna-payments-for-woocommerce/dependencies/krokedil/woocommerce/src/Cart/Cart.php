@@ -22,7 +22,7 @@ class Cart extends OrderData
     /**
      * Filter prefix.
      *
-     * @var mixed
+     * @var string
      */
     public $filter_prefix = 'cart';
     /**

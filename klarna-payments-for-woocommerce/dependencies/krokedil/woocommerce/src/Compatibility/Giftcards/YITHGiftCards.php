@@ -30,6 +30,9 @@ class YITHGiftCards extends AbstractGiftCardCompatibility
     /**
      * Get the giftcards applied to an order.
      *
+     * Returns nothing once YITH has added the gift cards to the order as a fee,
+     * since the fee line already carries the amount.
+     *
      * @param \WC_Order $order The WooCommerce order.
      *
      * @return OrderLineData[]
@@ -40,6 +43,10 @@ class YITHGiftCards extends AbstractGiftCardCompatibility
         $yith_meta = $order->get_meta('_ywgc_applied_gift_cards', \true);
         // If no YITH meta data can be found, return an empty array.
         if (empty($yith_meta)) {
+            return $coupons;
+        }
+        // YITH sets this flag when it adds the gift cards as a negative fee.
+        if (!empty($order->get_meta('ywgc_gift_card_updated_as_fee', \true))) {
             return $coupons;
         }
         foreach ($yith_meta as $code => $amount) {
